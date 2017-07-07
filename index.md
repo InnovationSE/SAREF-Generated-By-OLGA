@@ -1,37 +1,22 @@
-## Welcome to GitHub Pages
+# OLGA: Ontology Library GenerAtor
 
-You can use the [editor on GitHub](https://github.com/InnovationSE/SAREF-Generated-By-OLGA/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
+OLGA is a generic tool aiming to accelerate the adoption of the Semantic Web technology such as the Ontology Web Language [OWL](https://www.w3.org/OWL) and the Resource Description Framework [RDF](https://www.w3.org/2001/sw/wiki/RDF), and Json Linked Data [Jsonld](https://json-ld.org/) in the Internet Of Things development.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+OLGA complements existing OWL, RDF, and Jsonld] serialisers such as [Jackson-Jsonld in Java](https://github.com/io-informatics/jackson-jsonld) or RDF Object Relational Mappers such as [RomanticWeb in C#](RomanticWeb.net) and [RDFAlchemy in Python](http://rdfalchemy.readthedocs.io/en/latest/index.html). It takes one or more ontologies as an input and generates a library to be used by IoT developers. The generated a library is conform to the ontology and is dependent on available serialisers and ORMs in various languages (C#, Java, and Python for now) as shown below.
+![](./figures/OLGAImplementation.png).
 
-### Markdown
+OLGA takes as input the following:
+1. One or more Ontologies
+2. A paramter indicating the dependency of the generated library.
+	1. Jackson-Jsonld - Java
+	2. RomanticWeb - C#
+	3. RDFAlchemy - Python
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+# SAREF Example
+[SAREF](http://ontology.tno.nl/saref/) the Smart Appliances REFerence Ontology dependes on the [Time](https://www.w3.org/TR/owl-time/) Ontology when merged they have around 200 Classes and Individuals.
 
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/InnovationSE/SAREF-Generated-By-OLGA/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+The following sections contains the generated code by OLGA of the SAREF[.ttl](http://ontology.tno.nl/saref.ttl) and Time[.ttl](https://www.w3.org/2006/time) Ontologies. The generated libraries are dependent on the following:
+1. [RomanticWeb-C#](/SAREF-RomanticWeb/README.md)
+2. [Jackson-Jsonld-Java](/SAREF-Jackson-JsonLd/README.md)
+2. [RDFAlchemy-Python](/SAREF-RDFAlchemy/README.md)
+	

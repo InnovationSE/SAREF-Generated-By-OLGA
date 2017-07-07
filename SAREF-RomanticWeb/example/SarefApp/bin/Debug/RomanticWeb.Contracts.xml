@@ -1,0 +1,968 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>RomanticWeb.Contracts</name>
+    </assembly>
+    <members>
+        <member name="T:RomanticWeb.ComponentModel.EntityIdTypeConverter">
+            <summary><see cref="T:System.ComponentModel.TypeConverter"/> between <see cref="T:RomanticWeb.Entities.EntityId"/> and <see cref="T:System.Uri"/>.</summary>
+        </member>
+        <member name="F:RomanticWeb.ComponentModel.EntityIdTypeConverter.UriTypeConverter">
+            <summary>Exposes a default instance of the <see cref="F:RomanticWeb.ComponentModel.EntityIdTypeConverter.UriTypeConverter" /> used for comparison.</summary>
+        </member>
+        <member name="M:RomanticWeb.ComponentModel.EntityIdTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Type)">
+            <summary>Returns whether this converter can convert an object of the given type to the type of this converter.</summary>
+            <param name="context">Type: <see cref="T:System.ComponentModel.ITypeDescriptorContext" />
+            An <see cref="T:System.ComponentModel.ITypeDescriptorContext" /> that provides a format context.</param>
+            <param name="sourceType">Type: <see cref="T:System.Type" />
+            A <see cref="T:System.Type" /> that represents the type you want to convert from.</param>
+            <returns>Type: <see cref="T:System.Boolean" />
+            <b>true</b> if this converter can perform the conversion; otherwise, <b>false</b>.</returns>
+        </member>
+        <member name="M:RomanticWeb.ComponentModel.EntityIdTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Type)">
+            <summary>Returns whether this converter can convert the object to the specified type, using the specified context.</summary>
+            <param name="context">Type: <see cref="T:System.ComponentModel.ITypeDescriptorContext" />
+            An <see cref="T:System.ComponentModel.ITypeDescriptorContext" /> that provides a format context.</param>
+            <param name="destinationType">Type: <see cref="T:System.Type" />
+            A <see cref="T:System.Type" /> that represents the type you want to convert to.</param>
+            <returns>Type: <see cref="T:System.Boolean" />
+            <b>true</b> if this converter can perform the conversion; otherwise, <b>false</b>.</returns>
+        </member>
+        <member name="M:RomanticWeb.ComponentModel.EntityIdTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object,System.Type)">
+            <summary>Converts the given value object to the specified type, using the specified context and culture information.</summary>
+            <param name="context">Type: <see cref="T:System.ComponentModel.ITypeDescriptorContext" />
+            An <see cref="T:System.ComponentModel.ITypeDescriptorContext" /> that provides a format context.</param>
+            <param name="culture">Type: <see cref="T:System.Globalization.CultureInfo" />
+            A <see cref="T:System.Globalization.CultureInfo" />. If <b>null</b> is passed, the current culture is assumed.</param>
+            <param name="value">Type: <see cref="T:System.Object" />
+            The <see cref="T:System.Object" /> to convert.</param>
+            <param name="destinationType">Type: <see cref="T:System.Type" />
+            The <see cref="T:System.Type" /> to convert the value parameter to.</param>
+            <returns>Type: <see cref="T:System.Object" />
+            An <see cref="T:System.Object" /> that represents the converted value.</returns>
+        </member>
+        <member name="M:RomanticWeb.ComponentModel.EntityIdTypeConverter.IsValid(System.ComponentModel.ITypeDescriptorContext,System.Object)">
+            <summary>Returns whether the given value object is valid for this type and for the specified context.</summary>
+            <param name="context">Type: <see cref="T:System.ComponentModel.ITypeDescriptorContext" />
+            An <see cref="T:System.ComponentModel.ITypeDescriptorContext" /> that provides a format context.</param>
+            <param name="value">Type: <see cref="T:System.Object" />
+            The <see cref="T:System.Object" /> to test for validity.</param>
+            <returns>Type: <see cref="T:System.Boolean" />
+            <b>true</b> if the specified value is valid for this object; otherwise <b>false</b>.</returns>
+        </member>
+        <member name="T:RomanticWeb.ComponentModel.EntityIdTypeConverter`1">
+            <summary><see cref="T:System.ComponentModel.TypeConverter"/> between <see cref="T:RomanticWeb.Entities.EntityId"/> and <see cref="T:System.Uri"/>.</summary>
+        </member>
+        <member name="M:RomanticWeb.ComponentModel.EntityIdTypeConverter`1.ConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object)">
+            <summary>Converts the given object to the type of this converter, using the specified context and culture information.</summary>
+            <param name="context">Type: <see cref="T:System.ComponentModel.ITypeDescriptorContext" />
+            An <see cref="T:System.ComponentModel.ITypeDescriptorContext" /> that provides a format context.</param>
+            <param name="culture">Type: <see cref="T:System.Globalization.CultureInfo" />
+            The <see cref="T:System.Globalization.CultureInfo" /> to use as the current culture.</param>
+            <param name="value">Type: <see cref="T:System.Object" />
+            The <see cref="T:System.Object" /> to convert.</param>
+            <returns>Type: <see cref="T:System.Object" />
+            An <see cref="T:System.Object" /> that represents the converted value.</returns>
+        </member>
+        <member name="M:RomanticWeb.ComponentModel.EntityIdTypeConverter`1.CreateEntityId(System.Uri)">
+            <summary>Tries to create a <typeparamref name="TEntityId"/> using a <see cref="T:System.Uri"/> constructor.</summary>
+        </member>
+        <member name="T:RomanticWeb.Converters.IFallbackNodeConverter">
+            <summary>Marker interface for last resort node converter.</summary>
+        </member>
+        <member name="T:RomanticWeb.Converters.ILiteralNodeConverter">
+            <summary>Contract for implementing literal node converters.</summary>
+        </member>
+        <member name="M:RomanticWeb.Converters.ILiteralNodeConverter.CanConvert(RomanticWeb.Model.INode)">
+            <summary>Determines whether this instance can convert the specified literal node.</summary>
+            <param name="literalNode">The literal node.</param>
+        </member>
+        <member name="M:RomanticWeb.Converters.ILiteralNodeConverter.CanConvertBack(System.Type)">
+            <summary>Determines whether this instance can convert given strong type to literal.</summary>
+            <param name="type">Type to be converted.</param>
+            <returns><see cref="T:System.Uri" /> if this converted can convert given type, otherwise <b>null</b>.</returns>
+        </member>
+        <member name="T:RomanticWeb.Converters.INodeConverter">
+            <summary>Defines the contract for converting RDF nodes.</summary>
+        </member>
+        <member name="M:RomanticWeb.Converters.INodeConverter.Convert(RomanticWeb.Model.INode,RomanticWeb.IEntityContext)">
+            <summary>Converts a node to it's .NET representation</summary>
+            <param name="objectNode">Graph node to be converter.</param>
+            <param name="context">Owning entity context.</param>
+        </member>
+        <member name="M:RomanticWeb.Converters.INodeConverter.ConvertBack(System.Object,RomanticWeb.IEntityContext)">
+            <summary>Converts an object to an RDF node</summary>
+            <param name="value">Value to be converted.</param>
+            <param name="context">Owning entity context.</param>
+        </member>
+        <member name="T:RomanticWeb.Converters.MatchResult">
+            <summary>Literal node conversion matching result.</summary>
+        </member>
+        <member name="F:RomanticWeb.Converters.MatchResult.NoMatch">
+            <summary>The node doesn't match.</summary>
+        </member>
+        <member name="F:RomanticWeb.Converters.MatchResult.DontCare">
+            <summary>The matching result is irrelevant for conversion.</summary>
+        </member>
+        <member name="F:RomanticWeb.Converters.MatchResult.ExactMatch">
+            <summary>The node does match.</summary>
+        </member>
+        <member name="T:RomanticWeb.Converters.LiteralConversionMatch">
+            <summary>Result of matching literals for conversion by <see cref="T:RomanticWeb.Converters.ILiteralNodeConverter"/></summary>
+        </member>
+        <member name="P:RomanticWeb.Converters.LiteralConversionMatch.DatatypeMatches">
+            <summary>Gets or sets the value indicating whether the literal node's datatype matched.</summary>
+        </member>
+        <member name="P:RomanticWeb.Converters.LiteralConversionMatch.LiteralFormatMatches">
+            <summary>Gets or sets the value indicating whether the literal node's value format matched.</summary>
+        </member>
+        <member name="T:RomanticWeb.DeleteBehaviour">
+            <summary>Behavior that should be applied when deleting entities.</summary>
+        </member>
+        <member name="F:RomanticWeb.DeleteBehaviour.Default">
+            <summary>Default delete behavior set to <see cref="F:RomanticWeb.DeleteBehaviour.DoNothing" /></summary>
+        </member>
+        <member name="F:RomanticWeb.DeleteBehaviour.DoNothing">
+            <summary>Nothing special should happen.</summary>
+        </member>
+        <member name="F:RomanticWeb.DeleteBehaviour.DeleteVolatileChildren">
+            <summary>Delete other blank node entities referenced by the deleted entity.</summary>
+        </member>
+        <member name="F:RomanticWeb.DeleteBehaviour.DeleteChildren">
+            <summary>Delete other entities referenced by the deleted entity.</summary>
+        </member>
+        <member name="F:RomanticWeb.DeleteBehaviour.NullifyVolatileChildren">
+            <summary>Remove statements that referenced removed blank node entities.</summary>
+        </member>
+        <member name="F:RomanticWeb.DeleteBehaviour.NullifyChildren">
+            <summary>Remove statements that referenced removed entities.</summary>
+        </member>
+        <member name="T:RomanticWeb.Diagnostics.ILogger">
+            <summary>Exposes a logging facility.</summary>
+        </member>
+        <member name="M:RomanticWeb.Diagnostics.ILogger.Log(RomanticWeb.Diagnostics.LogLevel,System.String,System.Object[])">
+            <summary>Logs a message.</summary>
+            <param name="level">Log level.</param>
+            <param name="messageFormat">Message format string.</param>
+            <param name="arguments">Format string arguments.</param>
+        </member>
+        <member name="M:RomanticWeb.Diagnostics.ILogger.Log(RomanticWeb.Diagnostics.LogLevel,System.Exception,System.String,System.Object[])">
+            <summary>Logs a message.</summary>
+            <param name="level">Log level.</param>
+            <param name="exception">Exception to be logged.</param>
+            <param name="messageFormat">Message format string.</param>
+            <param name="arguments">Format string arguments.</param>
+        </member>
+        <member name="T:RomanticWeb.Diagnostics.LogLevel">
+            <summary>Defines possible logging levels.</summary>
+        </member>
+        <member name="F:RomanticWeb.Diagnostics.LogLevel.Fatal">
+            <summary>Defines a fatal error log level.</summary>
+        </member>
+        <member name="F:RomanticWeb.Diagnostics.LogLevel.Error">
+            <summary>Defines an ordinary error log level.</summary>
+        </member>
+        <member name="F:RomanticWeb.Diagnostics.LogLevel.Warning">
+            <summary>Defines a warning log level.</summary>
+        </member>
+        <member name="F:RomanticWeb.Diagnostics.LogLevel.Info">
+            <summary>Defines an informative log level.</summary>
+        </member>
+        <member name="F:RomanticWeb.Diagnostics.LogLevel.Trace">
+            <summary>Defines a trac log level.</summary>
+        </member>
+        <member name="F:RomanticWeb.Diagnostics.LogLevel.Debug">
+            <summary>Defines a debugging log level.</summary>
+        </member>
+        <member name="T:RomanticWeb.Entities.EntityId">
+            <summary>An Entity's identifier (URI or blank node).</summary>
+        </member>
+        <member name="M:RomanticWeb.Entities.EntityId.#ctor(System.String)">
+            <summary>Creates a new instance of <see cref="T:RomanticWeb.Entities.EntityId"/> from string.</summary>
+        </member>
+        <member name="M:RomanticWeb.Entities.EntityId.#ctor(System.Uri)">
+            <summary>Creates a new instance of <see cref="T:RomanticWeb.Entities.EntityId"/> from an Uniform Resource Identifies.</summary>
+        </member>
+        <member name="M:RomanticWeb.Entities.EntityId.#ctor">
+            <summary>Used for XML serialization.</summary>
+        </member>
+        <member name="P:RomanticWeb.Entities.EntityId.Uri">
+            <summary>The underlying Uniform Resource Identifier.</summary>
+        </member>
+        <member name="M:RomanticWeb.Entities.EntityId.op_Equality(RomanticWeb.Entities.EntityId,RomanticWeb.Entities.EntityId)">
+            <summary>Tests for equality two entity identifiers.</summary>
+            <param name="left">Left operand.</param>
+            <param name="right">Right operand.</param>
+            <returns><b>true</b> if both entity identifiers has same type and same Uri, otherwise <b>false</b>.</returns>
+        </member>
+        <member name="M:RomanticWeb.Entities.EntityId.op_Inequality(RomanticWeb.Entities.EntityId,RomanticWeb.Entities.EntityId)">
+            <summary>Tests for inequality two entity identifiers.</summary>
+            <param name="left">Left operand.</param>
+            <param name="right">Right operand.</param>
+            <returns><b>true</b> if both entity identifiers are of different type or has different Uri, otherwise <b>false</b>.</returns>
+        </member>
+        <member name="M:RomanticWeb.Entities.EntityId.op_Implicit(System.String)~RomanticWeb.Entities.EntityId">
+            <summary>Converts a string into an entity identifier.</summary>
+            <param name="entityId">String representation of the entity identifier.</param>
+            <returns><see cref="T:RomanticWeb.Entities.EntityId"/> instance or null.</returns>
+        </member>
+        <member name="M:RomanticWeb.Entities.EntityId.op_Implicit(System.Uri)~RomanticWeb.Entities.EntityId">
+            <summary>Converts an Uri into an entity identifier.</summary>
+            <param name="uri">Uri representation of the entity identifier.</param>
+            <returns><see cref="T:RomanticWeb.Entities.EntityId"/> instance or null.</returns>
+        </member>
+        <member name="M:RomanticWeb.Entities.EntityId.GetHashCode">
+            <summary>Serves as the default hash function.</summary>
+            <returns>Type: <see cref="T:System.Int32" />
+            A hash code for the current object.</returns>
+        </member>
+        <member name="M:RomanticWeb.Entities.EntityId.System#IComparable#CompareTo(System.Object)">
+            <summary>Compares the current object with another object of the same type.</summary>
+            <param name="operand">Type: <see cref="T:System.Object" />
+            An object to compare with this object.</param>
+            <returns>Type: <see cref="T:System.Int32" />
+            A value that indicates the relative order of the objects being compared.</returns>
+        </member>
+        <member name="M:RomanticWeb.Entities.EntityId.System#IComparable{RomanticWeb#Entities#EntityId}#CompareTo(RomanticWeb.Entities.EntityId)">
+            <summary>Compares the current identifier with another identifier of the same type.</summary>
+            <param name="other">Type: <see cref="T:RomanticWeb.Entities.EntityId" />
+            An identifier to compare with this identifier.</param>
+            <returns>Type: <see cref="T:System.Int32" />
+            A value that indicates the relative order of the identifiers being compared.</returns>
+        </member>
+        <member name="M:RomanticWeb.Entities.EntityId.Equals(System.Object)">
+            <summary>Determines whether the specified object is equal to the current object.</summary>
+            <param name="obj">Type: <see cref="T:System.Object" />
+            The object to compare with the current object.</param>
+            <returns>Type: <see cref="T:System.Boolean" />
+            <b>true</b> if the specified object is equal to the current object; otherwise, <b>false</b>.</returns>
+        </member>
+        <member name="M:RomanticWeb.Entities.EntityId.ToString">
+            <summary>Creates a string representation of this entity identifier.</summary>
+            <returns>String representation of this entity identifier.</returns>
+        </member>
+        <member name="M:RomanticWeb.Entities.EntityId.ToString(System.Boolean)">
+            <summary>Returns a <see cref="T:System.String" /> that represents this instance.</summary>
+            <param name="nQuadFormat">if set to <c>true</c> the string will be a valid NQuad node.</param>
+        </member>
+        <member name="M:RomanticWeb.Entities.EntityId.GetSchema">
+            <inheritdoc />
+        </member>
+        <member name="M:RomanticWeb.Entities.EntityId.ReadXml(System.Xml.XmlReader)">
+            <inheritdoc />
+        </member>
+        <member name="M:RomanticWeb.Entities.EntityId.WriteXml(System.Xml.XmlWriter)">
+            <inheritdoc />
+        </member>
+        <member name="M:RomanticWeb.Entities.EntityId.Equals(RomanticWeb.Entities.EntityId)">
+            <summary>Determines whether the specified entity identifier is equal to the current object.</summary>
+            <param name="other">Type: <see cref="T:RomanticWeb.Entities.EntityId" />
+            The entity identifier to compare with the current entity identifier.</param>
+            <returns>Type: <see cref="T:System.Boolean" />
+            <b>true</b> if the specified identifier is equal to the current one; otherwise, <b>false</b>.</returns>
+        </member>
+        <member name="T:RomanticWeb.Entities.IBaseUriSelectionPolicy">
+            <summary>Contract for selecting base <see cref="T:System.Uri"/>s for relative <see cref="T:RomanticWeb.Entities.IEntity"/> identifiers.</summary>
+        </member>
+        <member name="M:RomanticWeb.Entities.IBaseUriSelectionPolicy.SelectBaseUri(RomanticWeb.Entities.EntityId)">
+            <summary>Selects the base URI for the given entity identifier.</summary>
+        </member>
+        <member name="T:RomanticWeb.Entities.IBlankNodeIdGenerator">
+            <summary>Contract for generating blank node Ids.</summary>
+        </member>
+        <member name="M:RomanticWeb.Entities.IBlankNodeIdGenerator.Generate">
+            <summary>Generates a blank node identifier.</summary>
+            <returns>a new node every time.</returns>
+        </member>
+        <member name="T:RomanticWeb.Entities.IEntity">
+            <summary>Defines a contract for entities identified by <see cref="T:RomanticWeb.Entities.EntityId"/>.</summary>
+        </member>
+        <member name="P:RomanticWeb.Entities.IEntity.Id">
+            <summary>Gets the entity's identifier.</summary>
+        </member>
+        <member name="P:RomanticWeb.Entities.IEntity.Context">
+            <summary>Gets the entity context.</summary>
+        </member>
+        <member name="T:RomanticWeb.Entities.IEntityProxy">
+            <summary>A proxy, which mediates between <see cref="T:RomanticWeb.Entities.IEntity"/> instances and RDF data.</summary>
+        </member>
+        <member name="P:RomanticWeb.Entities.IEntityProxy.GraphSelectionOverride">
+            <summary>Gets the graph selection override.</summary>
+            <value>The graph selection override.</value>
+        </member>
+        <member name="P:RomanticWeb.Entities.IEntityProxy.Id">
+            <summary>Gets the entity's identifier.</summary>
+            <value>The identifier.</value>
+        </member>
+        <member name="P:RomanticWeb.Entities.IEntityProxy.EntityMapping">
+            <summary>Gets the entity mapping.</summary>
+            <value>The entity mapping.</value>
+        </member>
+        <member name="M:RomanticWeb.Entities.IEntityProxy.OverrideGraphSelection(RomanticWeb.NamedGraphs.ISourceGraphSelectionOverride)">
+            <summary>Overrides the graph selection.</summary>
+            <param name="graphOverride">The graph override.</param>
+        </member>
+        <member name="T:RomanticWeb.Entities.IResultTransformerCatalog">
+            <summary>A container for <see cref="T:RomanticWeb.Entities.ResultAggregations.IResultAggregator"/>s and <see cref="T:RomanticWeb.Entities.ResultPostprocessing.IResultTransformer"/>s.</summary>
+        </member>
+        <member name="M:RomanticWeb.Entities.IResultTransformerCatalog.GetAggregator(RomanticWeb.Entities.ResultAggregations.Aggregation)">
+            <summary>Gets an aggregator for <paramref name="aggregation"/>.</summary>
+            <param name="aggregation">The aggregation.</param>
+        </member>
+        <member name="M:RomanticWeb.Entities.IResultTransformerCatalog.GetTransformer(RomanticWeb.Mapping.Model.IPropertyMapping)">
+            <summary>Gets a transformer for transforming <paramref name="property"/>'s values.</summary>
+            <param name="property">The property.</param>
+        </member>
+        <member name="T:RomanticWeb.Entities.ResultAggregations.Aggregation">
+            <summary>Contains kinds of operation performed on multiple results when reading predicate values.</summary>
+        </member>
+        <member name="F:RomanticWeb.Entities.ResultAggregations.Aggregation.Original">
+            <summary>Leave results intact.</summary>
+        </member>
+        <member name="F:RomanticWeb.Entities.ResultAggregations.Aggregation.Single">
+            <summary>Return only a single value.</summary>
+        </member>
+        <member name="F:RomanticWeb.Entities.ResultAggregations.Aggregation.SingleOrDefault">
+            <summary>Return a single value or null.</summary>
+        </member>
+        <member name="F:RomanticWeb.Entities.ResultAggregations.Aggregation.First">
+            <summary>Return the first value.</summary>
+        </member>
+        <member name="F:RomanticWeb.Entities.ResultAggregations.Aggregation.FirstOrDefault">
+            <summary>Return the first value or null.</summary>
+        </member>
+        <member name="F:RomanticWeb.Entities.ResultAggregations.Aggregation.Has">
+            <summary>Check if any result exists.</summary>
+        </member>
+        <member name="T:RomanticWeb.Entities.ResultAggregations.IResultAggregator">
+            <summary>Defines a contract for processing results from reading rdf nodes.</summary>
+        </member>
+        <member name="P:RomanticWeb.Entities.ResultAggregations.IResultAggregator.Aggregation">
+            <summary>Gets the aggregation.</summary>
+            <value>The aggregation.</value>
+        </member>
+        <member name="M:RomanticWeb.Entities.ResultAggregations.IResultAggregator.Aggregate(System.Collections.Generic.IEnumerable{System.Object})">
+            <summary>Processes nodes and returns the transformed value.</summary>
+        </member>
+        <member name="T:RomanticWeb.Entities.ResultPostprocessing.IResultTransformer">
+            <summary>Contract from implementing transformation of a RDF objects.</summary>
+        </member>
+        <member name="M:RomanticWeb.Entities.ResultPostprocessing.IResultTransformer.FromNodes(RomanticWeb.Entities.IEntityProxy,RomanticWeb.Mapping.Model.IPropertyMapping,RomanticWeb.IEntityContext,System.Collections.Generic.IEnumerable{RomanticWeb.Model.INode})">
+            <summary>Gets the transformed result.</summary>
+            <param name="proxy">The parent entity proxy.</param>
+            <param name="property">The property.</param>
+            <param name="context">The context.</param>
+            <param name="nodes">The nodes.</param>
+        </member>
+        <member name="M:RomanticWeb.Entities.ResultPostprocessing.IResultTransformer.ToNodes(System.Object,RomanticWeb.Entities.IEntityProxy,RomanticWeb.Mapping.Model.IPropertyMapping,RomanticWeb.IEntityContext)">
+            <summary>Gets the transformed result.</summary>
+            <param name="proxy">The parent entity.</param>
+            <param name="property">The property.</param>
+            <param name="context">The context.</param>
+            <param name="value">The object to transform.</param>
+        </member>
+        <member name="T:RomanticWeb.IEntityContext">
+            <summary>Defines methods for factories, which produce <see cref="!:Entity"/> instances.</summary>
+        </member>
+        <member name="E:RomanticWeb.IEntityContext.Disposed">
+            <summary>Occurs when the entity context is disposed.</summary>
+        </member>
+        <member name="P:RomanticWeb.IEntityContext.Store">
+            <summary>Gets the underlying in-memory store.</summary>
+        </member>
+        <member name="P:RomanticWeb.IEntityContext.HasChanges">
+            <summary>Gets a value indicating whether the underlying store has any changes.</summary>
+        </member>
+        <member name="P:RomanticWeb.IEntityContext.BlankIdGenerator">
+            <summary>Gets the blank identifier generator.</summary>
+            <value>The blank identifier generator.</value>
+        </member>
+        <member name="P:RomanticWeb.IEntityContext.Ontologies">
+            <summary>Gets the <see cref="T:RomanticWeb.Ontologies.IOntologyProvider" />.</summary>
+        </member>
+        <member name="P:RomanticWeb.IEntityContext.Mappings">
+            <summary>Gets the <see cref="T:RomanticWeb.Mapping.IMappingsRepository" />.</summary>
+        </member>
+        <member name="P:RomanticWeb.IEntityContext.BaseUriSelector">
+            <summary>Gets the <see cref="T:RomanticWeb.Entities.IBaseUriSelectionPolicy" />.</summary>
+        </member>
+        <member name="P:RomanticWeb.IEntityContext.FallbackNodeConverter">
+            <summary>Gets the fallback node converter.</summary>
+        </member>
+        <member name="P:RomanticWeb.IEntityContext.Cultures">
+            <summary>Gets the cultures present in current context's data.</summary>
+        </member>
+        <member name="P:RomanticWeb.IEntityContext.TrackChanges">
+            <summary>Gets or sets a lag indicating whether to track changes or not.</summary>
+        </member>
+        <member name="P:RomanticWeb.IEntityContext.CurrentCulture">
+            <summary>Gets or sets current culture to filter localized literals through.</summary>
+            <remarks>
+            By default this should not be set resulting in using <see cref="!:System.Threading.Thread.CurrentThread.CurrentCulture" /> value.
+            Setting any value other than <b>null</b> should override this behaviour. Using <b>null</b> should reset the default behaviour back again.
+            </remarks>
+        </member>
+        <member name="P:RomanticWeb.IEntityContext.Changes">
+            <summary>Gets the changes.</summary>
+        </member>
+        <member name="M:RomanticWeb.IEntityContext.AsQueryable">
+            <summary>Converts this context into a LINQ queryable data source.</summary>
+            <returns>A LINQ querable data source.</returns>
+        </member>
+        <member name="M:RomanticWeb.IEntityContext.AsQueryable``1">
+            <summary>Converts this context into a LINQ queryable data source of entities of given type.</summary>
+            <typeparam name="T">Type of entities to work with.</typeparam>
+            <returns>A LINQ queryable data source of entities of given type.</returns>
+        </member>
+        <member name="M:RomanticWeb.IEntityContext.Load``1(RomanticWeb.Entities.EntityId)">
+            <summary>Loads an existing typed entity.</summary>
+            <typeparam name="T">Type to be used when returning a typed entity.</typeparam>
+            <param name="entityId">Entity identifier</param>
+            <returns>Typed instance of an entity wih given identifier.</returns>
+            <remarks>Does not return null, if the entity doesn't exist</remarks>
+        </member>
+        <member name="M:RomanticWeb.IEntityContext.Create``1(RomanticWeb.Entities.EntityId)">
+            <summary>Creates a new typed entity.</summary>
+            <typeparam name="T">Type to be used when returning a typed entity.</typeparam>
+            <param name="entityId">Entity identifier</param>
+        </member>
+        <member name="M:RomanticWeb.IEntityContext.Commit">
+            <summary>Saves all changes to the underlying store.</summary>
+        </member>
+        <member name="M:RomanticWeb.IEntityContext.Delete(RomanticWeb.Entities.EntityId)">
+            <summary>Marks an entity for deletion.</summary>
+            <param name="entityId">Target entity to be deleted.</param>
+        </member>
+        <member name="M:RomanticWeb.IEntityContext.Delete(RomanticWeb.Entities.EntityId,RomanticWeb.DeleteBehaviour)">
+            <summary>Marks an entity for deletion.</summary>
+            <param name="entityId">Target entity to be deleted.</param>
+            <param name="deleteBehaviour">Entity deletion behaviour.</param>
+        </member>
+        <member name="M:RomanticWeb.IEntityContext.InitializeEnitity(RomanticWeb.Entities.IEntity)">
+            <summary>Initializes the enitity.</summary>
+            <param name="entity">The entity.</param>
+        </member>
+        <member name="M:RomanticWeb.IEntityContext.EntityAs``1(RomanticWeb.Entities.IEntity)">
+            <summary>Wraps an entity as another entity type.</summary>
+            <typeparam name="T">the <see cref="T:RomanticWeb.Entities.IEntity"/> type</typeparam>
+            <param name="entity">The entity.</param>
+            <returns></returns>
+        </member>
+        <member name="M:RomanticWeb.IEntityContext.Exists(RomanticWeb.Entities.EntityId)">
+            <summary>Checks if the entity exists.</summary>
+        </member>
+        <member name="M:RomanticWeb.IEntityContext.Rollback">
+            <summary>
+            Discards all changes made to the entity context
+            </summary>
+        </member>
+        <member name="T:RomanticWeb.IEntityContextFactory">
+            <summary>An entrypoint to RomanticWeb, which encapsulates modularity and creation of <see cref="T:RomanticWeb.IEntityContext" />.</summary>
+        </member>
+        <member name="P:RomanticWeb.IEntityContextFactory.Ontologies">
+            <summary>Gets the ontology provider.</summary>
+        </member>
+        <member name="P:RomanticWeb.IEntityContextFactory.Mappings">
+            <summary>Gets the mappings.</summary>
+        </member>
+        <member name="P:RomanticWeb.IEntityContextFactory.Conventions">
+            <summary>Gets the conventions.</summary>
+        </member>
+        <member name="P:RomanticWeb.IEntityContextFactory.FallbackNodeConverter">
+            <summary>Gets the fallback node converter.</summary>
+        </member>
+        <member name="P:RomanticWeb.IEntityContextFactory.MappingModelVisitors">
+            <summary>Gets the mapping model visitors.</summary>
+        </member>
+        <member name="P:RomanticWeb.IEntityContextFactory.TransformerCatalog">
+            <summary>Gets the transformer catalog.</summary>
+        </member>
+        <member name="P:RomanticWeb.IEntityContextFactory.NamedGraphSelector">
+            <summary>Gets the transformer catalog.</summary>
+        </member>
+        <member name="P:RomanticWeb.IEntityContextFactory.ResourceResolutionStrategy">
+            <summary>Gets the external resource resolution strategy.</summary>
+        </member>
+        <member name="M:RomanticWeb.IEntityContextFactory.CreateContext">
+            <summary>Creates a new instance of entity context.</summary>
+        </member>
+        <member name="T:RomanticWeb.IEntitySource">
+            <summary>A source for triples, loaded from physical triple stores.</summary>
+        </member>
+        <member name="P:RomanticWeb.IEntitySource.MetaGraphUri">
+            <summary>Gets or sets the meta graph URI.</summary>
+        </member>
+        <member name="M:RomanticWeb.IEntitySource.LoadEntity(RomanticWeb.Entities.EntityId)">
+            <summary>Loads an entity into the given <see cref="T:RomanticWeb.IEntityStore"/></summary>
+        </member>
+        <member name="M:RomanticWeb.IEntitySource.EntityExist(RomanticWeb.Entities.EntityId)">
+            <summary>Checks if an Entity with a given Id exists</summary>
+        </member>
+        <member name="M:RomanticWeb.IEntitySource.ExecuteEntityQuery(RomanticWeb.Linq.Model.IQuery,System.Collections.Generic.IEnumerable{RomanticWeb.Entities.EntityId}@)">
+            <summary>Executes a query and returns resulting quads.</summary>
+            <param name="queryModel">Query model to be executed.</param>
+            <param name="resultingEntities">Enumeration of entity identifiers beeing in fact the resulting ones.</param>
+            <returns>Enumeration of entity quads beeing a result of the query.</returns>
+        </member>
+        <member name="M:RomanticWeb.IEntitySource.ExecuteScalarQuery(RomanticWeb.Linq.Model.IQuery)">
+            <summary>Executes a query with scalar result.</summary>
+            <param name="queryModel">Query model to be executed.</param>
+            <returns>Scalar value beeing a result of the query.</returns>
+        </member>
+        <member name="M:RomanticWeb.IEntitySource.ExecuteAskQuery(RomanticWeb.Linq.Model.IQuery)">
+            <summary>Executes an 'ask' query.</summary>
+            <param name="queryModel">Query model to be executed.</param>
+            <returns><b>true</b> in case a given query has solution, otherwise <b>false</b>.</returns>
+        </member>
+        <member name="M:RomanticWeb.IEntitySource.GetCommandText(RomanticWeb.Linq.Model.IQuery)">
+            <summary>Gets the underlying command text for given query.</summary>
+            <param name="queryModel">Query model to be executed.</param>
+            <returns>String containing a command text</returns>
+        </member>
+        <member name="M:RomanticWeb.IEntitySource.Commit(System.Collections.Generic.IEnumerable{RomanticWeb.Updates.IDatasetChange})">
+            <summary>
+            Applies changes to the underlaying triple store
+            </summary>
+            <param name="changes"></param>
+        </member>
+        <member name="T:RomanticWeb.IEntityStore">
+            <summary>Represents an in-memory quad cache, which are organized in per-entity quads.</summary>
+        </member>
+        <member name="P:RomanticWeb.IEntityStore.TrackChanges">
+            <summary>Gets a flag indicating whether to track changes.</summary>
+        </member>
+        <member name="P:RomanticWeb.IEntityStore.Quads">
+            <summary>Gets all quads from the store.</summary>
+        </member>
+        <member name="M:RomanticWeb.IEntityStore.GetObjectsForPredicate(RomanticWeb.Entities.EntityId,System.Uri,System.Uri)">
+            <summary>Gets all objects for predicate for a given entity.</summary>
+        </member>
+        <member name="M:RomanticWeb.IEntityStore.GetEntityQuads(RomanticWeb.Entities.EntityId)">
+            <summary>Gets all quads describing given entity.</summary>
+            <param name="entityId">Entity identifier for which to retrieve quads.</param>
+            <returns>Enumeration of quads describing given entity.</returns>
+        </member>
+        <member name="M:RomanticWeb.IEntityStore.AssertEntity(RomanticWeb.Entities.EntityId,System.Collections.Generic.IEnumerable{RomanticWeb.Model.IEntityQuad})">
+            <summary>Adds a triple to the store.</summary>
+        </member>
+        <member name="M:RomanticWeb.IEntityStore.ReplacePredicateValues(RomanticWeb.Entities.EntityId,RomanticWeb.Model.INode,System.Func{System.Collections.Generic.IEnumerable{RomanticWeb.Model.INode}},System.Uri,System.Globalization.CultureInfo)">
+            <summary>Removes the current triple(s) for subject/predicate and replaces it with triples with given object(s).</summary>
+            <param name="id">the subject</param>
+            <param name="propertyUri">the predicate</param>
+            <param name="newValues">new object node(s)</param>
+            <param name="graphUri">destination graph</param>
+            <param name="language">language of literal values.</param>
+        </member>
+        <member name="M:RomanticWeb.IEntityStore.Delete(RomanticWeb.Entities.EntityId,RomanticWeb.DeleteBehaviour)">
+            <summary>Marks an entity for deletion.</summary>
+            <param name="entityId">Identifier of the entity to be removed.</param>
+            <param name="deleteBehaviour">Optional parameter telling how to tread other related entities.</param>
+        </member>
+        <member name="M:RomanticWeb.IEntityStore.ResetState">
+            <summary>Forces the store to use current state as it's initial state.</summary>
+        </member>
+        <member name="M:RomanticWeb.IEntityStore.Rollback">
+            <summary>
+            Discards all changes made to the entity store
+            </summary>
+        </member>
+        <member name="T:RomanticWeb.LinkedData.IResourceResolutionStrategy">
+            <summary>Defines an interface of the resource resoulition strategy.</summary>
+        </member>
+        <member name="M:RomanticWeb.LinkedData.IResourceResolutionStrategy.Resolve(RomanticWeb.Entities.EntityId)">
+            <summary>Resolves a given entity identifier into an entity.</summary>
+            <param name="id">Entity identifier to be resolved.</param>
+            <returns>Instance of the <see cref="T:RomanticWeb.Entities.IEntity" /> describing given <paramref name="id" />.</returns>
+        </member>
+        <member name="M:RomanticWeb.LinkedData.IResourceResolutionStrategy.Resolve``1(RomanticWeb.Entities.EntityId)">
+            <summary>Resolves a given entity identifier into a typed entity.</summary>
+            <typeparam name="T">Type of entity to be resolved.</typeparam>
+            <param name="id">Entity identifier to be resolved.</param>
+            <returns>Instance of the <typeparamref name="T"/> describing given <paramref name="id" />.</returns>
+        </member>
+        <member name="T:RomanticWeb.Linq.Model.IExpression">
+            <summary>Provides a base interface for expressions in query.</summary>
+        </member>
+        <member name="T:RomanticWeb.Linq.Model.QueryForms">
+            <summary>Specifies target SPARQL query form.</summary>
+        </member>
+        <member name="F:RomanticWeb.Linq.Model.QueryForms.Select">
+            <summary>Selects expressions in to the resulting data set.</summary>
+        </member>
+        <member name="F:RomanticWeb.Linq.Model.QueryForms.Ask">
+            <summary>Asks for existance of a given entities.</summary>
+        </member>
+        <member name="F:RomanticWeb.Linq.Model.QueryForms.Describe">
+            <summary>Returns triples describing given entities.</summary>
+        </member>
+        <member name="F:RomanticWeb.Linq.Model.QueryForms.Construct">
+            <summary>Returns triples that can be used to construct another triple store.</summary>
+        </member>
+        <member name="T:RomanticWeb.Linq.Model.IQuery">
+            <summary>Represents a whole query.</summary>
+        </member>
+        <member name="P:RomanticWeb.Linq.Model.IQuery.Prefixes">
+            <summary>Gets an enumeration of all prefixes.</summary>
+        </member>
+        <member name="P:RomanticWeb.Linq.Model.IQuery.Select">
+            <summary>Gets an enumeration of all selected expressions.</summary>
+        </member>
+        <member name="P:RomanticWeb.Linq.Model.IQuery.Elements">
+            <summary>Gets an enumeration of all query elements.</summary>
+        </member>
+        <member name="P:RomanticWeb.Linq.Model.IQuery.IsSubQuery">
+            <summary>Gets a value indicating if the given query is actually a sub query.</summary>
+        </member>
+        <member name="P:RomanticWeb.Linq.Model.IQuery.QueryForm">
+            <summary>Gets a query form of given query.</summary>
+        </member>
+        <member name="P:RomanticWeb.Linq.Model.IQuery.Offset">
+            <summary>Gets or sets the offset.</summary>
+        </member>
+        <member name="P:RomanticWeb.Linq.Model.IQuery.Limit">
+            <summary>Gets or sets the limit.</summary>
+        </member>
+        <member name="P:RomanticWeb.Linq.Model.IQuery.OrderBy">
+            <summary>Gets a map of order by clauses.</summary>
+            <remarks>Key is the expression on which the sorting should be performed and the value determines the direction, where <b>true</b> means descending and <b>false</b> is for ascending (default).</remarks>
+        </member>
+        <member name="M:RomanticWeb.Linq.Model.IQuery.CreateVariableName(System.String)">
+            <summary>Creates a variable name from given identifier.</summary>
+            <param name="identifier">Identifier to be used to abbreviate variable name.</param>
+            <returns>Variable name with unique name.</returns>
+        </member>
+        <member name="M:RomanticWeb.Linq.Model.IQuery.RetrieveIdentifier(System.String)">
+            <summary>Retrieves an identifier from a passed variable name.</summary>
+            <param name="variableName">Variable name to retrieve identifier from.</param>
+            <returns>Identifier passed to create the variable name.</returns>
+        </member>
+        <member name="M:RomanticWeb.Linq.Model.IQuery.CreateIdentifier(System.String)">
+            <summary>Creates an identifier from given name.</summary>
+            <param name="name">Name.</param>
+            <returns>Identifier created from given name.</returns>
+        </member>
+        <member name="T:RomanticWeb.Linq.Model.IQueryComponent">
+            <summary>Provides a base interface for query components.</summary>
+        </member>
+        <member name="T:RomanticWeb.Linq.Model.IQueryElement">
+            <summary>Provides an abstract for query element.</summary>
+        </member>
+        <member name="T:RomanticWeb.Linq.Model.ISelectableQueryComponent">
+            <summary>Provides a base interface for components that can be selected.</summary>
+        </member>
+        <member name="P:RomanticWeb.Linq.Model.ISelectableQueryComponent.Expressions">
+            <summary>Gets an enumeration of selectable expressions.</summary>
+        </member>
+        <member name="T:RomanticWeb.Linq.Model.IPrefix">
+            <summary>Expresses a prefix in the query.</summary>
+        </member>
+        <member name="P:RomanticWeb.Linq.Model.IPrefix.NamespacePrefix">
+            <summary>Gets or sets a namespace prefix.</summary>
+        </member>
+        <member name="P:RomanticWeb.Linq.Model.IPrefix.NamespaceUri">
+            <summary>Gets or sets a namespace URI.</summary>
+        </member>
+        <member name="T:RomanticWeb.Mapping.Conventions.IConvention">
+            <summary>Marker interface. The generic should be used to implement conventions.</summary>
+        </member>
+        <member name="P:RomanticWeb.Mapping.Conventions.IConvention.Requires">
+            <summary>Gets the convention types that are required to be executed before this convention.</summary>
+        </member>
+        <member name="T:RomanticWeb.Mapping.Conventions.IConvention`1">
+            <summary>A base constract for implementing conventions.</summary>
+            <typeparam name="T">Type this convention should be applied to.</typeparam>
+        </member>
+        <member name="M:RomanticWeb.Mapping.Conventions.IConvention`1.ShouldApply(`0)">
+            <summary>Checks if convention should be applied.</summary>
+        </member>
+        <member name="M:RomanticWeb.Mapping.Conventions.IConvention`1.Apply(`0)">
+            <summary>Applies the convention to target.</summary>
+        </member>
+        <member name="T:RomanticWeb.Mapping.IMappingsRepository">
+            <summary>Provides access to entity mappings.</summary>
+        </member>
+        <member name="M:RomanticWeb.Mapping.IMappingsRepository.MappingFor``1">
+            <summary>Gets a mapping for an Entity type.</summary>
+            <typeparam name="TEntity">Entity type, for which mappings is going to be retrieved.</typeparam>
+        </member>
+        <member name="M:RomanticWeb.Mapping.IMappingsRepository.MappingFor(System.Type)">
+            <summary>Gets a mapping for an Entity type.</summary>
+        </member>
+        <member name="M:RomanticWeb.Mapping.IMappingsRepository.MappingForProperty(System.Uri)">
+            <summary>Gets a property mapping for given predicate Uri.</summary>
+            <param name="predicateUri">Predicate Uri to be search for.</param>
+            <returns>Property mapped to given predicate Uri or null.</returns>
+        </member>
+        <member name="T:RomanticWeb.Mapping.Model.IClassMapping">
+            <summary>A RDF type mapping for entity's RDF class.</summary>
+        </member>
+        <member name="P:RomanticWeb.Mapping.Model.IClassMapping.Uri">
+            <summary>Gets the RDF class URI.</summary>
+        </member>
+        <member name="P:RomanticWeb.Mapping.Model.IClassMapping.IsInherited">
+            <summary> Gets a value indicating whether [is inherited] from base class' mapping.</summary>
+            <value><c>true</c> if [is inherited]; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="M:RomanticWeb.Mapping.Model.IClassMapping.IsMatch(System.Collections.Generic.IEnumerable{System.Uri})">
+            <summary>Determines whether the specified class list is match.</summary>
+            <param name="classList">The class list.</param>
+            <returns>true is class list indicates class membership</returns>
+        </member>
+        <member name="M:RomanticWeb.Mapping.Model.IClassMapping.Accept(RomanticWeb.Mapping.Visitors.IMappingModelVisitor)">
+            <summary>Accepts the specified mapping model visitor.</summary>
+            <param name="mappingModelVisitor">The mapping model visitor.</param>
+        </member>
+        <member name="T:RomanticWeb.Mapping.Model.ICollectionMapping">
+            <summary>Represents a collection property mapping.</summary>
+        </member>
+        <member name="P:RomanticWeb.Mapping.Model.ICollectionMapping.StoreAs">
+            <summary>Gets the storage strategy for a mapped property.</summary>
+        </member>
+        <member name="P:RomanticWeb.Mapping.Model.ICollectionMapping.ElementConverter">
+            <summary>Gets the element converter.</summary>
+        </member>
+        <member name="T:RomanticWeb.Mapping.Model.IDictionaryMapping">
+            <summary>Represents a dictionary property mapping.</summary>
+        </member>
+        <member name="P:RomanticWeb.Mapping.Model.IDictionaryMapping.KeyPredicate">
+            <summary>Gets the key predicate mapping.</summary>
+        </member>
+        <member name="P:RomanticWeb.Mapping.Model.IDictionaryMapping.ValuePredicate">
+            <summary>Gets the value predicate mapping.</summary>
+        </member>
+        <member name="T:RomanticWeb.Mapping.Model.IEntityMapping">
+            <summary>A highest level of entity mapping, used to access property mappings, type mappings, etc.</summary>
+        </member>
+        <member name="P:RomanticWeb.Mapping.Model.IEntityMapping.EntityType">
+            <summary>Gets the type of the mapped entity.</summary>
+        </member>
+        <member name="P:RomanticWeb.Mapping.Model.IEntityMapping.Classes">
+            <summary>Gets the RDF type mapping.</summary>
+        </member>
+        <member name="P:RomanticWeb.Mapping.Model.IEntityMapping.Properties">
+            <summary>Gets the RDF type mapping.</summary>
+        </member>
+        <member name="P:RomanticWeb.Mapping.Model.IEntityMapping.HiddenProperties">
+            <summary>Gets the RDF type mapping for hidden properties (those overriden with the 'new' operator).</summary>
+        </member>
+        <member name="M:RomanticWeb.Mapping.Model.IEntityMapping.PropertyFor(System.String)">
+            <summary>Gets the property mapping for a property by name.</summary>
+        </member>
+        <member name="M:RomanticWeb.Mapping.Model.IEntityMapping.Accept(RomanticWeb.Mapping.Visitors.IMappingModelVisitor)">
+            <summary>Accepts the specified mapping model visitor.</summary>
+            <param name="mappingModelVisitor">The mapping model visitor.</param>
+        </member>
+        <member name="T:RomanticWeb.Mapping.Model.IPropertyMapping">
+            <summary>Mapping for an Entity's property.</summary>
+        </member>
+        <member name="P:RomanticWeb.Mapping.Model.IPropertyMapping.EntityMapping">
+            <summary>Gets the entity mapping.</summary>
+        </member>
+        <member name="P:RomanticWeb.Mapping.Model.IPropertyMapping.Uri">
+            <summary>Gets the RDF predicate URI.</summary>
+        </member>
+        <member name="P:RomanticWeb.Mapping.Model.IPropertyMapping.Name">
+            <summary>Gets the property name.</summary>
+        </member>
+        <member name="P:RomanticWeb.Mapping.Model.IPropertyMapping.ReturnType">
+            <summary>Gets the property's return type.</summary>
+        </member>
+        <member name="P:RomanticWeb.Mapping.Model.IPropertyMapping.DeclaringType">
+            <summary>Gets the property's declaring type.</summary>
+        </member>
+        <member name="P:RomanticWeb.Mapping.Model.IPropertyMapping.Converter">
+            <summary>Gets the converter.</summary>
+        </member>
+        <member name="M:RomanticWeb.Mapping.Model.IPropertyMapping.Accept(RomanticWeb.Mapping.Visitors.IMappingModelVisitor)">
+            <summary>Accepts the specified mapping model visitor.</summary>
+            <param name="mappingModelVisitor">The mapping model visitor.</param>
+        </member>
+        <member name="T:RomanticWeb.Mapping.Model.StoreAs">
+            <summary>Represents different way to persist collections to triples.</summary>
+        </member>
+        <member name="F:RomanticWeb.Mapping.Model.StoreAs.Undefined">
+            <summary>Not applicable, ie. not a collection.</summary>
+        </member>
+        <member name="F:RomanticWeb.Mapping.Model.StoreAs.SimpleCollection">
+            <summary>Persist a collection as multiple triples for subject/predicate pair.</summary>
+        </member>
+        <member name="F:RomanticWeb.Mapping.Model.StoreAs.RdfList">
+            <summary>Presist a colelction as an rdf:List.</summary>
+        </member>
+        <member name="T:RomanticWeb.Mapping.Visitors.IMappingModelVisitor">
+            <summary>Visits mapping attributes and produces mapping providers.</summary>
+        </member>
+        <member name="M:RomanticWeb.Mapping.Visitors.IMappingModelVisitor.Visit(RomanticWeb.Mapping.Model.IEntityMapping)">
+            <summary>Visits the specified entity mapping.</summary>
+            <param name="entityMapping">The entity mapping.</param>
+        </member>
+        <member name="M:RomanticWeb.Mapping.Visitors.IMappingModelVisitor.Visit(RomanticWeb.Mapping.Model.ICollectionMapping)">
+            <summary>Visits the specified collection mapping.</summary>
+            <param name="collectionMapping">The collection mapping.</param>
+        </member>
+        <member name="M:RomanticWeb.Mapping.Visitors.IMappingModelVisitor.Visit(RomanticWeb.Mapping.Model.IDictionaryMapping)">
+            <summary>Visits the specified dictionary mapping.</summary>
+            <param name="dictionaryMapping">The dictionary mapping.</param>
+        </member>
+        <member name="M:RomanticWeb.Mapping.Visitors.IMappingModelVisitor.Visit(RomanticWeb.Mapping.Model.IPropertyMapping)">
+            <summary>Visits the specified property mapping.</summary>
+            <param name="propertyMapping">The property mapping.</param>
+        </member>
+        <member name="M:RomanticWeb.Mapping.Visitors.IMappingModelVisitor.Visit(RomanticWeb.Mapping.Model.IClassMapping)">
+            <summary>Visits the specified class mapping.</summary>
+            <param name="classMapping">The class mapping.</param>
+        </member>
+        <member name="T:RomanticWeb.Model.IEntityQuad">
+            <summary>Represents a triple (subject, predicate, object).</summary>
+        </member>
+        <member name="P:RomanticWeb.Model.IEntityQuad.Graph">
+            <summary>Gets the named graph node or null, if triple is in named graph.</summary>
+        </member>
+        <member name="P:RomanticWeb.Model.IEntityQuad.EntityId">
+            <summary>Gets entity id, which defines this triple.</summary>
+        </member>
+        <member name="M:RomanticWeb.Model.IEntityQuad.ToString(System.Boolean)">
+            <summary>Returns a <see cref="T:System.String" /> that represents this instance.</summary>
+            <param name="nQuadFormat">If set to <c>true</c> the string will be a valid NQuad.</param>
+        </member>
+        <member name="T:RomanticWeb.Model.INode">
+            <summary>Represents an RDF node (URI or literal).</summary>
+            <remarks>Blank nodes are not supported currently.</remarks>
+        </member>
+        <member name="P:RomanticWeb.Model.INode.IsUri">
+            <summary>Gets the value indicating that the node is a URI.</summary>
+        </member>
+        <member name="P:RomanticWeb.Model.INode.IsLiteral">
+            <summary>Gets the value indicating that the node is a literal.</summary>
+        </member>
+        <member name="P:RomanticWeb.Model.INode.IsBlank">
+            <summary>Gets the value indicating that the node is a blank node.</summary>
+        </member>
+        <member name="P:RomanticWeb.Model.INode.Uri">
+            <summary>Gets the URI of a URI node.</summary>
+        </member>
+        <member name="P:RomanticWeb.Model.INode.Literal">
+            <summary>Gets the string value of a literal node.</summary>
+        </member>
+        <member name="P:RomanticWeb.Model.INode.BlankNode">
+            <summary>Gets the string value of a blank node.</summary>
+        </member>
+        <member name="P:RomanticWeb.Model.INode.DataType">
+            <summary>Gets the data type of a literal node.</summary>
+        </member>
+        <member name="P:RomanticWeb.Model.INode.Language">
+            <summary>Gets the language tag of a literal node.</summary>
+        </member>
+        <member name="M:RomanticWeb.Model.INode.ToEntityId">
+            <summary>Creates an <see cref="T:RomanticWeb.Entities.EntityId"/> for a <see cref="T:RomanticWeb.Model.INode"/>.</summary>
+        </member>
+        <member name="M:RomanticWeb.Model.INode.ToString(System.Boolean)">
+            <summary>Returns a <see cref="T:System.String" /> that represents this instance.</summary>
+            <param name="nQuadFormat">If set to <c>true</c> the string will be a valid NQuad node.</param>
+        </member>
+        <member name="T:RomanticWeb.Model.ITriple">
+            <summary>Reprents a triple, which does nto belong to a graph.</summary>
+        </member>
+        <member name="P:RomanticWeb.Model.ITriple.Object">
+            <summary>Gets the triple's object.</summary>
+        </member>
+        <member name="P:RomanticWeb.Model.ITriple.Predicate">
+            <summary>Gets the triple's predicate.</summary>
+        </member>
+        <member name="P:RomanticWeb.Model.ITriple.Subject">
+            <summary>Gets the triple's subject.</summary>
+        </member>
+        <member name="T:RomanticWeb.NamedGraphs.INamedGraphSelector">
+            <summary>Defines contract for selecting or creating a named graph URI.</summary>
+        </member>
+        <member name="M:RomanticWeb.NamedGraphs.INamedGraphSelector.SelectGraph(RomanticWeb.Entities.EntityId,RomanticWeb.Mapping.Model.IEntityMapping,RomanticWeb.Mapping.Model.IPropertyMapping)">
+            <summary>Selects the names graph URI.</summary>
+            <param name="entityId">The entity identifier.</param>
+            <param name="entityMapping">The entity mapping.</param>
+            <param name="predicate">The predicate.</param>
+            <returns>In implementing classes returns an absolute <see cref="T:System.Uri"/>.</returns>
+        </member>
+        <member name="T:RomanticWeb.NamedGraphs.ISourceGraphSelectionOverride">
+            <summary>Allows changing the algorithm used to select a named graph.</summary>
+        </member>
+        <member name="P:RomanticWeb.NamedGraphs.ISourceGraphSelectionOverride.SelectGraph">
+            <summary>Gets the select graph function.</summary>
+        </member>
+        <member name="T:RomanticWeb.Ontologies.IClass">
+            <summary>Represents an RDF class.</summary>
+        </member>
+        <member name="T:RomanticWeb.Ontologies.IOntology">
+            <summary>Encapsulates metadata about an ontology (like Foaf, Dublin Core, Rdfs, etc.).</summary>
+        </member>
+        <member name="P:RomanticWeb.Ontologies.IOntology.Prefix">
+            <summary>Gets the namespace prefix.</summary>
+        </member>
+        <member name="P:RomanticWeb.Ontologies.IOntology.DisplayName">
+            <summary>Gets the display name.</summary>
+            <remarks>This property is usually fed with dc:title or rdfs:label property.</remarks>
+        </member>
+        <member name="P:RomanticWeb.Ontologies.IOntology.BaseUri">
+            <summary>Gets the ontology's base URI.</summary>
+        </member>
+        <member name="P:RomanticWeb.Ontologies.IOntology.Properties">
+            <summary>Gets the ontology's properties.</summary>
+        </member>
+        <member name="P:RomanticWeb.Ontologies.IOntology.Classes">
+            <summary>Gets the ontology's classes.</summary>
+        </member>
+        <member name="T:RomanticWeb.Ontologies.IOntologyProvider">
+            <summary>Defines methods for accessing metadata about ontologies.</summary>
+        </member>
+        <member name="P:RomanticWeb.Ontologies.IOntologyProvider.Ontologies">
+            <summary>Get ontologies' metadata.</summary>
+        </member>
+        <member name="M:RomanticWeb.Ontologies.IOntologyProvider.ResolveUri(System.String,System.String)">
+            <summary>Gets a URI from a QName.</summary>
+        </member>
+        <member name="T:RomanticWeb.Ontologies.IProperty">
+            <summary>A base classs for RDF properties.</summary>
+        </member>
+        <member name="T:RomanticWeb.Ontologies.ITerm">
+            <summary>Base class for RDF terms (properties and classes).</summary>
+        </member>
+        <member name="P:RomanticWeb.Ontologies.ITerm.Uri">
+            <summary>Gets the <see cref="T:RomanticWeb.Ontologies.ITerm"/>'s URI.</summary>
+        </member>
+        <member name="P:RomanticWeb.Ontologies.ITerm.Ontology">
+            <summary>Gets the <see cref="T:RomanticWeb.Ontologies.IOntology"/>, which defines this <see cref="T:RomanticWeb.Ontologies.ITerm"/>.</summary>
+        </member>
+        <member name="P:RomanticWeb.Ontologies.ITerm.Prefix">
+            <summary>Gets the prefix of this term.</summary>
+        </member>
+        <member name="P:RomanticWeb.Ontologies.ITerm.Name">
+            <summary>Gets the term name.</summary>
+            <remarks>Essentially it is a relative URI or hash part (depending on ontology namespace)</remarks>
+        </member>
+        <member name="T:RomanticWeb.Updates.IDatasetChange">
+            <summary>Represents a change to the triple store.</summary>
+        </member>
+        <member name="P:RomanticWeb.Updates.IDatasetChange.Entity">
+            <summary>Gets the entity, which was changed.</summary>
+        </member>
+        <member name="P:RomanticWeb.Updates.IDatasetChange.Graph">
+            <summary>Gets the graph, which was changed.</summary>
+            <returns><b>null</b> if change affects multiple graphs.</returns>
+        </member>
+        <member name="P:RomanticWeb.Updates.IDatasetChange.IsEmpty">
+            <summary>Gets a value indicating whether this instance actually represents a change to the store.</summary>
+        </member>
+        <member name="M:RomanticWeb.Updates.IDatasetChange.CanMergeWith(RomanticWeb.Updates.IDatasetChange)">
+            <summary>Determines whether this instance can be merged with another.</summary>
+            <param name="other">The other change.</param>
+        </member>
+        <member name="M:RomanticWeb.Updates.IDatasetChange.MergeWith(RomanticWeb.Updates.IDatasetChange)">
+            <summary>Merges this change the with another change.</summary>
+        </member>
+        <member name="T:RomanticWeb.Updates.IDatasetChanges">
+            <summary>Declares a contract for reading changes made to the triple store.</summary>
+        </member>
+        <member name="P:RomanticWeb.Updates.IDatasetChanges.HasChanges">
+            <summary>Gets a value indicating whether there are any changes.</summary>
+        </member>
+    </members>
+</doc>

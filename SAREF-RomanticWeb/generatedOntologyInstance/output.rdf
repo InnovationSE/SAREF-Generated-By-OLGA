@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE rdf:RDF [
+	<!ENTITY rdf 'http://www.w3.org/1999/02/22-rdf-syntax-ns#'>
+	<!ENTITY rdfs 'http://www.w3.org/2000/01/rdf-schema#'>
+	<!ENTITY xsd 'http://www.w3.org/2001/XMLSchema#'>
+]>
+<rdf:RDF xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:xsd="http://www.w3.org/2001/XMLSchema#" xmlns:ns0="http://www.wurvoc.org/vocabularies/om-1.8/" xmlns:ns1="https://w3id.org/saref#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+  <ns0:degree_Celsius rdf:about="http://www.saref.instance/example#1">
+    <rdf:type rdf:resource="https://w3id.org/saref#TemperatureUnit" />
+    <rdf:type rdf:resource="https://w3id.org/saref#UnitOfMeasure" />
+    <ns2:primaryTopic xmlns:ns2="http://xmlns.com/foaf/0.1/" rdf:resource="http://www.saref.instance/example#1" />
+  </ns0:degree_Celsius>
+  <ns1:Measurement rdf:about="http://www.saref.instance/example#2">
+    <ns3:primaryTopic xmlns:ns3="http://xmlns.com/foaf/0.1/" rdf:resource="http://www.saref.instance/example#2" />
+    <ns1:hasTimestamp rdf:datatype="&xsd;dateTime">2017-07-05T18:32:20.1506017Z</ns1:hasTimestamp>
+    <ns1:hasValue rdf:datatype="&xsd;float">32</ns1:hasValue>
+    <ns1:isMeasuredIn rdf:resource="http://www.saref.instance/example#1" />
+  </ns1:Measurement>
+  <ns1:Temperature rdf:about="http://www.saref.instance/example#3">
+    <rdf:type rdf:resource="https://w3id.org/saref#Property" />
+    <ns4:primaryTopic xmlns:ns4="http://xmlns.com/foaf/0.1/" rdf:resource="http://www.saref.instance/example#3" />
+    <ns1:relatesToMeasurement rdf:resource="http://www.saref.instance/example#2" />
+  </ns1:Temperature>
+  <ns1:TemperatureSensor rdf:about="http://www.saref.instance/example#4">
+    <rdf:type rdf:resource="https://w3id.org/saref#Device" />
+    <rdf:type rdf:resource="https://w3id.org/saref#FunctionRelated" />
+    <rdf:type rdf:resource="https://w3id.org/saref#Sensor" />
+    <ns5:primaryTopic xmlns:ns5="http://xmlns.com/foaf/0.1/" rdf:resource="http://www.saref.instance/example#4" />
+    <ns1:hasDescription rdf:datatype="&xsd;string">Low range Zigee temperature sensor</ns1:hasDescription>
+    <ns1:hasManufacturer rdf:datatype="&xsd;string">CompanyA</ns1:hasManufacturer>
+    <ns1:hasModel rdf:datatype="&xsd;string">M321</ns1:hasModel>
+    <ns1:makesMeasurement rdf:resource="http://www.saref.instance/example#2" />
+  </ns1:TemperatureSensor>
+</rdf:RDF>

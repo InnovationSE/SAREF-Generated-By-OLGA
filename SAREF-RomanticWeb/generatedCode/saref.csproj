@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{59DC5E7D-CBA4-4E76-A432-D2F4795FA68D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SAREF-dotnet</RootNamespace>
+    <AssemblyName>SAREF-dotnet</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="dotNetRDF, Version=1.0.0.2473, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>.\packages\dotNetRDF.1.0.0.2473\lib\net40\dotNetRDF.dll</HintPath>
+    </Reference>
+    <Reference Include="dotNetRDF.Data.Virtuoso, Version=1.0.0.2473, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>.\packages\dotNetRDF.Data.Virtuoso.1.0.0.2473\lib\net40\dotNetRDF.Data.Virtuoso.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlAgilityPack, Version=1.4.6.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
+      <HintPath>.\packages\HtmlAgilityPack.1.4.6\lib\Net45\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>.\packages\Newtonsoft.Json.5.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog, Version=1.0.0.505, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>.\packages\NLog.1.0.0.505\lib\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenLink.Data.Virtuoso, Version=6.2.3128.1, Culture=neutral, PublicKeyToken=6654f6917d07cb95, processorArchitecture=MSIL">
+      <HintPath>.\packages\dotNetRDF.Data.Virtuoso.1.0.0.2473\lib\net40\OpenLink.Data.Virtuoso.dll</HintPath>
+    </Reference>
+    <Reference Include="Remotion.Linq, Version=2.1.0.0, Culture=neutral, PublicKeyToken=fee00910d6e5f53b, processorArchitecture=MSIL">
+      <HintPath>.\packages\Remotion.Linq.2.1.1\lib\net45\Remotion.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="RomanticWeb, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>.\packages\RomanticWeb.1.0.0-rc1\lib\net45\RomanticWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="RomanticWeb.Contracts, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>.\packages\RomanticWeb.Contracts.1.0.0-rc1\lib\net45\RomanticWeb.Contracts.dll</HintPath>
+    </Reference>
+    <Reference Include="RomanticWeb.dotNetRDF, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>.\packages\RomanticWeb.dotNetRDF.1.0.0-rc1\lib\net45\RomanticWeb.dotNetRDF.dll</HintPath>
+    </Reference>
+    <Reference Include="RomanticWeb.JsonLd, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>.\packages\RomanticWeb.JsonLd.1.0.0-rc1\lib\net45\RomanticWeb.JsonLd.dll</HintPath>
+    </Reference>
+    <Reference Include="RomanticWeb.Mapping.Fluent, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>.\packages\RomanticWeb.1.0.0-rc1\lib\net45\RomanticWeb.Mapping.Fluent.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="VDS.Common, Version=1.7.0.0, Culture=neutral, PublicKeyToken=ab5f4eb908061bf0, processorArchitecture=MSIL">
+      <HintPath>.\packages\VDS.Common.1.7.0\lib\net40-client\VDS.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="virtado4, Version=4.0.0.0, Culture=neutral, PublicKeyToken=391bf132017ae989, processorArchitecture=MSIL">
+      <HintPath>.\packages\OpenLink.Data.Virtuoso.7.20.3214.1\lib\net40\virtado4.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+		<Compile Include="w3id\org\saref\IService.cs" />
+		<Compile Include="www\w3\org\time\IInterval.cs" />
+		<Compile Include="w3id\org\saref\IMotion.cs" />
+		<Compile Include="w3id\org\saref\IOpenCloseState.cs" />
+		<Compile Include="w3id\org\saref\IEnergyUnit.cs" />
+		<Compile Include="w3id\org\saref\Iwatt_hour.cs" />
+		<Compile Include="w3id\org\saref\Ikilowatt_hour.cs" />
+		<Compile Include="www\w3\org\time\IMonthOfYear.cs" />
+		<Compile Include="www\w3\org\time\IunitMonth.cs" />
+		<Compile Include="w3id\org\saref\IStartState.cs" />
+		<Compile Include="w3id\org\saref\IStart.cs" />
+		<Compile Include="w3id\org\saref\ICurrency.cs" />
+		<Compile Include="w3id\org\saref\IUnited_States_dollar.cs" />
+		<Compile Include="w3id\org\saref\Ipound_sterling.cs" />
+		<Compile Include="w3id\org\saref\Ieuro.cs" />
+		<Compile Include="w3id\org\saref\ICloseCommand.cs" />
+		<Compile Include="w3id\org\saref\IClose.cs" />
+		<Compile Include="w3id\org\saref\IMeteringFunction.cs" />
+		<Compile Include="w3id\org\saref\ICommodity.cs" />
+		<Compile Include="www\w3\org\time\ITemporalDuration.cs" />
+		<Compile Include="w3id\org\saref\IToggleCommand.cs" />
+		<Compile Include="w3id\org\saref\IToggle.cs" />
+		<Compile Include="w3id\org\saref\ILightingDevice.cs" />
+		<Compile Include="w3id\org\saref\IComfort.cs" />
+		<Compile Include="w3id\org\saref\IMeter.cs" />
+		<Compile Include="w3id\org\saref\IPowerUnit.cs" />
+		<Compile Include="w3id\org\saref\Ikilowatt.cs" />
+		<Compile Include="w3id\org\saref\Iwatt.cs" />
+		<Compile Include="w3id\org\saref\IOpenCloseFunction.cs" />
+		<Compile Include="w3id\org\saref\ISwitch.cs" />
+		<Compile Include="www\w3\org\time\IYear.cs" />
+		<Compile Include="w3id\org\saref\IMultiLevelState.cs" />
+		<Compile Include="w3id\org\saref\IOpenCommand.cs" />
+		<Compile Include="w3id\org\saref\IOpen.cs" />
+		<Compile Include="www\w3\org\time\IDayOfWeek.cs" />
+		<Compile Include="www\w3\org\time\IFriday.cs" />
+		<Compile Include="www\w3\org\time\ISunday.cs" />
+		<Compile Include="www\w3\org\time\ISaturday.cs" />
+		<Compile Include="www\w3\org\time\IThursday.cs" />
+		<Compile Include="www\w3\org\time\ITuesday.cs" />
+		<Compile Include="www\w3\org\time\IWednesday.cs" />
+		<Compile Include="www\w3\org\time\IMonday.cs" />
+		<Compile Include="w3id\org\saref\IStopCommand.cs" />
+		<Compile Include="w3id\org\saref\IStop.cs" />
+		<Compile Include="w3id\org\saref\IGenerator.cs" />
+		<Compile Include="www\w3\org\time\IProperInterval.cs" />
+		<Compile Include="w3id\org\saref\IActuatingFunction.cs" />
+		<Compile Include="w3id\org\saref\IPressureUnit.cs" />
+		<Compile Include="w3id\org\saref\Ibar.cs" />
+		<Compile Include="w3id\org\saref\Ipascal.cs" />
+		<Compile Include="w3id\org\saref\IUnitOfMeasure.cs" />
+		<Compile Include="w3id\org\saref\ISetLevelCommand.cs" />
+		<Compile Include="w3id\org\saref\IOpenState.cs" />
+		<Compile Include="w3id\org\saref\IFunctionRelated.cs" />
+		<Compile Include="w3id\org\saref\IOnOffFunction.cs" />
+		<Compile Include="w3id\org\saref\IStartStopState.cs" />
+		<Compile Include="w3id\org\saref\IElectricity.cs" />
+		<Compile Include="w3id\org\saref\IGetCurrentMeterValueCommand.cs" />
+		<Compile Include="w3id\org\saref\IGetCurrentMeterValue.cs" />
+		<Compile Include="w3id\org\saref\IGetMeterHistoryCommand.cs" />
+		<Compile Include="w3id\org\saref\IGetMeterHistory.cs" />
+		<Compile Include="w3id\org\saref\ILoad.cs" />
+		<Compile Include="w3id\org\saref\ICloseState.cs" />
+		<Compile Include="w3id\org\saref\INetwork.cs" />
+		<Compile Include="w3id\org\saref\IActuator.cs" />
+		<Compile Include="w3id\org\saref\IFunction.cs" />
+		<Compile Include="w3id\org\saref\INotifyCommand.cs" />
+		<Compile Include="w3id\org\saref\INotify.cs" />
+		<Compile Include="www\w3\org\time\ITimeZone.cs" />
+		<Compile Include="w3id\org\saref\IStartCommand.cs" />
+		<Compile Include="w3id\org\saref\ITemperature.cs" />
+		<Compile Include="w3id\org\saref\IStartStopFunction.cs" />
+		<Compile Include="w3id\org\saref\IStepUpCommand.cs" />
+		<Compile Include="w3id\org\saref\IStepUp.cs" />
+		<Compile Include="w3id\org\saref\IMeasurement.cs" />
+		<Compile Include="w3id\org\saref\IWater.cs" />
+		<Compile Include="www\w3\org\rdf\schema\ILiteral.cs" />
+		<Compile Include="w3id\org\saref\ITime.cs" />
+		<Compile Include="w3id\org\saref\ISetAbsoluteLevelCommand.cs" />
+		<Compile Include="w3id\org\saref\ISetAbsoluteLevel.cs" />
+		<Compile Include="w3id\org\saref\IOnCommand.cs" />
+		<Compile Include="w3id\org\saref\IOn.cs" />
+		<Compile Include="w3id\org\saref\ISwitchOnService.cs" />
+		<Compile Include="w3id\org\saref\ICommand.cs" />
+		<Compile Include="www\w3\org\time\IGeneralDurationDescription.cs" />
+		<Compile Include="w3id\org\saref\IBuildingRelated.cs" />
+		<Compile Include="www\w3\org\rdf\schema\IResource.cs" />
+		<Compile Include="w3id\org\saref\ITemperatureUnit.cs" />
+		<Compile Include="w3id\org\saref\Idegree_Celsius.cs" />
+		<Compile Include="w3id\org\saref\Ikelvin.cs" />
+		<Compile Include="w3id\org\saref\Idegree_Fahrenheit.cs" />
+		<Compile Include="w3id\org\saref\ICoal.cs" />
+		<Compile Include="w3id\org\saref\IGetSensingDataCommand.cs" />
+		<Compile Include="w3id\org\saref\IGetSensingData.cs" />
+		<Compile Include="w3id\org\saref\IPressure.cs" />
+		<Compile Include="w3id\org\saref\ILight.cs" />
+		<Compile Include="w3id\org\saref\IHVAC.cs" />
+		<Compile Include="w3id\org\saref\ISmoke.cs" />
+		<Compile Include="www\w3\org\time\IGeneralDateTimeDescription.cs" />
+		<Compile Include="w3id\org\saref\IAppliance.cs" />
+		<Compile Include="www\w3\org\time\ITRS.cs" />
+		<Compile Include="w3id\org\saref\IEnergyRelated.cs" />
+		<Compile Include="w3id\org\saref\IEnergy.cs" />
+		<Compile Include="www\w3\org\time\IDuration.cs" />
+		<Compile Include="w3id\org\saref\ISmokeSensor.cs" />
+		<Compile Include="w3id\org\saref\ISafety.cs" />
+		<Compile Include="www\w3\org\time\ITimePosition.cs" />
+		<Compile Include="w3id\org\saref\ITask.cs" />
+		<Compile Include="w3id\org\saref\IWellBeing.cs" />
+		<Compile Include="w3id\org\saref\ILighting.cs" />
+		<Compile Include="w3id\org\saref\IEnergyEfficiency.cs" />
+		<Compile Include="w3id\org\saref\IDrying.cs" />
+		<Compile Include="w3id\org\saref\IEntertainment.cs" />
+		<Compile Include="w3id\org\saref\IWashing.cs" />
+		<Compile Include="w3id\org\saref\ICleaning.cs" />
+		<Compile Include="w3id\org\saref\IMeterReading.cs" />
+		<Compile Include="w3id\org\saref\IWashingMachine.cs" />
+		<Compile Include="w3id\org\saref\IGas.cs" />
+		<Compile Include="w3id\org\saref\IProfile.cs" />
+		<Compile Include="w3id\org\saref\IState.cs" />
+		<Compile Include="w3id\org\saref\IStepDownCommand.cs" />
+		<Compile Include="w3id\org\saref\IStepDown.cs" />
+		<Compile Include="w3id\org\saref\IMicroRenewable.cs" />
+		<Compile Include="w3id\org\saref\IPrice.cs" />
+		<Compile Include="www\w3\org\time\ITemporalUnit.cs" />
+		<Compile Include="www\w3\org\time\IunitSecond.cs" />
+		<Compile Include="www\w3\org\time\IunitHour.cs" />
+		<Compile Include="www\w3\org\time\IunitDay.cs" />
+		<Compile Include="www\w3\org\time\IunitMinute.cs" />
+		<Compile Include="www\w3\org\time\IunitWeek.cs" />
+		<Compile Include="www\w3\org\time\IunitYear.cs" />
+		<Compile Include="w3id\org\saref\IStorage.cs" />
+		<Compile Include="w3id\org\saref\ISetRelativeLevelCommand.cs" />
+		<Compile Include="w3id\org\saref\ISetRelativeLevel.cs" />
+		<Compile Include="w3id\org\saref\ISensor.cs" />
+		<Compile Include="w3id\org\saref\IDevice.cs" />
+		<Compile Include="w3id\org\saref\IPauseCommand.cs" />
+		<Compile Include="w3id\org\saref\IPause.cs" />
+		<Compile Include="w3id\org\saref\IEnergyMeter.cs" />
+		<Compile Include="www\w3\org\XMLSchema\IdateTimeStamp.cs" />
+		<Compile Include="www\w3\org\time\IDateTimeInterval.cs" />
+		<Compile Include="w3id\org\saref\IMultimedia.cs" />
+		<Compile Include="www\w3\org\time\IDateTimeDescription.cs" />
+		<Compile Include="www\w3\org\time\IGregorian.cs" />
+		<Compile Include="w3id\org\saref\IDoorSwitch.cs" />
+		<Compile Include="w3id\org\saref\IEventFunction.cs" />
+		<Compile Include="w3id\org\saref\ITemperatureSensor.cs" />
+		<Compile Include="www\w3\org\owl\IThing.cs" />
+		<Compile Include="w3id\org\saref\IHumidity.cs" />
+		<Compile Include="w3id\org\saref\IProperty.cs" />
+		<Compile Include="w3id\org\saref\IOnState.cs" />
+		<Compile Include="w3id\org\saref\IOnOffState.cs" />
+		<Compile Include="w3id\org\saref\IIlluminanceUnit.cs" />
+		<Compile Include="w3id\org\saref\Ilux.cs" />
+		<Compile Include="w3id\org\saref\IOccupancy.cs" />
+		<Compile Include="w3id\org\saref\IOffCommand.cs" />
+		<Compile Include="w3id\org\saref\IOff.cs" />
+		<Compile Include="w3id\org\saref\ISensingFunction.cs" />
+		<Compile Include="w3id\org\saref\IGetMeterDataCommand.cs" />
+		<Compile Include="w3id\org\saref\IGetMeterData.cs" />
+		<Compile Include="w3id\org\saref\IOffState.cs" />
+		<Compile Include="www\w3\org\time\IDurationDescription.cs" />
+		<Compile Include="www\w3\org\time\IJanuary.cs" />
+		<Compile Include="www\w3\org\time\ITemporalPosition.cs" />
+		<Compile Include="w3id\org\saref\IPower.cs" />
+		<Compile Include="www\w3\org\time\IInstant.cs" />
+		<Compile Include="w3id\org\saref\ILevelControlFunction.cs" />
+		<Compile Include="www\w3\org\time\IgeneralYear.cs" />
+		<Compile Include="w3id\org\saref\IGetCommand.cs" />
+		<Compile Include="www\w3\org\time\ITemporalEntity.cs" />
+		<Compile Include="w3id\org\saref\ILightSwitch.cs" />
+		<Compile Include="w3id\org\saref\IStopState.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

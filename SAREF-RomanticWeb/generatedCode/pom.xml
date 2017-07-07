@@ -1,0 +1,27 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>OLGA</groupId>
+	<artifactId>saref-dotnet</artifactId>
+	<version>0.0.1</version>
+	<packaging>dotnet-library</packaging>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.eobjects.build</groupId>
+				<artifactId>dotnet-maven-plugin</artifactId>
+				<extensions>true</extensions>
+				<configuration>
+					<buildConfiguration>Release</buildConfiguration>
+					<buildEnabled>true</buildEnabled>
+					<cleanEnabled>true</cleanEnabled>
+					<restoreEnabled>true</restoreEnabled>
+					<packEnabled>false</packEnabled>
+					<packOutput>bin</packOutput> 
+					<nugetAddEnabled>false</nugetAddEnabled>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>

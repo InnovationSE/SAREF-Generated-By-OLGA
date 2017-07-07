@@ -1,0 +1,488 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>RomanticWeb.dotNetRDF</name>
+    </assembly>
+    <members>
+        <member name="T:System.AppDomainExtensions">
+            <summary>Contains useful extension methods for AppDomain class.</summary>
+        </member>
+        <member name="M:System.AppDomainExtensions.GetPrimaryAssemblyPath">
+            <summary>Gets a primary path storing assemblies for given application domain.</summary>
+            <remarks>This method shouldn't reutrn <b>null</b> in any case.</remarks>
+            <returns>Primary place where assemblies for given application domain are stored.</returns>
+        </member>
+        <member name="T:RomanticWeb.ComponentModel.BaseUriResolutionStrategyComposition">
+            <summary>Provides dependencies for the <see cref="T:RomanticWeb.LinkedData.UrlMatchingResourceResolutionStrategy" /> to run.</summary>
+        </member>
+        <member name="M:RomanticWeb.ComponentModel.BaseUriResolutionStrategyComposition.#ctor">
+            <summary>Initializes a new instance of the <see cref="T:RomanticWeb.ComponentModel.BaseUriResolutionStrategyComposition" /> class.</summary>
+        </member>
+        <member name="T:RomanticWeb.DotNetRDF.Configuration.ConfigurationFileElement">
+            <summary>Configuration for a dotNetRDF configuration file.</summary>
+        </member>
+        <member name="P:RomanticWeb.DotNetRDF.Configuration.ConfigurationFileElement.Name">
+            <summary>Gets or sets the name.</summary>
+        </member>
+        <member name="P:RomanticWeb.DotNetRDF.Configuration.ConfigurationFileElement.Path">
+            <summary>Gets or sets the path.</summary>
+        </member>
+        <member name="P:RomanticWeb.DotNetRDF.Configuration.ConfigurationFileElement.AutoConfigure">
+            <summary>Gets or sets a value indicating whether configuration should automatically configured.</summary>
+        </member>
+        <member name="T:RomanticWeb.DotNetRDF.Configuration.ConfigurationFilesCollection">
+            <summary>Collection of dotNetRDF configuration file configurations.</summary>
+        </member>
+        <member name="M:RomanticWeb.DotNetRDF.Configuration.ConfigurationFilesCollection.CreateNewElement">
+            <summary>Create a new instance of <see cref="T:RomanticWeb.DotNetRDF.Configuration.ConfigurationFileElement"/>.</summary>
+        </member>
+        <member name="M:RomanticWeb.DotNetRDF.Configuration.ConfigurationFilesCollection.GetElementKey(System.Configuration.ConfigurationElement)">
+            <summary>Gets the <see cref="P:RomanticWeb.DotNetRDF.Configuration.ConfigurationFileElement.Name"/>.</summary>
+        </member>
+        <member name="T:RomanticWeb.DotNetRDF.Configuration.FileStoreElement">
+            <summary>Configuration element for in-memory triple store connected with a file source.</summary>
+        </member>
+        <member name="P:RomanticWeb.DotNetRDF.Configuration.FileStoreElement.FilePath">
+            <summary>Gets or sets the dataset file path.</summary>
+        </member>
+        <member name="M:RomanticWeb.DotNetRDF.Configuration.FileStoreElement.CreateTripleStore">
+            <inheritdoc />
+        </member>
+        <member name="T:RomanticWeb.DotNetRDF.Configuration.ExternallyConfiguredStoreElement">
+            <summary>Configuration element for a triple store configured in a dotNetRDF configuration file.</summary>
+        </member>
+        <member name="M:RomanticWeb.DotNetRDF.Configuration.ExternallyConfiguredStoreElement.#ctor(RomanticWeb.DotNetRDF.Configuration.StoresConfigurationSection)">
+            <summary>Initializes a new instance of the <see cref="T:RomanticWeb.DotNetRDF.Configuration.ExternallyConfiguredStoreElement"/> class.</summary>
+            <param name="stores">Stores configuration section.</param>
+        </member>
+        <member name="P:RomanticWeb.DotNetRDF.Configuration.ExternallyConfiguredStoreElement.BlankNodeIdentifier">
+            <summary>Gets or sets the blank node identifier of configured store.</summary>
+        </member>
+        <member name="P:RomanticWeb.DotNetRDF.Configuration.ExternallyConfiguredStoreElement.ObjectUri">
+            <summary>Gets or sets the object URI of configured store.</summary>
+        </member>
+        <member name="P:RomanticWeb.DotNetRDF.Configuration.ExternallyConfiguredStoreElement.ConfigurationName">
+            <summary>Gets or sets the name of the configuration as declared in the configuration section.</summary>
+        </member>
+        <member name="M:RomanticWeb.DotNetRDF.Configuration.ExternallyConfiguredStoreElement.CreateTripleStore">
+            <summary>Creates the triple store by loading it from the relevant configuration file.</summary>
+        </member>
+        <member name="M:RomanticWeb.DotNetRDF.Configuration.StorageProviders.StorageProviderElement.#ctor">
+            <summary>Initializes a new instance of the <see cref="T:RomanticWeb.DotNetRDF.Configuration.StorageProviders.StorageProviderElement" /> class.</summary>
+        </member>
+        <member name="T:RomanticWeb.DotNetRDF.Configuration.InMemoryStoreElement">
+            <summary>Configuration element for in-memory triple store.</summary>
+        </member>
+        <member name="P:RomanticWeb.DotNetRDF.Configuration.InMemoryStoreElement.ThreadSafe">
+            <summary>Gets or sets a value indicating whether the store should be thread safe.</summary>
+        </member>
+        <member name="M:RomanticWeb.DotNetRDF.Configuration.InMemoryStoreElement.CreateTripleStore">
+            <inheritdoc />
+        </member>
+        <member name="T:RomanticWeb.DotNetRDF.Configuration.PersistentStoreElement">
+            <summary>Configuration of a third-party triple store.</summary>
+        </member>
+        <member name="M:RomanticWeb.DotNetRDF.Configuration.PersistentStoreElement.CreateTripleStore">
+            <summary>Creates a <see cref="T:VDS.RDF.PersistentTripleStore" />.</summary>
+        </member>
+        <member name="M:RomanticWeb.DotNetRDF.Configuration.PersistentStoreElement.OnDeserializeUnrecognizedElement(System.String,System.Xml.XmlReader)">
+            <summary>Tries to deserialize known elements representing third-party triple store connector, like Virtuoso, AllegroGraph and others.</summary>
+        </member>
+        <member name="T:RomanticWeb.DotNetRDF.Configuration.StoreElement">
+            <summary>Configuration of a dotNetRDF triple store.</summary>
+        </member>
+        <member name="P:RomanticWeb.DotNetRDF.Configuration.StoreElement.Name">
+            <summary>Gets or sets the name.</summary>
+        </member>
+        <member name="M:RomanticWeb.DotNetRDF.Configuration.StoreElement.CreateTripleStore">
+            <summary>Creates the triple store.</summary>
+        </member>
+        <member name="T:RomanticWeb.DotNetRDF.Configuration.StoresCollection">
+            <summary>Configuration elements for dotNetRDF triple stores.</summary>
+        </member>
+        <member name="M:RomanticWeb.DotNetRDF.Configuration.StoresCollection.#ctor(RomanticWeb.DotNetRDF.Configuration.StoresConfigurationSection)">
+            <summary>Initializes a new instance of the <see cref="T:RomanticWeb.DotNetRDF.Configuration.StoresCollection"/> class.</summary>
+            <param name="parent">The parent configuraion section.</param>
+        </member>
+        <member name="M:RomanticWeb.DotNetRDF.Configuration.StoresCollection.System#Collections#Generic#IEnumerable{RomanticWeb#DotNetRDF#Configuration#StoreElement}#GetEnumerator">
+            <inheritdoc/>
+        </member>
+        <member name="M:RomanticWeb.DotNetRDF.Configuration.StoresCollection.CreateNewElement">
+            <summary>Not implemented.</summary>
+        </member>
+        <member name="M:RomanticWeb.DotNetRDF.Configuration.StoresCollection.GetElementKey(System.Configuration.ConfigurationElement)">
+            <summary>Gets <see cref="P:RomanticWeb.DotNetRDF.Configuration.StoreElement.Name"/>.</summary>
+        </member>
+        <member name="M:RomanticWeb.DotNetRDF.Configuration.StoresCollection.OnDeserializeUnrecognizedElement(System.String,System.Xml.XmlReader)">
+            <summary>Tries to deserialize a store element node.</summary>
+        </member>
+        <member name="T:RomanticWeb.DotNetRDF.Configuration.StoresConfigurationSection">
+            <summary>Configuration section for triple stores.</summary>
+        </member>
+        <member name="P:RomanticWeb.DotNetRDF.Configuration.StoresConfigurationSection.Default">
+            <summary>Gets the configuration from default configutarion section.</summary>
+        </member>
+        <member name="P:RomanticWeb.DotNetRDF.Configuration.StoresConfigurationSection.Stores">
+            <summary>Gets or sets the stores.</summary>
+        </member>
+        <member name="P:RomanticWeb.DotNetRDF.Configuration.StoresConfigurationSection.ConfigurationFiles">
+            <summary>Gets or sets the configuration files.</summary>
+        </member>
+        <member name="M:RomanticWeb.DotNetRDF.Configuration.StoresConfigurationSection.CreateStore(System.String)">
+            <summary>Creates a store defined in configuration.</summary>
+        </member>
+        <member name="M:RomanticWeb.DotNetRDF.Configuration.StoresConfigurationSection.OnDeserializeUnrecognizedElement(System.String,System.Xml.XmlReader)">
+            <summary>Tries to deserialize stores collection</summary>
+        </member>
+        <member name="T:RomanticWeb.DotNetRDF.DefaultSparqlCommandExecutionStrategyFactory">
+            <summary>Provides a default implementation of the <see cref="T:RomanticWeb.DotNetRDF.ISparqlCommandExecutionStrategyFactory" />.</summary>
+        </member>
+        <member name="M:RomanticWeb.DotNetRDF.DefaultSparqlCommandExecutionStrategyFactory.CreateFor(VDS.RDF.ITripleStore,System.Uri)">
+            <inheritdoc />
+        </member>
+        <member name="T:RomanticWeb.DotNetRDF.EntityContextFactoryExtensions">
+            <summary>Provides useful <see cref="T:RomanticWeb.EntityContextFactory" /> extensions.</summary>
+        </member>
+        <member name="M:RomanticWeb.DotNetRDF.EntityContextFactoryExtensions.WithDotNetRDF(RomanticWeb.EntityContextFactory)">
+            <summary>Sets up the <paramref name="factory"/> with components required to use dotNetRDF.</summary>
+        </member>
+        <member name="M:RomanticWeb.DotNetRDF.EntityContextFactoryExtensions.WithDotNetRDF(RomanticWeb.EntityContextFactory,VDS.RDF.ITripleStore)">
+            <summary>Sets up the <paramref name="factory"/> with components required to use dotNetRDF and supplies a triple store instance.</summary>
+        </member>
+        <member name="M:RomanticWeb.DotNetRDF.EntityContextFactoryExtensions.WithDotNetRDF(RomanticWeb.EntityContextFactory,System.String)">
+            <summary>
+            Sets up the <paramref name="factory"/> with components required to use dotNetRDF 
+            and supplies a triple store name configured in app.config/web.config
+            </summary>
+        </member>
+        <member name="M:RomanticWeb.DotNetRDF.EntityContextFactoryExtensions.WithUriMatchingResourceResulutionStrategy(RomanticWeb.EntityContextFactory,System.Collections.Generic.IEnumerable{System.Uri})">
+            <summary>Sets up the factory to use <see cref="T:RomanticWeb.ComponentModel.BaseUriResolutionStrategyComposition" /> for resolving external resources.</summary>
+            <remarks>
+            This implementation checks if a resource's identifier matches given <paramref name="baseUris" /> 
+            and then resolves by making a <see cref="T:System.Net.WebRequest" /> to resource's identifier.
+            </remarks>
+            <param name="factory">Target factory to be configured.</param>
+            <param name="baseUris">Base Uris to match for external resources.</param>
+            <returns>Given <paramref name="factory" />.</returns>
+        </member>
+        <member name="T:RomanticWeb.DotNetRDF.FileTripleStore">
+            <summary>Provides a basic implementation of a file based updateable triple store.</summary>
+        </member>
+        <member name="M:RomanticWeb.DotNetRDF.FileTripleStore.#ctor(System.String)">
+            <summary>Creates a new instance of the file triple store.</summary>
+            <param name="filePath">Path of the file to read/write.</param>
+        </member>
+        <member name="M:RomanticWeb.DotNetRDF.FileTripleStore.#ctor(System.String,VDS.RDF.IStoreReader,VDS.RDF.IStoreWriter)">
+            <summary>Creates a new instance of the file triple store.</summary>
+            <param name="filePath">Path of the file to read/write.</param>
+            <param name="storeReader">Store reader used to read the file.</param>
+            <param name="storeWriter">Store writer to write the file.</param>
+        </member>
+        <member name="M:RomanticWeb.DotNetRDF.FileTripleStore.#ctor(System.String,VDS.RDF.IRdfReader,VDS.RDF.IRdfWriter)">
+            <summary>Creates a new instance of the file triple store.</summary>
+            <param name="filePath">Path of the file to read/write.</param>
+            <param name="rdfReader">RDF reader used to read the file.</param>
+            <param name="rdfWriter">RDF writer to write the file.</param>
+        </member>
+        <member name="M:RomanticWeb.DotNetRDF.FileTripleStore.#ctor(System.IO.Stream,VDS.RDF.IStoreReader,VDS.RDF.IStoreWriter)">
+            <summary>Creates a new instance of the file triple store.</summary>
+            <param name="fileStream">Stream to read/write.</param>
+            <param name="storeReader">Store reader used to read the file.</param>
+            <param name="storeWriter">Store writer to write the file.</param>
+        </member>
+        <member name="M:RomanticWeb.DotNetRDF.FileTripleStore.#ctor(System.IO.Stream,VDS.RDF.IRdfReader,VDS.RDF.IRdfWriter)">
+            <summary>Creates a new instance of the file triple store.</summary>
+            <param name="fileStream">Stream to read/write.</param>
+            <param name="rdfReader">RDF reader used to read the file.</param>
+            <param name="rdfWriter">RDF writer to write the file.</param>
+        </member>
+        <member name="M:RomanticWeb.DotNetRDF.FileTripleStore.ExecuteUpdate(VDS.RDF.Update.SparqlUpdateCommandSet)">
+            <inheritdoc />
+        </member>
+        <member name="M:RomanticWeb.DotNetRDF.FileTripleStore.ExecuteUpdate(VDS.RDF.Update.SparqlUpdateCommand)">
+            <inheritdoc />
+        </member>
+        <member name="M:RomanticWeb.DotNetRDF.FileTripleStore.ExecuteUpdate(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:RomanticWeb.DotNetRDF.FileTripleStore.VDS#RDF#IUpdateableTripleStore#ExecuteUpdate(VDS.RDF.Update.SparqlUpdateCommandSet)">
+            <inheritdoc />
+        </member>
+        <member name="M:RomanticWeb.DotNetRDF.FileTripleStore.VDS#RDF#IUpdateableTripleStore#ExecuteUpdate(VDS.RDF.Update.SparqlUpdateCommand)">
+            <inheritdoc />
+        </member>
+        <member name="M:RomanticWeb.DotNetRDF.FileTripleStore.VDS#RDF#IUpdateableTripleStore#ExecuteUpdate(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="T:RomanticWeb.DotNetRDF.ISparqlCommandExecutionStrategy">
+            <summary>Represents an abstract SPARQL command execution strategy.</summary>
+        </member>
+        <member name="M:RomanticWeb.DotNetRDF.ISparqlCommandExecutionStrategy.GetSparqlQuery(RomanticWeb.Linq.Model.IQuery)">
+            <summary>Transforms a given SPARQL query into an dotNetRDF model.</summary>
+            <param name="sparqlQuery">SPARQL query to be transformed.</param>
+            <returns>SPARQL command in dotNetRDF model.</returns>
+        </member>
+        <member name="M:RomanticWeb.DotNetRDF.ISparqlCommandExecutionStrategy.GetSparqlQuery(RomanticWeb.Linq.Model.IQuery,RomanticWeb.Linq.Sparql.SparqlQueryVariables@)">
+            <summary>Transforms a given SPARQL query into an dotNetRDF model.</summary>
+            <param name="sparqlQuery">SPARQL query to be transformed.</param>
+            <param name="variables">Container that will carry out variable mappings.</param>
+            <returns>SPARQL command in dotNetRDF model.</returns>
+        </member>
+        <member name="M:RomanticWeb.DotNetRDF.ISparqlCommandExecutionStrategy.ExecuteCommandSet(VDS.RDF.Update.SparqlUpdateCommandSet)">
+            <summary>Executes a given SPARQL update command set.</summary>
+            <param name="commands">Commands to be executed.</param>
+        </member>
+        <member name="M:RomanticWeb.DotNetRDF.ISparqlCommandExecutionStrategy.ExecuteAsk(RomanticWeb.Linq.Model.IQuery)">
+            <summary>Executes an SPARQL ASK query.</summary>
+            <param name="sparqlQuery">Target SPARQL query to be transformed.</param>
+            <returns><b>true</b> if the ASK query evaluates so; otherwise <b>false</b>.</returns>
+        </member>
+        <member name="M:RomanticWeb.DotNetRDF.ISparqlCommandExecutionStrategy.ExecuteAsk(VDS.RDF.Query.SparqlQuery)">
+            <summary>Executes an SPARQL ASK query.</summary>
+            <param name="sparqlQuery">Target SPARQL query to be transformed.</param>
+            <returns><b>true</b> if the ASK query evaluates so; otherwise <b>false</b>.</returns>
+        </member>
+        <member name="M:RomanticWeb.DotNetRDF.ISparqlCommandExecutionStrategy.ExecuteSelect(VDS.RDF.Query.SparqlQuery)">
+            <summary>Executes a SPARQL SELECT query.</summary>
+            <param name="sparqlQuery">Target query to be executed.</param>
+            <returns>Result set.</returns>
+        </member>
+        <member name="M:RomanticWeb.DotNetRDF.ISparqlCommandExecutionStrategy.ExecuteSelect(RomanticWeb.Linq.Model.IQuery)">
+            <summary>Executes a SPARQL SELECT query.</summary>
+            <param name="sparqlQuery">Target query to be executed.</param>
+            <returns>Result set.</returns>
+        </member>
+        <member name="M:RomanticWeb.DotNetRDF.ISparqlCommandExecutionStrategy.ExecuteSelect(RomanticWeb.Linq.Model.IQuery,RomanticWeb.Linq.Sparql.SparqlQueryVariables@)">
+            <summary>Executes a SPARQL SELECT query.</summary>
+            <param name="sparqlQuery">Target query to be executed.</param>
+            <param name="variables">Container that will carry out variable mappings.</param>
+            <returns>Result set.</returns>
+        </member>
+        <member name="T:RomanticWeb.DotNetRDF.ISparqlCommandExecutionStrategyFactory">
+            <summary>Provides an abstract SPARQl command execution strategy factory.</summary>
+        </member>
+        <member name="M:RomanticWeb.DotNetRDF.ISparqlCommandExecutionStrategyFactory.CreateFor(VDS.RDF.ITripleStore,System.Uri)">
+            <summary>Creates an instance of <see cref="T:RomanticWeb.DotNetRDF.ISparqlCommandExecutionStrategy" /> for a given <see cref="T:VDS.RDF.ITripleStore" />.</summary>
+            <param name="store">Target triple store for which to create a SPARQL command execution strategy.</param>
+            <param name="metaGraphUri">Meta-graph Uri.</param>
+            <returns>Instance of <see cref="T:RomanticWeb.DotNetRDF.ISparqlCommandExecutionStrategy" />.</returns>
+        </member>
+        <member name="T:RomanticWeb.DotNetRDF.ISparqlCommandFactory">
+            <summary>Defines the contract for creating SPARQL Update commands.</summary>
+        </member>
+        <member name="M:RomanticWeb.DotNetRDF.ISparqlCommandFactory.CreateCommands(RomanticWeb.Updates.IDatasetChange)">
+            <summary>Creates the commands represented by the <paramref name="change"/>.</summary>
+        </member>
+        <member name="T:RomanticWeb.DotNetRDF.PersistentTripleStoreSparqlCommandExecutionStrategy">
+            <summary>Provides a default implementation of the <see cref="T:RomanticWeb.DotNetRDF.ISparqlCommandExecutionStrategy" /> for peristent triple stores.</summary>
+        </member>
+        <member name="M:RomanticWeb.DotNetRDF.PersistentTripleStoreSparqlCommandExecutionStrategy.#ctor(VDS.RDF.ITripleStore,System.Uri)">
+            <summary>Initializes a new instance of the <see cref="T:RomanticWeb.DotNetRDF.PersistentTripleStoreSparqlCommandExecutionStrategy" /> class.</summary>
+            <param name="store">Target in-memory triple store.</param>
+            <param name="metaGraphUri">Meta-graph uri.</param>
+        </member>
+        <member name="P:RomanticWeb.DotNetRDF.PersistentTripleStoreSparqlCommandExecutionStrategy.MetaGraphUri">
+            <summary>Gets a meta-graph Uri.</summary>
+        </member>
+        <member name="P:RomanticWeb.DotNetRDF.PersistentTripleStoreSparqlCommandExecutionStrategy.Store">
+            <summary>Gets a triple store.</summary>
+        </member>
+        <member name="M:RomanticWeb.DotNetRDF.PersistentTripleStoreSparqlCommandExecutionStrategy.GetSparqlQuery(RomanticWeb.Linq.Model.IQuery)">
+            <inheritdoc />
+        </member>
+        <member name="M:RomanticWeb.DotNetRDF.PersistentTripleStoreSparqlCommandExecutionStrategy.GetSparqlQuery(RomanticWeb.Linq.Model.IQuery,RomanticWeb.Linq.Sparql.SparqlQueryVariables@)">
+            <inheritdoc />
+        </member>
+        <member name="M:RomanticWeb.DotNetRDF.PersistentTripleStoreSparqlCommandExecutionStrategy.ExecuteCommandSet(VDS.RDF.Update.SparqlUpdateCommandSet)">
+            <inheritdoc />
+        </member>
+        <member name="M:RomanticWeb.DotNetRDF.PersistentTripleStoreSparqlCommandExecutionStrategy.ExecuteAsk(RomanticWeb.Linq.Model.IQuery)">
+            <inheritdoc />
+        </member>
+        <member name="M:RomanticWeb.DotNetRDF.PersistentTripleStoreSparqlCommandExecutionStrategy.ExecuteAsk(VDS.RDF.Query.SparqlQuery)">
+            <inheritdoc />
+        </member>
+        <member name="M:RomanticWeb.DotNetRDF.PersistentTripleStoreSparqlCommandExecutionStrategy.ExecuteSelect(VDS.RDF.Query.SparqlQuery)">
+            <inheritdoc />
+        </member>
+        <member name="M:RomanticWeb.DotNetRDF.PersistentTripleStoreSparqlCommandExecutionStrategy.ExecuteSelect(RomanticWeb.Linq.Model.IQuery)">
+            <inheritdoc />
+        </member>
+        <member name="M:RomanticWeb.DotNetRDF.PersistentTripleStoreSparqlCommandExecutionStrategy.ExecuteSelect(RomanticWeb.Linq.Model.IQuery,RomanticWeb.Linq.Sparql.SparqlQueryVariables@)">
+            <inheritdoc />
+        </member>
+        <member name="T:RomanticWeb.DotNetRDF.InMemoryTripleStoreSparqlCommandExecutionStrategy">
+            <summary>Provides a default implementation of the <see cref="T:RomanticWeb.DotNetRDF.ISparqlCommandExecutionStrategy" /> for in-memory triple stores.</summary>
+        </member>
+        <member name="M:RomanticWeb.DotNetRDF.InMemoryTripleStoreSparqlCommandExecutionStrategy.#ctor(VDS.RDF.IInMemoryQueryableStore,System.Uri)">
+            <summary>Initializes a new instance of the <see cref="T:RomanticWeb.DotNetRDF.InMemoryTripleStoreSparqlCommandExecutionStrategy" /> class.</summary>
+            <param name="store">Target in-memory triple store.</param>
+            <param name="metaGraphUri">Meta-graph uri.</param>
+        </member>
+        <member name="M:RomanticWeb.DotNetRDF.InMemoryTripleStoreSparqlCommandExecutionStrategy.ExecuteAsk(RomanticWeb.Linq.Model.IQuery)">
+            <inheritdoc />
+        </member>
+        <member name="M:RomanticWeb.DotNetRDF.InMemoryTripleStoreSparqlCommandExecutionStrategy.ExecuteSelect(VDS.RDF.Query.SparqlQuery)">
+            <inheritdoc />
+        </member>
+        <member name="M:RomanticWeb.DotNetRDF.InMemoryTripleStoreSparqlCommandExecutionStrategy.ExecuteSelect(RomanticWeb.Linq.Model.IQuery,RomanticWeb.Linq.Sparql.SparqlQueryVariables@)">
+            <inheritdoc />
+        </member>
+        <member name="T:RomanticWeb.DotNetRDF.NodeExtensions">
+            <summary>Estension methods for <see cref="T:VDS.RDF.INode"/>s.</summary>
+        </member>
+        <member name="M:RomanticWeb.DotNetRDF.NodeExtensions.WrapNode(VDS.RDF.INode,RomanticWeb.Entities.EntityId)">
+            <summary>Converts a dotNetRDF's <see cref="T:VDS.RDF.INode"/> into RomanticWeb's <see cref="T:RomanticWeb.Model.Node"/>.</summary>
+        </member>
+        <member name="M:RomanticWeb.DotNetRDF.NodeExtensions.UnWrapNode(RomanticWeb.Model.INode,VDS.RDF.INodeFactory)">
+            <summary>Converts a RomanticWeb's <see cref="T:RomanticWeb.Model.Node"/> into dotNetRDF's <see cref="T:VDS.RDF.INode"/>.</summary>
+        </member>
+        <member name="M:RomanticWeb.DotNetRDF.NodeExtensions.UnWrapGraphUri(RomanticWeb.Model.Node)">
+            <summary>Gets the graph node's Uri.</summary>
+        </member>
+        <member name="T:RomanticWeb.DotNetRDF.SparqlQueryVisitor">
+            <summary>Parses given query into a SPARQL 1.1 query.</summary>
+            <remarks>
+            This whole "construct" is (hopefuly) temporary workaround for poor performance of SPARQL queries on in-memory triple stores.
+            In general, having a query of two graph patterns is processed as a cross-product. For stores with thousends triples this will end up with a timeout.
+            For some simple cases, it is possible to convert the query to a set of queries executed against specific graphs, thus overal processing can be finished in timely fashion. 
+            </remarks>
+        </member>
+        <member name="M:RomanticWeb.DotNetRDF.SparqlQueryVisitor.#ctor(System.Boolean)">
+            <summary>Initializes a new instance of the <see cref="T:RomanticWeb.DotNetRDF.SparqlQueryVisitor"/> class.</summary>
+            <param name="requiresQueryOptimizations">Instructs the visitor to optimize query for in-memory dotNetRDF processing.</param>
+        </member>
+        <member name="P:RomanticWeb.DotNetRDF.SparqlQueryVisitor.IsQueryOptimized">
+            <summary>Gets a value indicating whether this query optimized.</summary>
+        </member>
+        <member name="M:RomanticWeb.DotNetRDF.SparqlQueryVisitor.VisitQuery(RomanticWeb.Linq.Model.IQuery)">
+            <inheritdoc />
+        </member>
+        <member name="M:RomanticWeb.DotNetRDF.SparqlQueryVisitor.VisitStrongEntityAccessorGraph(RomanticWeb.Linq.Model.StrongEntityAccessor)">
+            <inheritdoc />
+        </member>
+        <member name="M:RomanticWeb.DotNetRDF.SparqlQueryVisitor.VisitCall(RomanticWeb.Linq.Model.Call)">
+            <inheritdoc />
+        </member>
+        <member name="M:RomanticWeb.DotNetRDF.SparqlQueryVisitor.VisitQueryResultModifiers(System.Collections.Generic.IDictionary{RomanticWeb.Linq.Model.IExpression,System.Boolean},System.Int32,System.Int32)">
+            <inheritdoc />
+        </member>
+        <member name="T:RomanticWeb.DotNetRDF.TripleStoreAdapter">
+            <summary>An implementation of <see cref="T:RomanticWeb.IEntitySource"/>, which reads triples from a VDS.RDF.ITripleStore.</summary>
+        </member>
+        <member name="M:RomanticWeb.DotNetRDF.TripleStoreAdapter.#ctor(VDS.RDF.ITripleStore,RomanticWeb.DotNetRDF.ISparqlCommandFactory,RomanticWeb.DotNetRDF.ISparqlCommandExecutionStrategyFactory)">
+            <summary>Creates a new instance of <see cref="T:RomanticWeb.DotNetRDF.TripleStoreAdapter" />.</summary>
+            <param name="store">The underlying triple store</param>
+            <param name="sparqlCommandFactory">SPARQL command factory.</param>
+            <param name="sparqlCommandExecutionStrategyFactory">SPRAQL command execution strategy factory.</param>
+        </member>
+        <member name="P:RomanticWeb.DotNetRDF.TripleStoreAdapter.MetaGraphUri">
+            <summary>Uri of the meta graph, which contains information about Entities' named graphs.</summary>
+        </member>
+        <member name="M:RomanticWeb.DotNetRDF.TripleStoreAdapter.LoadEntity(RomanticWeb.Entities.EntityId)">
+            <summary>Loads an entity using SPARQL query and returns the resulting triples.</summary>
+        </member>
+        <member name="M:RomanticWeb.DotNetRDF.TripleStoreAdapter.EntityExist(RomanticWeb.Entities.EntityId)">
+            <summary>Executes an ASK query to perform existence check.</summary>
+        </member>
+        <member name="M:RomanticWeb.DotNetRDF.TripleStoreAdapter.ExecuteEntityQuery(RomanticWeb.Linq.Model.IQuery,System.Collections.Generic.IEnumerable{RomanticWeb.Entities.EntityId}@)">
+            <summary>Executes a SPARQL query and returns resulting quads</summary>
+            <param name="queryModel">Query model to be executed.</param>
+            <param name="resultingEntities">Enumeration of entity identifiers beeing in fact the resulting ones.</param>
+            <returns>Enumeration of entity quads beeing a result of the query.</returns>
+        </member>
+        <member name="M:RomanticWeb.DotNetRDF.TripleStoreAdapter.ExecuteScalarQuery(RomanticWeb.Linq.Model.IQuery)">
+            <summary>Executes a SPARQL query with scalar result.</summary>
+            <param name="queryModel">Query model to be executed.</param>
+            <returns>Scalar value beeing a result of the query.</returns>
+        </member>
+        <member name="M:RomanticWeb.DotNetRDF.TripleStoreAdapter.ExecuteAskQuery(RomanticWeb.Linq.Model.IQuery)">
+            <summary>Executes a SPARQL ask query.</summary>
+            <param name="queryModel">Query model to be executed.</param>
+            <returns><b>true</b> in case a given query has solution, otherwise <b>false</b>.</returns>
+        </member>
+        <member name="M:RomanticWeb.DotNetRDF.TripleStoreAdapter.GetCommandText(RomanticWeb.Linq.Model.IQuery)">
+            <inheritdoc />
+        </member>
+        <member name="M:RomanticWeb.DotNetRDF.TripleStoreAdapter.Commit(System.Collections.Generic.IEnumerable{RomanticWeb.Updates.IDatasetChange})">
+            <summary>One-by-one retracts deleted triples, asserts new triples and updates the meta graph.</summary>
+            <param name="changes">Dataset changes.</param>
+        </member>
+        <member name="M:RomanticWeb.DotNetRDF.TripleStoreAdapter.Dispose">
+            <summary> Disposes this instance and the underlying store.</summary>
+        </member>
+        <member name="T:RomanticWeb.DotNetRDF.TripleStoreExtensions">
+            <summary>Provides useful extension methods for <see cref="T:VDS.RDF.ITripleStore" />.</summary>
+        </member>
+        <member name="M:RomanticWeb.DotNetRDF.TripleStoreExtensions.LoadFromString(VDS.RDF.ITripleStore,System.String,System.Uri)">
+            <summary>Loads data from string with optional automated graph generation.</summary>
+            <param name="store">Target store to be loaded with data.</param>
+            <param name="data">String with data.</param>
+            <param name="metaGraphUri">When provided, store will have automatically created graphs for all resources that are mentioned in the meta graph provided.</param>
+        </member>
+        <member name="M:RomanticWeb.DotNetRDF.TripleStoreExtensions.LoadFromString(VDS.RDF.ITripleStore,System.String,VDS.RDF.IStoreReader,System.Uri)">
+            <summary>Loads data from string with optional automated graph generation.</summary>
+            <param name="store">Target store to be loaded with data.</param>
+            <param name="data">String with data.</param>
+            <param name="parser">Store reader.</param>
+            <param name="metaGraphUri">When provided, store will have automatically created graphs for all resources that are mentioned in the meta graph provided.</param>
+        </member>
+        <member name="M:RomanticWeb.DotNetRDF.TripleStoreExtensions.LoadFromString(VDS.RDF.ITripleStore,System.String,VDS.RDF.IRdfReader,System.Uri)">
+            <summary>Loads data from string with optional automated graph generation.</summary>
+            <param name="store">Target store to be loaded with data.</param>
+            <param name="data">String with data.</param>
+            <param name="parser">RDF reader.</param>
+            <param name="metaGraphUri">When provided, store will have automatically created graphs for all resources that are mentioned in the meta graph provided.</param>
+        </member>
+        <member name="M:RomanticWeb.DotNetRDF.TripleStoreExtensions.LoadFromFile(VDS.RDF.ITripleStore,System.String,System.Uri)">
+            <summary>Loads data from file with optional automated graph generation.</summary>
+            <param name="store">Target store to be loaded with data.</param>
+            <param name="file">Source file with data.</param>
+            <param name="metaGraphUri">When provided, store will have automatically created graphs for all resources that are mentioned in the meta graph provided.</param>
+        </member>
+        <member name="M:RomanticWeb.DotNetRDF.TripleStoreExtensions.LoadFromEmbeddedResource(VDS.RDF.ITripleStore,System.String,System.Uri)">
+            <summary>Loads data from file with optional automated graph generation.</summary>
+            <param name="store">Target store to be loaded with data.</param>
+            <param name="resourceName">Source file with data.</param>
+            <param name="metaGraphUri">When provided, store will have automatically created graphs for all resources that are mentioned in the meta graph provided.</param>
+        </member>
+        <member name="T:RomanticWeb.LinkedData.UrlMatchingResourceResolutionStrategy">
+            <summary>Provides a predefined Uri list resource resolution strategy.</summary>
+            <remarks>This provider is designed to cover resolving named individuals from their respective ontologies beeing in relations with resources in the main entity context.</remarks>
+        </member>
+        <member name="M:RomanticWeb.LinkedData.UrlMatchingResourceResolutionStrategy.#ctor(RomanticWeb.Ontologies.IOntologyProvider,System.Collections.Generic.IEnumerable{System.Reflection.Assembly},System.Collections.Generic.IEnumerable{System.Uri},System.Func{System.Uri,System.Net.WebRequest})">
+            <summary>Initializes a new instance of the <see cref="T:RomanticWeb.LinkedData.UrlMatchingResourceResolutionStrategy" /> class.</summary>
+            <param name="ontology">Optional ontology provider.</param>
+            <param name="mappingAssemblies">Optional mapping assemblies.</param>
+            <param name="baseUris">Base uris.</param>
+            <param name="webRequestFactory">Web request factory method.</param>
+        </member>
+        <member name="M:RomanticWeb.LinkedData.UrlMatchingResourceResolutionStrategy.Resolve(RomanticWeb.Entities.EntityId)">
+            <inheritdoc />
+        </member>
+        <member name="M:RomanticWeb.LinkedData.UrlMatchingResourceResolutionStrategy.Resolve``1(RomanticWeb.Entities.EntityId)">
+            <inheritdoc />
+        </member>
+        <member name="T:RomanticWeb.Mapping.BaseUriMappingModelVisitor">
+            <summary>Provides a mapping lookup for <see cref="T:RomanticWeb.LinkedData.UrlMatchingResourceResolutionStrategy" />.</summary>
+        </member>
+        <member name="P:RomanticWeb.Mapping.BaseUriMappingModelVisitor.MappingAssemblies">
+            <summary>Gets the mapping assemblies.</summary>
+        </member>
+        <member name="M:RomanticWeb.Mapping.BaseUriMappingModelVisitor.Visit(RomanticWeb.Mapping.Model.IEntityMapping)">
+            <inheritdoc />
+        </member>
+        <member name="M:RomanticWeb.Mapping.BaseUriMappingModelVisitor.Visit(RomanticWeb.Mapping.Model.ICollectionMapping)">
+            <inheritdoc />
+        </member>
+        <member name="M:RomanticWeb.Mapping.BaseUriMappingModelVisitor.Visit(RomanticWeb.Mapping.Model.IDictionaryMapping)">
+            <inheritdoc />
+        </member>
+        <member name="M:RomanticWeb.Mapping.BaseUriMappingModelVisitor.Visit(RomanticWeb.Mapping.Model.IPropertyMapping)">
+            <inheritdoc />
+        </member>
+        <member name="M:RomanticWeb.Mapping.BaseUriMappingModelVisitor.Visit(RomanticWeb.Mapping.Model.IClassMapping)">
+            <inheritdoc />
+        </member>
+    </members>
+</doc>

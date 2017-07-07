@@ -1,0 +1,392 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>RomanticWeb.Mapping.Fluent</name>
+    </assembly>
+    <members>
+        <member name="T:RomanticWeb.Collections.Mapping.DictionaryEntryMap`3">
+            <summary>A base class for mapping dynamically created type for dictionary entries.</summary>
+            <typeparam name="T">Type of entity, which contains the dictionary</typeparam>
+            <typeparam name="TKey">The type of the dictionary key.</typeparam>
+            <typeparam name="TValue">The type of the dictionary value.</typeparam>
+        </member>
+        <member name="M:RomanticWeb.Collections.Mapping.DictionaryEntryMap`3.#ctor">
+            <summary>Initializes a new instance of the <see cref="T:RomanticWeb.Collections.Mapping.DictionaryEntryMap`3"/> class.</summary>
+        </member>
+        <member name="M:RomanticWeb.Collections.Mapping.DictionaryEntryMap`3.SetupKeyProperty(RomanticWeb.Mapping.Fluent.ITermPart{RomanticWeb.Mapping.Fluent.IPropertyMap})">
+            <summary>Setups the key property mapping.</summary>
+        </member>
+        <member name="M:RomanticWeb.Collections.Mapping.DictionaryEntryMap`3.SetupValueProperty(RomanticWeb.Mapping.Fluent.ITermPart{RomanticWeb.Mapping.Fluent.IPropertyMap})">
+            <summary>Setups the value property mapping.</summary>
+        </member>
+        <member name="T:RomanticWeb.Collections.Mapping.DictionaryOwnerMap`4">
+            <summary>
+            A base class for mapping dynamically created type for dictionary owner
+            </summary>
+            <typeparam name="T">Type of entity, which contains the dictionary</typeparam>
+            <typeparam name="TPair">The type of the key/value pair.</typeparam>
+            <typeparam name="TKey">The type of the dictionary key.</typeparam>
+            <typeparam name="TValue">The type of the dictionary value.</typeparam>
+        </member>
+        <member name="M:RomanticWeb.Collections.Mapping.DictionaryOwnerMap`4.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:RomanticWeb.Collections.Mapping.DictionaryOwnerMap`4"/> class.
+            </summary>
+        </member>
+        <member name="M:RomanticWeb.Collections.Mapping.DictionaryOwnerMap`4.SetupEntriesCollection(RomanticWeb.Mapping.Fluent.ITermPart{RomanticWeb.Mapping.Fluent.ICollectionMap})">
+            <summary>
+            Setups the entries collection property predicate.
+            </summary>
+        </member>
+        <member name="T:RomanticWeb.Collections.Mapping.ListEntryMap`3">
+            <summary>A base class for mapping dynamically created type for dictionary entries.</summary>
+            <typeparam name="TListNode">Type of entity, which contains the list.</typeparam>
+            <typeparam name="T">The type of the dictionary value.</typeparam>
+            <typeparam name="TConverter">converter type for list elements</typeparam>
+        </member>
+        <member name="M:RomanticWeb.Collections.Mapping.ListEntryMap`3.#ctor">
+            <summary>Initializes a new instance of the <see cref="T:RomanticWeb.Collections.Mapping.ListEntryMap`3"/> class.</summary>
+        </member>
+        <member name="T:RomanticWeb.Collections.Mapping.ListOwnerMap`1">
+            <summary>
+            Base class for dynamically generated list mappings
+            </summary>
+            <typeparam name="TOwner">The type of the list owner.</typeparam>
+        </member>
+        <member name="M:RomanticWeb.Collections.Mapping.ListOwnerMap`1.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:RomanticWeb.Collections.Mapping.ListOwnerMap`1"/> class.
+            </summary>
+        </member>
+        <member name="P:RomanticWeb.Collections.Mapping.ListOwnerMap`1.ListPredicate">
+            <summary>
+            Gets the list predicate uri
+            </summary>
+        </member>
+        <member name="T:RomanticWeb.Mapping.Fluent.ClassMap">
+            <summary>
+            A mapping definition for rdf class
+            </summary>
+        </member>
+        <member name="M:RomanticWeb.Mapping.Fluent.ClassMap.Is(System.String,System.String)">
+            <summary>
+            Sets the class name 
+            </summary>
+        </member>
+        <member name="M:RomanticWeb.Mapping.Fluent.ClassMap.Is(System.Uri)">
+            <summary>
+            Sets the class name 
+            </summary>
+        </member>
+        <member name="M:RomanticWeb.Mapping.Fluent.ClassMap.Accept(RomanticWeb.Mapping.Visitors.IFluentMapsVisitor)">
+            <summary>
+            Accepts the specified fluent maps visitor.
+            </summary>
+            <param name="fluentMapsVisitor">The fluent maps visitor.</param>
+            <returns></returns>
+        </member>
+        <member name="T:RomanticWeb.Mapping.Fluent.CollectionMap">
+            <inheritdoc/>
+        </member>
+        <member name="P:RomanticWeb.Mapping.Fluent.CollectionMap.Term">
+            <inheritdoc/>
+        </member>
+        <member name="P:RomanticWeb.Mapping.Fluent.CollectionMap.StoreAs">
+            <summary>Gets options for setting how this collection will be persisted.</summary>
+        </member>
+        <member name="P:RomanticWeb.Mapping.Fluent.CollectionMap.ConverterType">
+            <inheritdoc/>
+        </member>
+        <member name="P:RomanticWeb.Mapping.Fluent.CollectionMap.ElementConverterType">
+            <summary>Gets or sets an element converter type.</summary>
+        </member>
+        <member name="P:RomanticWeb.Mapping.Fluent.CollectionMap.StorageStrategy">
+            <summary>Gets or sets the value, which indicates how the collection's triples will be stored.</summary>
+        </member>
+        <member name="M:RomanticWeb.Mapping.Fluent.CollectionMap.Accept(RomanticWeb.Mapping.Visitors.IFluentMapsVisitor)">
+            <inheritdoc />
+        </member>
+        <member name="M:RomanticWeb.Mapping.Fluent.CollectionMap.ConvertElementsWith``1">
+            <inheritdoc />
+        </member>
+        <member name="T:RomanticWeb.Mapping.Fluent.DictionaryMap">
+            <summary>
+            A mapping definition for dictionary properties
+            </summary>
+        </member>
+        <member name="P:RomanticWeb.Mapping.Fluent.DictionaryMap.Term">
+            <inheritdoc/>
+        </member>
+        <member name="P:RomanticWeb.Mapping.Fluent.DictionaryMap.KeyPredicate">
+            <inheritdoc />
+        </member>
+        <member name="P:RomanticWeb.Mapping.Fluent.DictionaryMap.ValuePredicate">
+            <inheritdoc />
+        </member>
+        <member name="M:RomanticWeb.Mapping.Fluent.DictionaryMap.ConvertKeysWith``1">
+            <inheritdoc />
+        </member>
+        <member name="M:RomanticWeb.Mapping.Fluent.DictionaryMap.ConvertValuesWith``1">
+            <inheritdoc />
+        </member>
+        <member name="M:RomanticWeb.Mapping.Fluent.DictionaryMap.Accept(RomanticWeb.Mapping.Visitors.IFluentMapsVisitor)">
+            <inheritdoc/>
+        </member>
+        <member name="T:RomanticWeb.Mapping.Fluent.DictionaryMap.ValueMap">
+            <summary>A definition for mapping dictionary value predicate.</summary>
+        </member>
+        <member name="P:RomanticWeb.Mapping.Fluent.DictionaryMap.ValueMap.ConverterType">
+            <summary>Gets or sets the type of the converter.</summary>
+        </member>
+        <member name="M:RomanticWeb.Mapping.Fluent.DictionaryMap.ValueMap.Accept(RomanticWeb.Mapping.Visitors.IFluentMapsVisitor)">
+            <summary>Accepts the specified fluent maps visitor.</summary>
+        </member>
+        <member name="T:RomanticWeb.Mapping.Fluent.DictionaryMap.KeyMap">
+            <summary>A definition for mapping dictionary key predicate.</summary>
+        </member>
+        <member name="P:RomanticWeb.Mapping.Fluent.DictionaryMap.KeyMap.ConverterType">
+            <summary>Gets or sets the type of the converter.</summary>
+        </member>
+        <member name="M:RomanticWeb.Mapping.Fluent.DictionaryMap.KeyMap.Accept(RomanticWeb.Mapping.Visitors.IFluentMapsVisitor)">
+            <summary>Accepts the specified fluent maps visitor.</summary>
+        </member>
+        <member name="T:RomanticWeb.Mapping.Fluent.EntityMap`1">
+            <summary>Base class for fluently defining entity mappings.</summary>
+        </member>
+        <member name="M:RomanticWeb.Mapping.Fluent.EntityMap`1.#ctor">
+            <summary>Initializes a new instance of the <see cref="T:RomanticWeb.Mapping.Fluent.EntityMap`1"/> class.</summary>
+        </member>
+        <member name="M:RomanticWeb.Mapping.Fluent.EntityMap`1.Property``1(System.Linq.Expressions.Expression{System.Func{`0,``0}})">
+            <summary>Gets a builder for mapping a property.</summary>
+        </member>
+        <member name="M:RomanticWeb.Mapping.Fluent.EntityMap`1.Collection``1(System.Linq.Expressions.Expression{System.Func{`0,``0}})">
+            <summary>Gets a builder for mapping a collection property.</summary>
+        </member>
+        <member name="M:RomanticWeb.Mapping.Fluent.EntityMap`1.Dictionary``1(System.Linq.Expressions.Expression{System.Func{`0,``0}})">
+            <summary>Gets a builder for mapping a dictionary property.</summary>
+        </member>
+        <member name="T:RomanticWeb.Mapping.Fluent.EntityMap">
+            <summary>Base class for fluently defining entity entityMappings.</summary>
+        </member>
+        <member name="M:RomanticWeb.Mapping.Fluent.EntityMap.#ctor(System.Type)">
+            <summary>Initializes a new instance of the <see cref="T:RomanticWeb.Mapping.Fluent.EntityMap"/> class.</summary>
+            <param name="type">The mapped type.</param>
+        </member>
+        <member name="P:RomanticWeb.Mapping.Fluent.EntityMap.Class">
+            <summary>Gets a builder for mapping the type.</summary>
+        </member>
+        <member name="M:RomanticWeb.Mapping.Fluent.EntityMap.Accept(RomanticWeb.Mapping.Visitors.IFluentMapsVisitor)">
+            <summary>Accepts the specified fluent maps visitor.</summary>
+            <param name="fluentMapsVisitor">The fluent maps visitor.</param>
+        </member>
+        <member name="T:RomanticWeb.Mapping.Fluent.IClassMap">
+            <summary>
+            A mapping definition for rdf class
+            </summary>
+        </member>
+        <member name="M:RomanticWeb.Mapping.Fluent.IClassMap.Is(System.String,System.String)">
+            <summary>
+            Sets the class name 
+            </summary>
+        </member>
+        <member name="M:RomanticWeb.Mapping.Fluent.IClassMap.Is(System.Uri)">
+            <summary>
+            Sets the class name 
+            </summary>
+        </member>
+        <member name="T:RomanticWeb.Mapping.Fluent.ICollectionMap">
+            <summary>A mapping definition for collection properties.</summary>
+        </member>
+        <member name="P:RomanticWeb.Mapping.Fluent.ICollectionMap.Term">
+            <summary>Gets a predicate map part.</summary>
+        </member>
+        <member name="P:RomanticWeb.Mapping.Fluent.ICollectionMap.ElementConverterType">
+            <summary>Gets or sets an element converter type.</summary>
+            <remarks>This type is used only for RDF lists.</remarks>
+        </member>
+        <member name="P:RomanticWeb.Mapping.Fluent.ICollectionMap.StoreAs">
+            <summary>Gets options for setting how this collection will be persisted.</summary>
+        </member>
+        <member name="M:RomanticWeb.Mapping.Fluent.ICollectionMap.ConvertElementsWith``1">
+            <summary>Sets the converter type for the collection's elements.</summary>
+        </member>
+        <member name="T:RomanticWeb.Mapping.Fluent.IDictionaryMap">
+            <summary>
+            A mapping definition for dictionary properties
+            </summary>
+        </member>
+        <member name="P:RomanticWeb.Mapping.Fluent.IDictionaryMap.Term">
+            <summary>Gets the predicate map part.</summary>
+        </member>
+        <member name="P:RomanticWeb.Mapping.Fluent.IDictionaryMap.KeyPredicate">
+            <summary>
+            Gets the dictionary key predicate map part
+            </summary>
+        </member>
+        <member name="P:RomanticWeb.Mapping.Fluent.IDictionaryMap.ValuePredicate">
+            <summary>
+            Gets the dictionary value predicate map part
+            </summary>
+        </member>
+        <member name="M:RomanticWeb.Mapping.Fluent.IDictionaryMap.ConvertKeysWith``1">
+            <summary>
+            Sets the converter type for dictionary keys
+            </summary>
+        </member>
+        <member name="M:RomanticWeb.Mapping.Fluent.IDictionaryMap.ConvertValuesWith``1">
+            <summary>
+            Sets the converter type for dictionary values
+            </summary>
+        </member>
+        <member name="T:RomanticWeb.Mapping.Fluent.IPropertyMap">
+            <summary>A mapping definition for properties.</summary>
+        </member>
+        <member name="P:RomanticWeb.Mapping.Fluent.IPropertyMap.Term">
+            <summary>
+            Gets a predicate map part
+            </summary>
+        </member>
+        <member name="M:RomanticWeb.Mapping.Fluent.IPropertyMap.ConvertWith``1">
+            <Summary>
+            Sets the converter type for this property
+            </Summary>
+        </member>
+        <member name="T:RomanticWeb.Mapping.Fluent.ITermPart`1">
+            <summary>
+            Allows mapping RDF predicate to a mapped element
+            </summary>
+        </member>
+        <member name="M:RomanticWeb.Mapping.Fluent.ITermPart`1.Is(System.Uri)">
+            <summary>
+            Maps the term to a fully qualified URI
+            </summary>
+        </member>
+        <member name="M:RomanticWeb.Mapping.Fluent.ITermPart`1.Is(System.String,System.String)">
+            <summary>
+            Maps the term to a QName referenced URI
+            </summary>
+            <remarks>The QName must be resolvable from the <see cref="T:RomanticWeb.Ontologies.IOntologyProvider"/></remarks>
+        </member>
+        <member name="T:RomanticWeb.Mapping.Fluent.PropertyMap">
+            <summary>A mapping definition for properties.</summary>
+        </member>
+        <member name="M:RomanticWeb.Mapping.Fluent.PropertyMap.#ctor(System.Reflection.PropertyInfo)">
+            <summary>Initializes a new instance of the <see cref="T:RomanticWeb.Mapping.Fluent.PropertyMap"/> class.</summary>
+            <param name="propertyInfo">The property.</param>
+        </member>
+        <member name="P:RomanticWeb.Mapping.Fluent.PropertyMap.Term">
+            <inheritdoc/>
+        </member>
+        <member name="M:RomanticWeb.Mapping.Fluent.PropertyMap.ConvertWith``1">
+            <inheritdoc/>
+        </member>
+        <member name="M:RomanticWeb.Mapping.Fluent.PropertyMap.Accept(RomanticWeb.Mapping.Visitors.IFluentMapsVisitor)">
+            <inheritdoc/>
+        </member>
+        <member name="T:RomanticWeb.Mapping.Fluent.PropertyMapBase">
+            <summary>A base mapping definition for properties and collections.</summary>
+        </member>
+        <member name="M:RomanticWeb.Mapping.Fluent.PropertyMapBase.#ctor(System.Reflection.PropertyInfo)">
+            <summary>Initializes a new instance of the <see cref="T:RomanticWeb.Mapping.Fluent.PropertyMapBase"/> class.</summary>
+            <param name="propertyInfo">The property.</param>
+        </member>
+        <member name="P:RomanticWeb.Mapping.Fluent.PropertyMapBase.ConverterType">
+            <summary>Gets the converter type.</summary>
+        </member>
+        <member name="M:RomanticWeb.Mapping.Fluent.PropertyMapBase.Accept(RomanticWeb.Mapping.Visitors.IFluentMapsVisitor)">
+            <summary>Accepts the specified fluent maps visitor.</summary>
+        </member>
+        <member name="T:RomanticWeb.Mapping.Fluent.StorageStrategyPart">
+            <summary>Allows setting the way in which collections are persisted as triples.</summary>
+        </member>
+        <member name="M:RomanticWeb.Mapping.Fluent.StorageStrategyPart.SimpleCollection">
+            <summary>Marks a collection to be stored as a set of triples.</summary>
+        </member>
+        <member name="M:RomanticWeb.Mapping.Fluent.StorageStrategyPart.RdfList">
+            <summary>Marks a collection to be stored as an rfd:List.</summary>
+        </member>
+        <member name="T:RomanticWeb.Mapping.Fluent.TermMap">
+            <summary>
+            Base class for mapping definitions of rdf terms
+            </summary>
+        </member>
+        <member name="M:RomanticWeb.Mapping.MappingFromFluent.#ctor(RomanticWeb.Diagnostics.ILogger)">
+            <summary>Initializes a new instance of the <see cref="T:RomanticWeb.Mapping.MappingFromFluent" /> class.</summary>
+            <param name="log">Logging facility.</param>
+        </member>
+        <member name="M:RomanticWeb.Mapping.MappingFromFluent.FromAssemblyOf``1(RomanticWeb.Mapping.IMappingBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:RomanticWeb.Mapping.MappingFromFluent.FromAssembly(RomanticWeb.Mapping.IMappingBuilder,System.Reflection.Assembly)">
+            <inheritdoc />
+        </member>
+        <member name="T:RomanticWeb.Mapping.Sources.FluentMappingsSource">
+            <summary>Mapping repository, which scans an assembly for fluent mapping classes.</summary>
+        </member>
+        <member name="M:RomanticWeb.Mapping.Sources.FluentMappingsSource.#ctor(System.Reflection.Assembly,RomanticWeb.Diagnostics.ILogger)">
+            <summary>Creates a new instance of <see cref="T:RomanticWeb.Mapping.Sources.FluentMappingsSource"/>.</summary>
+        </member>
+        <member name="P:RomanticWeb.Mapping.Sources.FluentMappingsSource.Description">
+            <inheritdoc />
+        </member>
+        <member name="M:RomanticWeb.Mapping.Sources.FluentMappingsSource.GetMappingProviders">
+            <summary>
+            Finds all fluent <see cref="P:RomanticWeb.Mapping.Sources.AssemblyMappingsSource.Assembly"/>s in the <see cref="T:RomanticWeb.Mapping.Sources.AssemblyMappingsSource"/>
+            and transforms them to <see cref="T:RomanticWeb.Mapping.Fluent.EntityMap"/>s
+            </summary>
+        </member>
+        <member name="P:RomanticWeb.Mapping.Sources.GeneratedListMappingSource.Requires">
+            <inheritdoc />
+        </member>
+        <member name="T:RomanticWeb.Mapping.Visitors.IFluentMapsVisitor">
+            <summary>
+            Visits fluent entity maps and transforms them into matching entity mapping providers
+            </summary>
+        </member>
+        <member name="M:RomanticWeb.Mapping.Visitors.IFluentMapsVisitor.Visit(RomanticWeb.Mapping.Fluent.EntityMap)">
+            <summary>
+            Visits the specified entity map.
+            </summary>
+            <param name="entityMap">The entity map.</param>
+        </member>
+        <member name="M:RomanticWeb.Mapping.Visitors.IFluentMapsVisitor.Visit(RomanticWeb.Mapping.Fluent.ClassMap)">
+            <summary>
+            Visits the specified class map.
+            </summary>
+            <param name="classMap">The class map.</param>
+        </member>
+        <member name="M:RomanticWeb.Mapping.Visitors.IFluentMapsVisitor.Visit(RomanticWeb.Mapping.Fluent.PropertyMap)">
+            <summary>
+            Visits the specified entity map.
+            </summary>
+            <param name="propertyMap">The entity map.</param>
+        </member>
+        <member name="M:RomanticWeb.Mapping.Visitors.IFluentMapsVisitor.Visit(RomanticWeb.Mapping.Fluent.DictionaryMap,RomanticWeb.Mapping.Providers.IPredicateMappingProvider,RomanticWeb.Mapping.Providers.IPredicateMappingProvider)">
+            <summary>
+            Visits the specified dictionary map.
+            </summary>
+            <param name="dictionaryMap">The dictionary map.</param>
+            <param name="key">The key property mapping provider.</param>
+            <param name="value">The value property mapping provider.</param>
+        </member>
+        <member name="M:RomanticWeb.Mapping.Visitors.IFluentMapsVisitor.Visit(RomanticWeb.Mapping.Fluent.CollectionMap)">
+            <summary>
+            Visits the specified collection map.
+            </summary>
+            <param name="collectionMap">The collection map.</param>
+        </member>
+        <member name="M:RomanticWeb.Mapping.Visitors.IFluentMapsVisitor.Visit(RomanticWeb.Mapping.Fluent.DictionaryMap.KeyMap)">
+            <summary>
+            Visits the specified dictionary key property map.
+            </summary>
+            <param name="keyMap">The key map.</param>
+        </member>
+        <member name="M:RomanticWeb.Mapping.Visitors.IFluentMapsVisitor.Visit(RomanticWeb.Mapping.Fluent.DictionaryMap.ValueMap)">
+            <summary>
+            Visits the specified dictionary value property map.
+            </summary>
+            <param name="valueMap">The value map.</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

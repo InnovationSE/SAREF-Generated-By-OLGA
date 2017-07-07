@@ -1,0 +1,65 @@
+{
+	"@context": {
+		"isMeasuredInExactlyUnitOfMeasure": "https://w3id.org/saref#isMeasuredIn",
+		"isMeasuredInOnlyUnitOfMeasure": "https://w3id.org/saref#isMeasuredIn",
+		"relatesToPropertyExactlyProperty": "https://w3id.org/saref#relatesToProperty",
+		"relatesToPropertyOnlyProperty": "https://w3id.org/saref#relatesToProperty",
+		"isMeasuredByDeviceOnlyDevice": "https://w3id.org/saref#isMeasuredByDevice",
+		"isControlledByDeviceOnlyDevice": "https://w3id.org/saref#isControlledByDevice",
+		"relatesToMeasurementOnlyMeasurement": "https://w3id.org/saref#relatesToMeasurement",
+		"hasFunctionSomeSensingFunction": "https://w3id.org/saref#hasFunction",
+		"measuresPropertySomeTemperature": "https://w3id.org/saref#measuresProperty",
+		"consistsOfSomeSensor": "https://w3id.org/saref#consistsOf",
+		"offersOnlyService": "https://w3id.org/saref#offers",
+		"consistsOfOnlyDevice": "https://w3id.org/saref#consistsOf",
+		"measuresPropertyOnlyProperty": "https://w3id.org/saref#measuresProperty",
+		"hasTypicalConsumptionOnlyPower": "https://w3id.org/saref#hasTypicalConsumption",
+		"accomplishesMinTask": "https://w3id.org/saref#accomplishes",
+		"controlsPropertyOnlyProperty": "https://w3id.org/saref#controlsProperty",
+		"hasStateOnlyState": "https://w3id.org/saref#hasState",
+		"makesMeasurementOnlyMeasurement": "https://w3id.org/saref#makesMeasurement",
+		"isUsedForOnlyCommodity": "https://w3id.org/saref#isUsedFor",
+		"hasFunctionMinFunction": "https://w3id.org/saref#hasFunction",
+		"hasProfileOnlyProfile": "https://w3id.org/saref#hasProfile"
+	},
+	"@graph": [{
+			"@type": "owl:DatatypeProperty",
+			"@id": "https://w3id.org/saref#hasTimestamp"
+		}, {
+			"@type": "owl:DatatypeProperty",
+			"@id": "https://w3id.org/saref#hasValue"
+		}, {
+			"@id": "https://w3id.org/saref#555",
+			"https://w3id.org/saref#hasTimestamp": 1499361524754,
+			"https://w3id.org/saref#hasValue": 32.5,
+			"@type": "https://w3id.org/saref#Measurement"
+		}, {
+			"@id": "https://w3id.org/saref#abc",
+			"@type": "https://w3id.org/saref#Temperature",
+			"https://w3id.org/saref#relatesToMeasurement": [{
+					"@id": "https://w3id.org/saref#555"
+				}
+			]
+		}, {
+			"@type": "owl:DatatypeProperty",
+			"@id": "https://w3id.org/saref#hasDescription"
+		}, {
+			"@type": "owl:DatatypeProperty",
+			"@id": "https://w3id.org/saref#hasManufacturer"
+		}, {
+			"@type": "owl:DatatypeProperty",
+			"@id": "https://w3id.org/saref#hasModel"
+		}, {
+			"hasTypicalConsumptionEnergy": [],
+			"@id": "https://w3id.org/saref#111",
+			"https://w3id.org/saref#hasDescription": "Low range Zigee temperature sensor",
+			"https://w3id.org/saref#hasManufacturer": "CompanyA",
+			"https://w3id.org/saref#hasModel": "M321",
+			"@type": "https://w3id.org/saref#TemperatureSensor",
+			"https://w3id.org/saref#makesMeasurement": [{
+					"@id": "https://w3id.org/saref#555"
+				}
+			]
+		}
+	]
+}

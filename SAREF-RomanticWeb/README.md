@@ -26,7 +26,7 @@ static ITripleStore store;
 static string clientURI = "http://www.saref.instance/example";
 ```
 
-Then, the contextFactory is configured to the mappings from the C# interfaces and their annotations.
+Then, the contextFactory is configured to be linked with the mappings from the C# interfaces and their annotations.
 ```C#
 public static void InitContext()
  {

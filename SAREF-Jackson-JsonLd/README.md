@@ -19,42 +19,42 @@ Saref-0.0.1.jar contains already the generated interfaces, classes with their an
 
 ```Java
 private static List create_SAREF_Instances()
-	{
-		//TemperatureUnit
-		ITemperatureUnit temperatureUnit = new TemperatureUnit("degree_Celsius");
+{
+ //TemperatureUnit
+ ITemperatureUnit temperatureUnit = new TemperatureUnit("degree_Celsius");
 
-		//Measurement
-		IMeasurement indoorTemperature = new Measurement("1");
-        indoorTemperature.addisMeasuredInOnly((IUnitOfMeasure) temperatureUnit);
-        ((Measurement)indoorTemperature).hasValue = 32.5f;
-        ((Measurement)indoorTemperature).hasTimestamp = Calendar.getInstance();
+ //Measurement
+ IMeasurement indoorTemperature = new Measurement("1");
+ indoorTemperature.addisMeasuredInOnly((IUnitOfMeasure) temperatureUnit);
+ ((Measurement)indoorTemperature).hasValue = 32.5f;
+ ((Measurement)indoorTemperature).hasTimestamp = Calendar.getInstance();
         
-        //Temperature
-        ITemperature temperature = new Temperature("2");
-        ((IProperty)temperature).addrelatesToMeasurementOnly((Measurement)indoorTemperature);
+ //Temperature
+ ITemperature temperature = new Temperature("2");
+ ((IProperty)temperature).addrelatesToMeasurementOnly((Measurement)indoorTemperature);
         
-        //Temperature Sensor
-        ITemperatureSensor  temperatureSensor  = new TemperatureSensor("3");
-        ((TemperatureSensor)temperatureSensor).hasManufacturer_String = "CompanyA";
-        ((TemperatureSensor)temperatureSensor).hasModel_String = "M321";
-        ((TemperatureSensor)temperatureSensor).hasDescription_String = "Low range Zigee temperature sensor";
-        ((IDevice)temperatureSensor).addmakesMeasurementOnly((IMeasurement)indoorTemperature);
+ //Temperature Sensor
+ ITemperatureSensor  temperatureSensor  = new TemperatureSensor("3");
+ ((TemperatureSensor)temperatureSensor).hasManufacturer_String = "CompanyA";
+ ((TemperatureSensor)temperatureSensor).hasModel_String = "M321";
+ ((TemperatureSensor)temperatureSensor).hasDescription_String = "Low range Zigee temperature sensor";
+ ((IDevice)temperatureSensor).addmakesMeasurementOnly((IMeasurement)indoorTemperature);
         
-        List ontElements = new ArrayList();
-        //Add the created instances to the list of ontology elements
-        ontElements.add(indoorTemperature);
-        ontElements.add(temperature);
-        ontElements.add(temperatureSensor);
-        
-        return ontElements;
-	}
+ List ontElements = new ArrayList();
+ //Add the created instances to the list of ontology elements
+ ontElements.add(indoorTemperature);
+ ontElements.add(temperature);
+ ontElements.add(temperatureSensor);
+ 
+ return ontElements;
+}
 ```
 
 ## 2 Create the Graph 
 Once the ontology classes are instantiated, the graph can be generated, as shown below:
 ```Java
 JsonldGraphBuilder builder =  JsonldGraph.Builder.create();
-         _sarefOntologyInstance = builder.build(listOfOntologyInstances);
+_sarefOntologyInstance = builder.build(listOfOntologyInstances);
 ```
 
 ## 3 Serialize

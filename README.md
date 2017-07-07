@@ -12,7 +12,7 @@ OLGA takes as input the following:
 	3. RDFAlchemy - Python (in progress)
 
 The output of OLGA is a generated library ready to be used by IoT developers. The generated library is conform to the ontology and is dependent on available serializers and ORMs in various languages (C#, Java, and Python for now) as shown below.
-![](./figures/OLGAImplementation.png).
+![](./figures/OLGAImplementation2.png).
 
 # SAREF Example
 [SAREF](http://ontology.tno.nl/saref/) the Smart Appliances REFerence Ontology depends on the [Time](https://www.w3.org/TR/owl-time/) Ontology. Once merged the two ontologies have around 200 Classes and Individuals.
@@ -21,9 +21,9 @@ The following sections contain the generated code by OLGA of SAREF[.ttl](http://
 1. Packaged generated library in .dll and .jar formats. (.whl is in progress).
 2. Generated source code in C\# and Java. (Python in progress).
 3. Generated ontology instance (A-Box) of an instantiation SAREF example.
-4. An instantiation and usage examples for each of the generated SAREF libraries (Jackson-Jsonld and RomanticWeb). The examples demonstrate how any IoT developer can import the generated packages and use them in his development without any knowledge regarding ontologies. The provided examples show the instantiation of a [SAREF temperature sensor](ontology.tno.nl/saref/saref_TemperatureSensor.html) with a measurement temperature in degree Celsius, and other information such as the manufacturer and the model number.
+4. An instantiation and usage examples for each of the generated SAREF libraries (Jackson-Jsonld and RomanticWeb). The examples demonstrate how any IoT developer can import the generated packages and use them in his development without any knowledge regarding ontologies. The provided examples show the instantiation of a [SAREF temperature sensor](http://ontology.tno.nl/saref/saref_TemperatureSensor.html) with a measurement temperature in degree Celsius, and other information such as the manufacturer and the model number.
 
-# The Three sections of SAREF examples and generated libraries 
+# The sections of SAREF generated libraries 
 1. [RomanticWeb-C#](/SAREF-RomanticWeb/README.md)
 2. [Jackson-Jsonld-Java](/SAREF-Jackson-JsonLd/README.md)
 2. [RDFAlchemy-Python](/SAREF-RDFAlchemy/README.md)

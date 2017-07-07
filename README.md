@@ -23,7 +23,7 @@ The following sections contain the generated code by OLGA of SAREF[.ttl](http://
 3. Generated ontology instance (A-Box) of an instantiation SAREF example.
 4. An instantiation and usage examples for each of the generated SAREF libraries (Jackson-Jsonld and RomanticWeb). The examples demonstrate how any IoT developer can import the generated packages and use them in his development without any knowledge regarding ontologies. The provided examples show the instantiation of a [SAREF temperature sensor](ontology.tno.nl/saref/saref_TemperatureSensor.html) with a measurement temperature in degree Celsius, and other information such as the manufacturer and the model number.
 
-# The Three sections 
+# The Three sections of SAREF examples and generated libraries 
 1. [RomanticWeb-C#](/SAREF-RomanticWeb/README.md)
 2. [Jackson-Jsonld-Java](/SAREF-Jackson-JsonLd/README.md)
 2. [RDFAlchemy-Python](/SAREF-RDFAlchemy/README.md)

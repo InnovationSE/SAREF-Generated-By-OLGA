@@ -1,0 +1,15 @@
+<http://w3id/saref/instance/example#2> a <https://w3id.org/saref#Measurement> ;
+	<https://w3id.org/saref#hasTimestamp> "2017-07-09T01:42:42.234-04:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+	<https://w3id.org/saref#hasValue> "32.5"^^<http://www.w3.org/2001/XMLSchema#float> ;
+	<https://w3id.org/saref#isMeasuredIn> <http://w3id/saref/instance/example#degree_Celsius> .
+
+<http://w3id/saref/instance/example#3> a <https://w3id.org/saref#Temperature> ;
+	<https://w3id.org/saref#relatesToMeasurement> <http://w3id/saref/instance/example#2> .
+
+<http://w3id/saref/instance/example#4> a <https://w3id.org/saref#TemperatureSensor> ;
+	<https://w3id.org/saref#hasDescription> "Low range Zigee temperature sensor" ;
+	<https://w3id.org/saref#hasManufacturer> "CompanyA" ;
+	<https://w3id.org/saref#hasModel> "M321" ;
+	<https://w3id.org/saref#makesMeasurement> <http://w3id/saref/instance/example#2> .
+
+<http://w3id/saref/instance/example#degree_Celsius> a <https://w3id.org/saref#TemperatureUnit> .

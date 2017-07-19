@@ -8,7 +8,7 @@ SAREF Generated Library in Python with RDFAlchemy by OLGA
 
 # Example
 
-So first to install our saref you have to execute the following line :
+So first to install our SAREF library you have to execute the following line :
 
 ![](./figures/pip.png)
 

@@ -10,7 +10,7 @@ OLGA takes as input the following:
 	1. Jackson-Jsonld - Java
 	2. RomanticWeb - C#
 	3. RDF4J - Java
-	4. RDFAlchemy - Python (in progress)
+	4. RDFAlchemy - Python
 
 The output of OLGA is a generated library ready to be used by IoT developers. The generated library is conform to the ontology and is dependent on available serializers and ORMs in various languages (C#, Java, and Python for now) as shown below.
 ![](./figures/OLGAImplementation2.png).

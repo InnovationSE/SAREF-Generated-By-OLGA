@@ -41,12 +41,11 @@ In the following a simple example is provided to depict the usage of the generat
 
 ## 2 Create a graph and Serialize
 
-The output of the topology (ontology instances) can be serialized and saved in a ... file. The following, code snippet, serializes the content in an turtle file which can be found [here](./generatedOntologyInstance/).
+The output of the topology (ontology instances) can be serialized and saved in a .ttl file. The following, code snippet, serializes the content in an turtle file which can be found [here](./generatedOntologyInstance/).
 
 ```Python
 	g = rdfSubject.db = Graph()
 	#Instanciate
-	g.serialize(destination='C:/output.txt',format='turtle')
+	g.serialize(destination='C:/output.ttl',format='turtle')
 ```
 
-In progress

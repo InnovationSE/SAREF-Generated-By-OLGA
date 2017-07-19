@@ -27,7 +27,8 @@ In the following a simple example is provided to depict the usage of the generat
     indoorMeasurement = Measurement(URIRef(SAREF + "2"))
     indoorMeasurement.addisMeasuredInOnly(temperatureUnit)
     indoorMeasurement.hasValue = 32
-    indoorMeasurement.hasTimestamp = "df"
+    ts = time.time()
+    indoorMeasurement.hasTimestamp = datetime.datetime.fromtimestamp(ts).strftime('%Y-%m-%d %H:%M:%S')
 
     temperature = Temperature(URIRef(SAREF + "3"))
     temperature.addrelatesToMeasurementOnly(indoorMeasurement)

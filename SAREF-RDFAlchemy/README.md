@@ -1,7 +1,5 @@
 # SAREF in Python with RDFAchemy
 
-In progress
-
 SAREF Generated Library in Python with RDFAlchemy by OLGA 
 
 # RDFAlchemy
@@ -24,7 +22,7 @@ In the following a simple example is provided to depict the usage of the generat
 
 ## 1 Instantiate the Ontology Model
 
-... contains already the generated interfaces, classes with their annotations. Therefore, the instantiation can take place:
+The .whl contains already the generated classes with their annotations. Therefore, the instantiation can take place:
 
 ```Python 
     SAREF = Namespace("http://www.saref.instance/example/")

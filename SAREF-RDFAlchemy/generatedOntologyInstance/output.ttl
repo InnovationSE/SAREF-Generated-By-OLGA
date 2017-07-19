@@ -16,7 +16,7 @@
 <http://www.saref.instance/example/1> a ns1:TemperatureUnit .
 
 <http://www.saref.instance/example/2> a ns1:Measurement ;
-    ns1:hasTimestamp "df" ;
+    ns1:hasTimestamp "2017-07-19 11:06:44" ;
     ns1:hasValue 32 ;
     ns1:isMeasuredInOnlyUnitOfMeasure ( <http://www.saref.instance/example/1> ) .
 

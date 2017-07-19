@@ -1,5 +1,5 @@
 # OLGA: Ontology Library GenerAtor
-
+ 
 OLGA is a generic tool aiming to accelerate the adoption of the Semantic technology such as the Ontology Web Language [OWL](https://www.w3.org/OWL) and the Resource Description Framework [RDF](https://www.w3.org/2001/sw/wiki/RDF), and Json Linked Data [Jsonld](https://json-ld.org/) in the Internet Of Things development.
 
 OLGA complements existing OWL, RDF, and Jsonld serializers such as [Jackson-Jsonld in Java](https://github.com/io-informatics/jackson-jsonld) and [RDF4J](http://rdf4j.org/) or RDF Object Relational Mappers such as [RomanticWeb in C#](RomanticWeb.net) and [RDFAlchemy in Python](http://rdfalchemy.readthedocs.io/en/latest/index.html). 

@@ -1,0 +1,22 @@
+@prefix ns1: <https://w3id.org/saref#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://www.saref.instance/example/3> a ns1:Temperature ;
+    ns1:relatesToMeasurementOnlyMeasurement ( <http://www.saref.instance/example/2> ) .
+
+<http://www.saref.instance/example/4> a ns1:TemperatureSensor ;
+    ns1:hasDescription "Low range Zigee temperature sensor" ;
+    ns1:hasManufacturer "CompanyA" ;
+    ns1:hasModel "M321" ;
+    ns1:makesMeasurementOnlyMeasurement ( <http://www.saref.instance/example/2> ) .
+
+<http://www.saref.instance/example/1> a ns1:TemperatureUnit .
+
+<http://www.saref.instance/example/2> a ns1:Measurement ;
+    ns1:hasTimestamp "df" ;
+    ns1:hasValue 32 ;
+    ns1:isMeasuredInOnlyUnitOfMeasure ( <http://www.saref.instance/example/1> ) .
+

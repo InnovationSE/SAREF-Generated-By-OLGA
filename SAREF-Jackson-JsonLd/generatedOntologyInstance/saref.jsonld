@@ -35,8 +35,6 @@
 			"@type": "https://w3id.org/saref#Measurement",
 			"https://w3id.org/saref#isMeasuredIn": [{
 					"@id": "https://w3id.org/saref#degree_Celsius"
-				}, {
-					"@id": "https://w3id.org/saref#degree_Kelvin"
 				}
 			]
 		}, {
@@ -68,9 +66,6 @@
 			]
 		}, {
 			"@id": "https://w3id.org/saref#degree_Celsius",
-			"@type": "https://w3id.org/saref#TemperatureUnit"
-		}, {
-			"@id": "https://w3id.org/saref#degree_Kelvin",
 			"@type": "https://w3id.org/saref#TemperatureUnit"
 		}
 	]

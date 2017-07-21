@@ -21,17 +21,36 @@ import w3id.org.saref.*;
 
 public class Program {
 	
-	
-	static JsonldResource _sarefOntologyInstance = null;
+	public static List ontElements = new ArrayList();
+	static JsonldResource _header = null;
 	
 	public static void main(String[] args) throws FileNotFoundException {
 
-		List listOfOntologyInstances = create_SAREF_Instances();
+		ITemperatureUnit temperatureUnit = new TemperatureUnit("degree_Celsius");
+		
+		IMeasurement indoorTemperature = new Measurement("555");
+        indoorTemperature.addisMeasuredInExactly1((IUnitOfMeasure) temperatureUnit);
+        ((Measurement)indoorTemperature).hasValue = 32.5f;
+        ((Measurement)indoorTemperature).hasTimestamp = Calendar.getInstance();
         
+        ITemperature temperature = new Temperature("abc");
+        ((IProperty)temperature).addrelatesToMeasurementOnly((IMeasurement)indoorTemperature);
+        
+        ITemperatureSensor  temperatureSensor  = new TemperatureSensor("111");
+        ((TemperatureSensor)temperatureSensor).hasManufacturer_String = "CompanyA";
+        ((TemperatureSensor)temperatureSensor).hasModel_String = "M321";
+        ((TemperatureSensor)temperatureSensor).hasDescription_String = "Low range Zigee temperature sensor";
+        ((IDevice)temperatureSensor).addmakesMeasurementOnly((IMeasurement)indoorTemperature);
+        
+        ontElements.add(indoorTemperature);
+        ontElements.add(temperature);
+        ontElements.add(temperatureSensor);
+        ontElements.add(temperatureUnit);
+                
         JsonldGraphBuilder builder =  JsonldGraph.Builder.create();
-         _sarefOntologyInstance = builder.build(listOfOntologyInstances);
+         _header = builder.build(ontElements);
          
-        String saref = new File(".").getAbsolutePath() + "/src/main/resources/saref.jsonld";
+        String saref = new File(".").getAbsolutePath() + "/src/main/resources/saref.json";
          
         File jsonLD_File = new File(saref);
  		OutputStream outputStream = new FileOutputStream(jsonLD_File);
@@ -40,7 +59,7 @@ public class Program {
 
  		try {
  			objectMapper.registerModule(jsonldModule);
- 			objectMapper.writer().writeValue(outputStream, _sarefOntologyInstance);
+ 			objectMapper.writer().writeValue(outputStream, _header);
 
  		} catch (JsonGenerationException e) {
  			e.printStackTrace();
@@ -50,36 +69,5 @@ public class Program {
  			e.printStackTrace();
  		}
  	}
-	
-	private static List create_SAREF_Instances()
-	{
-		//TemperatureUnit
-		ITemperatureUnit temperatureUnit = new TemperatureUnit("degree_Celsius");
-
-		//Measurement
-		IMeasurement indoorTemperature = new Measurement("1");
-        indoorTemperature.addisMeasuredInOnly((IUnitOfMeasure) temperatureUnit);
-        ((Measurement)indoorTemperature).hasValue = 32.5f;
-        ((Measurement)indoorTemperature).hasTimestamp = Calendar.getInstance();
-        
-        //Temperature
-        ITemperature temperature = new Temperature("2");
-        ((IProperty)temperature).addrelatesToMeasurementOnly((Measurement)indoorTemperature);
-        
-        //Temperature Sensor
-        ITemperatureSensor  temperatureSensor  = new TemperatureSensor("3");
-        ((TemperatureSensor)temperatureSensor).hasManufacturer_String = "CompanyA";
-        ((TemperatureSensor)temperatureSensor).hasModel_String = "M321";
-        ((TemperatureSensor)temperatureSensor).hasDescription_String = "Low range Zigee temperature sensor";
-        ((IDevice)temperatureSensor).addmakesMeasurementOnly((IMeasurement)indoorTemperature);
-        
-        List ontElements = new ArrayList();
-        //Add the created instances to the list of ontology elements
-        ontElements.add(indoorTemperature);
-        ontElements.add(temperature);
-        ontElements.add(temperatureSensor);
-        
-        return ontElements;
-	}
        
 	}

@@ -29,15 +29,19 @@
 			"@type": "owl:DatatypeProperty",
 			"@id": "https://w3id.org/saref#hasValue"
 		}, {
-			"@id": "https://w3id.org/saref#1",
-			"https://w3id.org/saref#hasTimestamp": 1499466448415,
+			"@id": "https://w3id.org/saref#555",
+			"https://w3id.org/saref#hasTimestamp": 1499864183802,
 			"https://w3id.org/saref#hasValue": 32.5,
-			"@type": "https://w3id.org/saref#Measurement"
+			"@type": "https://w3id.org/saref#Measurement",
+			"https://w3id.org/saref#isMeasuredIn": [{
+					"@id": "https://w3id.org/saref#degree_Celsius"
+				}
+			]
 		}, {
-			"@id": "https://w3id.org/saref#2",
+			"@id": "https://w3id.org/saref#abc",
 			"@type": "https://w3id.org/saref#Temperature",
 			"https://w3id.org/saref#relatesToMeasurement": [{
-					"@id": "https://w3id.org/saref#1"
+					"@id": "https://w3id.org/saref#555"
 				}
 			]
 		}, {
@@ -51,15 +55,18 @@
 			"@id": "https://w3id.org/saref#hasModel"
 		}, {
 			"hasTypicalConsumptionEnergy": [],
-			"@id": "https://w3id.org/saref#3",
+			"@id": "https://w3id.org/saref#111",
 			"https://w3id.org/saref#hasDescription": "Low range Zigee temperature sensor",
 			"https://w3id.org/saref#hasManufacturer": "CompanyA",
 			"https://w3id.org/saref#hasModel": "M321",
 			"@type": "https://w3id.org/saref#TemperatureSensor",
 			"https://w3id.org/saref#makesMeasurement": [{
-					"@id": "https://w3id.org/saref#1"
+					"@id": "https://w3id.org/saref#555"
 				}
 			]
+		}, {
+			"@id": "https://w3id.org/saref#degree_Celsius",
+			"@type": "https://w3id.org/saref#TemperatureUnit"
 		}
 	]
 }

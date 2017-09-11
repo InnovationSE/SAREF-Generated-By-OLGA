@@ -3,10 +3,10 @@ from rdfalchemy.rdfSubject import rdfSubject
 import datetime
 import time
 
-from w3id.org.saref.TemperatureUnit import TemperatureUnit
-from w3id.org.saref.Measurement import Measurement
-from w3id.org.saref.Temperature  import Temperature
-from w3id.org.saref.TemperatureSensor  import TemperatureSensor
+from saref.w3id.org.saref.TemperatureUnit import TemperatureUnit
+from saref.w3id.org.saref.Measurement import Measurement
+from saref.w3id.org.saref.Temperature  import Temperature
+from saref.w3id.org.saref.TemperatureSensor  import TemperatureSensor
 
 
 if __name__ == '__main__':

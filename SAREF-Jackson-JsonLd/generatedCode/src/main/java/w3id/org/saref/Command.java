@@ -25,7 +25,10 @@ import saref.jsonld.util.RefId;
 
 import w3id.org.saref.IFunction;  
 import w3id.org.saref.IState;  
-	
+
+
+
+
 
 
 public  class Command implements ICommand {
@@ -69,7 +72,6 @@ public  class Command implements ICommand {
 	{
 		isCommandOfMinFunction.add(parameter.getRefId());
 	}
-			
 	@JsonInclude(Include.NON_EMPTY)
 	@JsonldProperty("https://w3id.org/saref#actsUpon") 
 	private List<RefId> actsUponOnlyState;
@@ -77,7 +79,6 @@ public  class Command implements ICommand {
 	{
 		actsUponOnlyState.add(parameter.getRefId());
 	}
-			
 	
 	
 	

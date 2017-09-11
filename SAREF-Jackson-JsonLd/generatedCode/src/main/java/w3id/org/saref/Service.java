@@ -25,7 +25,10 @@ import saref.jsonld.util.RefId;
 
 import w3id.org.saref.IDevice;  
 import w3id.org.saref.IFunction;  
-	
+
+
+
+
 
 
 public  class Service implements IService {
@@ -64,7 +67,6 @@ public  class Service implements IService {
 	{
 		isOfferedByMinDevice.add(parameter.getRefId());
 	}
-			
 	@JsonInclude(Include.NON_EMPTY)
 	@JsonldProperty("https://w3id.org/saref#represents") 
 	private List<RefId> representsMinFunction;
@@ -72,7 +74,6 @@ public  class Service implements IService {
 	{
 		representsMinFunction.add(parameter.getRefId());
 	}
-			
 	
 	
 	

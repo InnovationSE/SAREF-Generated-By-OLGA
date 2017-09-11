@@ -24,9 +24,12 @@ import ioinformarics.oss.jackson.module.jsonld.annotation.JsonldPropertyType;
 import saref.jsonld.util.RefId;
 
 import w3id.org.saref.Command;
+
+
 import w3id.org.saref.IFunction;
 import w3id.org.saref.IState;
-	
+
+
 
 
 public  class GetCommand implements IGetCommand {
@@ -67,7 +70,7 @@ public  class GetCommand implements IGetCommand {
 	
 	
 	@JsonInclude(Include.NON_EMPTY)
-	@JsonldProperty("https://w3id.org/saref#isCommandOf") 
+	@JsonldProperty("https://w3id.org/saref#isCommandOf")
 	private List<RefId> isCommandOfMinFunction;
 	public void addisCommandOfMin1(IFunction parameter)
 	{
@@ -75,7 +78,7 @@ public  class GetCommand implements IGetCommand {
 	}
 			
 	@JsonInclude(Include.NON_EMPTY)
-	@JsonldProperty("https://w3id.org/saref#actsUpon") 
+	@JsonldProperty("https://w3id.org/saref#actsUpon")
 	private List<RefId> actsUponOnlyState;
 	public void addactsUponOnly(IState parameter)
 	{

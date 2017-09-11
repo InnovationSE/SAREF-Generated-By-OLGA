@@ -51,6 +51,7 @@ public interface ITemperatureSensor extends ISensor {
 	@JsonldProperty("https://w3id.org/saref#measuresProperty") 
 	public void addmeasuresPropertySome(ITemperature parameter);
 			
+			
 	/**
 	* addconsistsOfSome
 	* @param ISensor

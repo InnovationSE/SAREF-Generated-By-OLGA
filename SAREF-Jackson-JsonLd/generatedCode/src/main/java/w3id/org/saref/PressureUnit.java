@@ -24,7 +24,12 @@ import ioinformarics.oss.jackson.module.jsonld.annotation.JsonldPropertyType;
 import saref.jsonld.util.RefId;
 
 import w3id.org.saref.UnitOfMeasure;
-	
+
+
+
+import www.wurvoc.org.vocabularies.om_1_8.bar.bar;
+import www.wurvoc.org.vocabularies.om_1_8.pascal.pascal;
+
 
 
 public  class PressureUnit implements IPressureUnit {
@@ -35,6 +40,8 @@ public  class PressureUnit implements IPressureUnit {
 		super();
 		this.id = "https://w3id.org/saref#" + id;
 		relations = new HashMap<String, List<RefId>>();
+		bar bar = new bar("bar");
+		pascal pascal = new pascal("pascal");
 		
 	}
 

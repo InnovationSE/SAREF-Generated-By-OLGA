@@ -24,7 +24,11 @@ import ioinformarics.oss.jackson.module.jsonld.annotation.JsonldPropertyType;
 import saref.jsonld.util.RefId;
 
 import w3id.org.saref.UnitOfMeasure;
-	
+
+
+
+import www.wurvoc.org.vocabularies.om_1_8.lux.lux;
+
 
 
 public  class IlluminanceUnit implements IIlluminanceUnit {
@@ -35,6 +39,7 @@ public  class IlluminanceUnit implements IIlluminanceUnit {
 		super();
 		this.id = "https://w3id.org/saref#" + id;
 		relations = new HashMap<String, List<RefId>>();
+		lux lux = new lux("lux");
 		
 	}
 

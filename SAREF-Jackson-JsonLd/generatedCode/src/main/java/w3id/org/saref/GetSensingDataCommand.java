@@ -25,9 +25,13 @@ import saref.jsonld.util.RefId;
 
 import w3id.org.saref.GetCommand;
 import w3id.org.saref.Command;
+
+
 import w3id.org.saref.IFunction;
 import w3id.org.saref.IState;
-	
+
+import w3id.org.saref.GetSensingData;
+
 
 
 public  class GetSensingDataCommand implements IGetSensingDataCommand {
@@ -38,6 +42,7 @@ public  class GetSensingDataCommand implements IGetSensingDataCommand {
 		super();
 		this.id = "https://w3id.org/saref#" + id;
 		relations = new HashMap<String, List<RefId>>();
+		GetSensingData getsensingdata = new GetSensingData("GetSensingData");
 		isCommandOfMinFunction = new ArrayList<>();
 		actsUponOnlyState = new ArrayList<>();
 		
@@ -68,7 +73,7 @@ public  class GetSensingDataCommand implements IGetSensingDataCommand {
 	
 	
 	@JsonInclude(Include.NON_EMPTY)
-	@JsonldProperty("https://w3id.org/saref#isCommandOf") 
+	@JsonldProperty("https://w3id.org/saref#isCommandOf")
 	private List<RefId> isCommandOfMinFunction;
 	public void addisCommandOfMin1(IFunction parameter)
 	{
@@ -76,7 +81,7 @@ public  class GetSensingDataCommand implements IGetSensingDataCommand {
 	}
 			
 	@JsonInclude(Include.NON_EMPTY)
-	@JsonldProperty("https://w3id.org/saref#actsUpon") 
+	@JsonldProperty("https://w3id.org/saref#actsUpon")
 	private List<RefId> actsUponOnlyState;
 	public void addactsUponOnly(IState parameter)
 	{

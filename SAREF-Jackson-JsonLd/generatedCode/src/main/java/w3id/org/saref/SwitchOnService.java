@@ -26,9 +26,12 @@ import saref.jsonld.util.RefId;
 import w3id.org.saref.IOnOffFunction;  
 import w3id.org.saref.ILightSwitch;  
 import w3id.org.saref.Service;
+
+
 import w3id.org.saref.IDevice;
 import w3id.org.saref.IFunction;
-	
+
+
 
 
 public  class SwitchOnService implements ISwitchOnService {
@@ -69,7 +72,6 @@ public  class SwitchOnService implements ISwitchOnService {
 	{
 		representsSomeOnOffFunction.add(parameter.getRefId());
 	}
-			
 	@JsonInclude(Include.NON_EMPTY)
 	@JsonldProperty("https://w3id.org/saref#isOfferedBy") 
 	private List<RefId> isOfferedBySomeLightSwitch;
@@ -77,12 +79,11 @@ public  class SwitchOnService implements ISwitchOnService {
 	{
 		isOfferedBySomeLightSwitch.add(parameter.getRefId());
 	}
-			
 	
 	
 	
 	@JsonInclude(Include.NON_EMPTY)
-	@JsonldProperty("https://w3id.org/saref#isOfferedBy") 
+	@JsonldProperty("https://w3id.org/saref#isOfferedBy")
 	private List<RefId> isOfferedByMinDevice;
 	public void addisOfferedByMin1(IDevice parameter)
 	{
@@ -90,7 +91,7 @@ public  class SwitchOnService implements ISwitchOnService {
 	}
 			
 	@JsonInclude(Include.NON_EMPTY)
-	@JsonldProperty("https://w3id.org/saref#represents") 
+	@JsonldProperty("https://w3id.org/saref#represents")
 	private List<RefId> representsMinFunction;
 	public void addrepresentsMin1(IFunction parameter)
 	{

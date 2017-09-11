@@ -33,5 +33,6 @@ public interface IHVAC extends IFunctionRelated {
 	@JsonIgnore
 	public RefId getRefId();
 	
+			
 	
 }

@@ -78,5 +78,6 @@ public interface ILightSwitch extends ISwitch {
 	@JsonldProperty("https://w3id.org/saref#offers") 
 	public void addoffersSome(ISwitchOnService parameter);
 			
+			
 	
 }

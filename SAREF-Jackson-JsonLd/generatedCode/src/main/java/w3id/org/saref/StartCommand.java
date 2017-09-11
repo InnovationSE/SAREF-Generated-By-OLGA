@@ -25,9 +25,13 @@ import saref.jsonld.util.RefId;
 
 import w3id.org.saref.IStartStopState;  
 import w3id.org.saref.Command;
+
+
 import w3id.org.saref.IFunction;
 import w3id.org.saref.IState;
-	
+
+import w3id.org.saref.Start;
+
 
 
 public  class StartCommand implements IStartCommand {
@@ -38,6 +42,7 @@ public  class StartCommand implements IStartCommand {
 		super();
 		this.id = "https://w3id.org/saref#" + id;
 		relations = new HashMap<String, List<RefId>>();
+		Start start = new Start("Start");
 		actsUponOnlyStartStopState = new ArrayList<>();
 		isCommandOfMinFunction = new ArrayList<>();
 		actsUponOnlyState = new ArrayList<>();
@@ -72,12 +77,11 @@ public  class StartCommand implements IStartCommand {
 	{
 		actsUponOnlyStartStopState.add(parameter.getRefId());
 	}
-			
 	
 	
 	
 	@JsonInclude(Include.NON_EMPTY)
-	@JsonldProperty("https://w3id.org/saref#isCommandOf") 
+	@JsonldProperty("https://w3id.org/saref#isCommandOf")
 	private List<RefId> isCommandOfMinFunction;
 	public void addisCommandOfMin1(IFunction parameter)
 	{
@@ -85,7 +89,7 @@ public  class StartCommand implements IStartCommand {
 	}
 			
 	@JsonInclude(Include.NON_EMPTY)
-	@JsonldProperty("https://w3id.org/saref#actsUpon") 
+	@JsonldProperty("https://w3id.org/saref#actsUpon")
 	private List<RefId> actsUponOnlyState;
 	public void addactsUponOnly(IState parameter)
 	{

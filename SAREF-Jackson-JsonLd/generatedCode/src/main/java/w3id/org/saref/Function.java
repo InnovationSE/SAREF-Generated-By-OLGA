@@ -24,7 +24,10 @@ import ioinformarics.oss.jackson.module.jsonld.annotation.JsonldPropertyType;
 import saref.jsonld.util.RefId;
 
 import w3id.org.saref.ICommand;  
-	
+
+
+
+
 
 
 public  class Function implements IFunction {
@@ -62,7 +65,6 @@ public  class Function implements IFunction {
 	{
 		hasCommandMinCommand.add(parameter.getRefId());
 	}
-			
 	
 	
 	

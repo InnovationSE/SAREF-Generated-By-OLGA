@@ -25,9 +25,13 @@ import saref.jsonld.util.RefId;
 
 import w3id.org.saref.IOpenCloseState;  
 import w3id.org.saref.Command;
+
+
 import w3id.org.saref.IFunction;
 import w3id.org.saref.IState;
-	
+
+import w3id.org.saref.Close;
+
 
 
 public  class CloseCommand implements ICloseCommand {
@@ -38,6 +42,7 @@ public  class CloseCommand implements ICloseCommand {
 		super();
 		this.id = "https://w3id.org/saref#" + id;
 		relations = new HashMap<String, List<RefId>>();
+		Close close = new Close("Close");
 		actsUponOnlyOpenCloseState = new ArrayList<>();
 		isCommandOfMinFunction = new ArrayList<>();
 		actsUponOnlyState = new ArrayList<>();
@@ -72,12 +77,11 @@ public  class CloseCommand implements ICloseCommand {
 	{
 		actsUponOnlyOpenCloseState.add(parameter.getRefId());
 	}
-			
 	
 	
 	
 	@JsonInclude(Include.NON_EMPTY)
-	@JsonldProperty("https://w3id.org/saref#isCommandOf") 
+	@JsonldProperty("https://w3id.org/saref#isCommandOf")
 	private List<RefId> isCommandOfMinFunction;
 	public void addisCommandOfMin1(IFunction parameter)
 	{
@@ -85,7 +89,7 @@ public  class CloseCommand implements ICloseCommand {
 	}
 			
 	@JsonInclude(Include.NON_EMPTY)
-	@JsonldProperty("https://w3id.org/saref#actsUpon") 
+	@JsonldProperty("https://w3id.org/saref#actsUpon")
 	private List<RefId> actsUponOnlyState;
 	public void addactsUponOnly(IState parameter)
 	{

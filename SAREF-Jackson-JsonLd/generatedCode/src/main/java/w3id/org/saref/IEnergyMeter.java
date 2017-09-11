@@ -42,6 +42,8 @@ public interface IEnergyMeter extends IMeter {
 	@JsonldProperty("https://w3id.org/saref#measuresProperty") 
 	public void addmeasuresPropertySome(IEnergy parameter);
 			
+			
+			
 	/**
 	* addconsistsOfSome
 	* @param IMeter

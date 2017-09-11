@@ -25,9 +25,12 @@ import saref.jsonld.util.RefId;
 
 import w3id.org.saref.IMultiLevelState;  
 import w3id.org.saref.Command;
+
+
 import w3id.org.saref.IFunction;
 import w3id.org.saref.IState;
-	
+
+
 
 
 public  class SetLevelCommand implements ISetLevelCommand {
@@ -72,12 +75,11 @@ public  class SetLevelCommand implements ISetLevelCommand {
 	{
 		actsUponOnlyMultiLevelState.add(parameter.getRefId());
 	}
-			
 	
 	
 	
 	@JsonInclude(Include.NON_EMPTY)
-	@JsonldProperty("https://w3id.org/saref#isCommandOf") 
+	@JsonldProperty("https://w3id.org/saref#isCommandOf")
 	private List<RefId> isCommandOfMinFunction;
 	public void addisCommandOfMin1(IFunction parameter)
 	{
@@ -85,7 +87,7 @@ public  class SetLevelCommand implements ISetLevelCommand {
 	}
 			
 	@JsonInclude(Include.NON_EMPTY)
-	@JsonldProperty("https://w3id.org/saref#actsUpon") 
+	@JsonldProperty("https://w3id.org/saref#actsUpon")
 	private List<RefId> actsUponOnlyState;
 	public void addactsUponOnly(IState parameter)
 	{

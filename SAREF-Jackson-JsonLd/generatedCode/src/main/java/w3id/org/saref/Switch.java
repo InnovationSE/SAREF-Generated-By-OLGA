@@ -26,6 +26,8 @@ import saref.jsonld.util.RefId;
 import w3id.org.saref.Actuator;
 import w3id.org.saref.FunctionRelated;
 import w3id.org.saref.Device;
+
+
 import w3id.org.saref.IActuatingFunction;
 import w3id.org.saref.IService;
 import w3id.org.saref.IDevice;
@@ -38,7 +40,8 @@ import w3id.org.saref.IMeasurement;
 import w3id.org.saref.ICommodity;
 import w3id.org.saref.IFunction;
 import w3id.org.saref.IProfile;
-	
+
+
 
 
 public  class Switch implements ISwitch {
@@ -100,7 +103,7 @@ public  class Switch implements ISwitch {
 	
 	
 	@JsonInclude(Include.NON_EMPTY)
-	@JsonldProperty("https://w3id.org/saref#hasFunction") 
+	@JsonldProperty("https://w3id.org/saref#hasFunction")
 	private List<RefId> hasFunctionSomeActuatingFunction;
 	public void addhasFunctionSome(IActuatingFunction parameter)
 	{
@@ -108,7 +111,7 @@ public  class Switch implements ISwitch {
 	}
 			
 	@JsonInclude(Include.NON_EMPTY)
-	@JsonldProperty("https://w3id.org/saref#offers") 
+	@JsonldProperty("https://w3id.org/saref#offers")
 	private List<RefId> offersOnlyService;
 	public void addoffersOnly(IService parameter)
 	{
@@ -116,7 +119,7 @@ public  class Switch implements ISwitch {
 	}
 			
 	@JsonInclude(Include.NON_EMPTY)
-	@JsonldProperty("https://w3id.org/saref#consistsOf") 
+	@JsonldProperty("https://w3id.org/saref#consistsOf")
 	private List<RefId> consistsOfOnlyDevice;
 	public void addconsistsOfOnly(IDevice parameter)
 	{
@@ -124,7 +127,7 @@ public  class Switch implements ISwitch {
 	}
 			
 	@JsonInclude(Include.NON_EMPTY)
-	@JsonldProperty("https://w3id.org/saref#measuresProperty") 
+	@JsonldProperty("https://w3id.org/saref#measuresProperty")
 	private List<RefId> measuresPropertyOnlyProperty;
 	public void addmeasuresPropertyOnly(IProperty parameter)
 	{
@@ -132,13 +135,15 @@ public  class Switch implements ISwitch {
 	}
 			
 	@JsonInclude(Include.NON_EMPTY)
-	@JsonldProperty("https://w3id.org/saref#hasTypicalConsumption") 
+	@JsonldProperty("https://w3id.org/saref#hasTypicalConsumption")
 	private List<RefId> hasTypicalConsumptionOnlyPower;
 	public void addhasTypicalConsumptionOnly(IPower parameter)
 	{
 		hasTypicalConsumptionOnlyPower.add(parameter.getRefId());
 	}
 			
+	@JsonInclude(Include.NON_EMPTY)
+	@JsonldProperty("https://w3id.org/saref#hasTypicalConsumption")
 	private List<RefId> hasTypicalConsumptionOnlyEnergy;
 	public void addhasTypicalConsumptionOnly(IEnergy parameter)
 	{
@@ -146,7 +151,7 @@ public  class Switch implements ISwitch {
 	}
 			
 	@JsonInclude(Include.NON_EMPTY)
-	@JsonldProperty("https://w3id.org/saref#accomplishes") 
+	@JsonldProperty("https://w3id.org/saref#accomplishes")
 	private List<RefId> accomplishesMinTask;
 	public void addaccomplishesMin1(ITask parameter)
 	{
@@ -154,7 +159,7 @@ public  class Switch implements ISwitch {
 	}
 			
 	@JsonInclude(Include.NON_EMPTY)
-	@JsonldProperty("https://w3id.org/saref#controlsProperty") 
+	@JsonldProperty("https://w3id.org/saref#controlsProperty")
 	private List<RefId> controlsPropertyOnlyProperty;
 	public void addcontrolsPropertyOnly(IProperty parameter)
 	{
@@ -162,7 +167,7 @@ public  class Switch implements ISwitch {
 	}
 			
 	@JsonInclude(Include.NON_EMPTY)
-	@JsonldProperty("https://w3id.org/saref#hasState") 
+	@JsonldProperty("https://w3id.org/saref#hasState")
 	private List<RefId> hasStateOnlyState;
 	public void addhasStateOnly(IState parameter)
 	{
@@ -170,7 +175,7 @@ public  class Switch implements ISwitch {
 	}
 			
 	@JsonInclude(Include.NON_EMPTY)
-	@JsonldProperty("https://w3id.org/saref#makesMeasurement") 
+	@JsonldProperty("https://w3id.org/saref#makesMeasurement")
 	private List<RefId> makesMeasurementOnlyMeasurement;
 	public void addmakesMeasurementOnly(IMeasurement parameter)
 	{
@@ -178,7 +183,7 @@ public  class Switch implements ISwitch {
 	}
 			
 	@JsonInclude(Include.NON_EMPTY)
-	@JsonldProperty("https://w3id.org/saref#isUsedFor") 
+	@JsonldProperty("https://w3id.org/saref#isUsedFor")
 	private List<RefId> isUsedForOnlyCommodity;
 	public void addisUsedForOnly(ICommodity parameter)
 	{
@@ -186,7 +191,7 @@ public  class Switch implements ISwitch {
 	}
 			
 	@JsonInclude(Include.NON_EMPTY)
-	@JsonldProperty("https://w3id.org/saref#hasFunction") 
+	@JsonldProperty("https://w3id.org/saref#hasFunction")
 	private List<RefId> hasFunctionMinFunction;
 	public void addhasFunctionMin1(IFunction parameter)
 	{
@@ -194,7 +199,7 @@ public  class Switch implements ISwitch {
 	}
 			
 	@JsonInclude(Include.NON_EMPTY)
-	@JsonldProperty("https://w3id.org/saref#hasProfile") 
+	@JsonldProperty("https://w3id.org/saref#hasProfile")
 	private List<RefId> hasProfileOnlyProfile;
 	public void addhasProfileOnly(IProfile parameter)
 	{
@@ -232,6 +237,8 @@ public  class Switch implements ISwitch {
 	{
 		return hasTypicalConsumptionOnlyPower;
 	}
+	@JsonInclude(Include.NON_EMPTY)
+	@JsonProperty("https://w3id.org/saref#hasTypicalConsumption")
 	public List<RefId> gethasTypicalConsumptionEnergy()
 	{
 		return hasTypicalConsumptionOnlyEnergy;

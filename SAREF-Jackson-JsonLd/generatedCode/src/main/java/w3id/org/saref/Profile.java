@@ -28,7 +28,10 @@ import w3id.org.saref.IProperty;
 import w3id.org.saref.ICommodity;  
 import w3id.org.saref.IPrice;  
 import w3id.org.saref.IProfile;  
-	
+
+
+
+
 
 
 public  class Profile implements IProfile {
@@ -70,7 +73,6 @@ public  class Profile implements IProfile {
 	{
 		hasTimeOnlyTime.add(parameter.getRefId());
 	}
-			
 	@JsonInclude(Include.NON_EMPTY)
 	@JsonldProperty("https://w3id.org/saref#isAbout") 
 	private List<RefId> isAboutOnlyProperty;
@@ -85,7 +87,6 @@ public  class Profile implements IProfile {
 	{
 		isAboutOnlyCommodity.add(parameter.getRefId());
 	}
-			
 	@JsonInclude(Include.NON_EMPTY)
 	@JsonldProperty("https://w3id.org/saref#hasPrice") 
 	private List<RefId> hasPriceOnlyPrice;
@@ -93,7 +94,6 @@ public  class Profile implements IProfile {
 	{
 		hasPriceOnlyPrice.add(parameter.getRefId());
 	}
-			
 	@JsonInclude(Include.NON_EMPTY)
 	@JsonldProperty("https://w3id.org/saref#consistsOf") 
 	private List<RefId> consistsOfOnlyProfile;
@@ -101,7 +101,6 @@ public  class Profile implements IProfile {
 	{
 		consistsOfOnlyProfile.add(parameter.getRefId());
 	}
-			
 	
 	
 	
@@ -118,6 +117,8 @@ public  class Profile implements IProfile {
 	{
 		return isAboutOnlyProperty;
 	}
+	@JsonInclude(Include.NON_EMPTY)
+	@JsonProperty("https://w3id.org/saref#isAbout")
 	public List<RefId> getisAboutCommodity()
 	{
 		return isAboutOnlyCommodity;

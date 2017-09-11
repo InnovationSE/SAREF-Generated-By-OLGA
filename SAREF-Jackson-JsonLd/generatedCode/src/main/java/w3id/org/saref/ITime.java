@@ -23,7 +23,7 @@ import ioinformarics.oss.jackson.module.jsonld.annotation.JsonldPropertyType;
 import saref.jsonld.util.RefId;
 
 import w3id.org.saref.IProperty;  
-import www.w3.org.time.ITemporalEntity;  
+import www.w3.org._2006.time.ITemporalEntity;  
 
 
 public interface ITime extends IProperty {

@@ -24,7 +24,13 @@ import ioinformarics.oss.jackson.module.jsonld.annotation.JsonldPropertyType;
 import saref.jsonld.util.RefId;
 
 import w3id.org.saref.UnitOfMeasure;
-	
+
+
+
+import www.wurvoc.org.vocabularies.om_1_8.United_States_dollar.United_States_dollar;
+import www.wurvoc.org.vocabularies.om_1_8.pound_sterling.pound_sterling;
+import www.wurvoc.org.vocabularies.om_1_8.euro.euro;
+
 
 
 public  class Currency implements ICurrency {
@@ -35,6 +41,9 @@ public  class Currency implements ICurrency {
 		super();
 		this.id = "https://w3id.org/saref#" + id;
 		relations = new HashMap<String, List<RefId>>();
+		United_States_dollar united_states_dollar = new United_States_dollar("United_States_dollar");
+		pound_sterling pound_sterling = new pound_sterling("pound_sterling");
+		euro euro = new euro("euro");
 		
 	}
 

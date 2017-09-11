@@ -30,8 +30,11 @@ import w3id.org.saref.IProperty;
 import w3id.org.saref.ICommodity;  
 import w3id.org.saref.IMeasurement;  
 import w3id.org.saref.Function;
+
+
 import w3id.org.saref.ICommand;
-	
+
+
 
 
 public  class MeteringFunction implements IMeteringFunction {
@@ -89,7 +92,6 @@ public  class MeteringFunction implements IMeteringFunction {
 	{
 		hasCommandOnlyGetMeterHistoryCommand.add(parameter.getRefId());
 	}
-			
 	@JsonInclude(Include.NON_EMPTY)
 	@JsonldProperty("https://w3id.org/saref#hasMeterReadingType") 
 	private List<RefId> hasMeterReadingTypeOnlyProperty;
@@ -104,7 +106,6 @@ public  class MeteringFunction implements IMeteringFunction {
 	{
 		hasMeterReadingTypeOnlyCommodity.add(parameter.getRefId());
 	}
-			
 	@JsonInclude(Include.NON_EMPTY)
 	@JsonldProperty("https://w3id.org/saref#hasMeterReading") 
 	private List<RefId> hasMeterReadingOnlyMeasurement;
@@ -112,12 +113,11 @@ public  class MeteringFunction implements IMeteringFunction {
 	{
 		hasMeterReadingOnlyMeasurement.add(parameter.getRefId());
 	}
-			
 	
 	
 	
 	@JsonInclude(Include.NON_EMPTY)
-	@JsonldProperty("https://w3id.org/saref#hasCommand") 
+	@JsonldProperty("https://w3id.org/saref#hasCommand")
 	private List<RefId> hasCommandMinCommand;
 	public void addhasCommandMin1(ICommand parameter)
 	{
@@ -137,6 +137,8 @@ public  class MeteringFunction implements IMeteringFunction {
 	{
 		return hasMeterReadingTypeOnlyProperty;
 	}
+	@JsonInclude(Include.NON_EMPTY)
+	@JsonProperty("https://w3id.org/saref#hasMeterReadingType")
 	public List<RefId> gethasMeterReadingTypeCommodity()
 	{
 		return hasMeterReadingTypeOnlyCommodity;

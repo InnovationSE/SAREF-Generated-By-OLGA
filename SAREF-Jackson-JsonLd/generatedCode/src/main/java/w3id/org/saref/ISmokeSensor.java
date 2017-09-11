@@ -68,5 +68,6 @@ public interface ISmokeSensor extends ISensor {
 	@JsonldProperty("https://w3id.org/saref#hasFunction") 
 	public void addhasFunctionSome(IEventFunction parameter);
 			
+			
 	
 }

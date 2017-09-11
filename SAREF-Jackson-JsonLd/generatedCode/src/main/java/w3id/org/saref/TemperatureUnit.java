@@ -24,7 +24,13 @@ import ioinformarics.oss.jackson.module.jsonld.annotation.JsonldPropertyType;
 import saref.jsonld.util.RefId;
 
 import w3id.org.saref.UnitOfMeasure;
-	
+
+
+
+import www.wurvoc.org.vocabularies.om_1_8.degree_Celsius.degree_Celsius;
+import www.wurvoc.org.vocabularies.om_1_8.kelvin.kelvin;
+import www.wurvoc.org.vocabularies.om_1_8.degree_Fahrenheit.degree_Fahrenheit;
+
 
 
 public  class TemperatureUnit implements ITemperatureUnit {
@@ -35,6 +41,9 @@ public  class TemperatureUnit implements ITemperatureUnit {
 		super();
 		this.id = "https://w3id.org/saref#" + id;
 		relations = new HashMap<String, List<RefId>>();
+		degree_Celsius degree_celsius = new degree_Celsius("degree_Celsius");
+		kelvin kelvin = new kelvin("kelvin");
+		degree_Fahrenheit degree_fahrenheit = new degree_Fahrenheit("degree_Fahrenheit");
 		
 	}
 

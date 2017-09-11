@@ -27,8 +27,11 @@ import w3id.org.saref.IMeasurement;
 import w3id.org.saref.IProperty;  
 import w3id.org.saref.IGetSensingDataCommand;  
 import w3id.org.saref.Function;
+
+
 import w3id.org.saref.ICommand;
-	
+
+
 
 
 public  class SensingFunction implements ISensingFunction {
@@ -69,7 +72,6 @@ public  class SensingFunction implements ISensingFunction {
 	{
 		hasSensingRangeSomeMeasurement.add(parameter.getRefId());
 	}
-			
 	@JsonInclude(Include.NON_EMPTY)
 	@JsonldProperty("https://w3id.org/saref#hasSensorType") 
 	private List<RefId> hasSensorTypeOnlyProperty;
@@ -77,7 +79,6 @@ public  class SensingFunction implements ISensingFunction {
 	{
 		hasSensorTypeOnlyProperty.add(parameter.getRefId());
 	}
-			
 	@JsonInclude(Include.NON_EMPTY)
 	@JsonldProperty("https://w3id.org/saref#hasCommand") 
 	private List<RefId> hasCommandOnlyGetSensingDataCommand;
@@ -85,12 +86,11 @@ public  class SensingFunction implements ISensingFunction {
 	{
 		hasCommandOnlyGetSensingDataCommand.add(parameter.getRefId());
 	}
-			
 	
 	
 	
 	@JsonInclude(Include.NON_EMPTY)
-	@JsonldProperty("https://w3id.org/saref#hasCommand") 
+	@JsonldProperty("https://w3id.org/saref#hasCommand")
 	private List<RefId> hasCommandMinCommand;
 	public void addhasCommandMin1(ICommand parameter)
 	{

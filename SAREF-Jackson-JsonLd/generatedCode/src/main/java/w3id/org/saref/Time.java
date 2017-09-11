@@ -23,11 +23,14 @@ import ioinformarics.oss.jackson.module.jsonld.annotation.JsonldPropertyType;
 
 import saref.jsonld.util.RefId;
 
-import www.w3.org.time.ITemporalEntity;  
+import www.w3.org._2006.time.ITemporalEntity;  
 import w3id.org.saref.Property;
+
+
 import w3id.org.saref.IDevice;
 import w3id.org.saref.IMeasurement;
-	
+
+
 
 
 public  class Time implements ITime {
@@ -68,12 +71,11 @@ public  class Time implements ITime {
 	{
 		consistsOfSomeTemporalEntity.add(parameter.getRefId());
 	}
-			
 	
 	
 	
 	@JsonInclude(Include.NON_EMPTY)
-	@JsonldProperty("https://w3id.org/saref#isMeasuredByDevice") 
+	@JsonldProperty("https://w3id.org/saref#isMeasuredByDevice")
 	private List<RefId> isMeasuredByDeviceOnlyDevice;
 	public void addisMeasuredByDeviceOnly(IDevice parameter)
 	{
@@ -81,7 +83,7 @@ public  class Time implements ITime {
 	}
 			
 	@JsonInclude(Include.NON_EMPTY)
-	@JsonldProperty("https://w3id.org/saref#isControlledByDevice") 
+	@JsonldProperty("https://w3id.org/saref#isControlledByDevice")
 	private List<RefId> isControlledByDeviceOnlyDevice;
 	public void addisControlledByDeviceOnly(IDevice parameter)
 	{
@@ -89,7 +91,7 @@ public  class Time implements ITime {
 	}
 			
 	@JsonInclude(Include.NON_EMPTY)
-	@JsonldProperty("https://w3id.org/saref#relatesToMeasurement") 
+	@JsonldProperty("https://w3id.org/saref#relatesToMeasurement")
 	private List<RefId> relatesToMeasurementOnlyMeasurement;
 	public void addrelatesToMeasurementOnly(IMeasurement parameter)
 	{

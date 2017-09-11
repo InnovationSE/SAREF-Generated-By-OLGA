@@ -25,7 +25,11 @@ import saref.jsonld.util.RefId;
 
 import w3id.org.saref.StartStopState;
 import w3id.org.saref.State;
-	
+
+
+
+import w3id.org.saref.Stop;
+
 
 
 public  class StopState implements IStopState {
@@ -36,6 +40,7 @@ public  class StopState implements IStopState {
 		super();
 		this.id = "https://w3id.org/saref#" + id;
 		relations = new HashMap<String, List<RefId>>();
+		Stop stop = new Stop("Stop");
 		
 	}
 

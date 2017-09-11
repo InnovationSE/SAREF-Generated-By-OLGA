@@ -25,7 +25,11 @@ import saref.jsonld.util.RefId;
 
 import w3id.org.saref.OnOffState;
 import w3id.org.saref.State;
-	
+
+
+
+import w3id.org.saref.On;
+
 
 
 public  class OnState implements IOnState {
@@ -36,6 +40,7 @@ public  class OnState implements IOnState {
 		super();
 		this.id = "https://w3id.org/saref#" + id;
 		relations = new HashMap<String, List<RefId>>();
+		On on = new On("On");
 		
 	}
 

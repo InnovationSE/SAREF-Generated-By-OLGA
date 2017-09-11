@@ -24,9 +24,12 @@ import ioinformarics.oss.jackson.module.jsonld.annotation.JsonldPropertyType;
 import saref.jsonld.util.RefId;
 
 import w3id.org.saref.Property;
+
+
 import w3id.org.saref.IDevice;
 import w3id.org.saref.IMeasurement;
-	
+
+
 
 
 public  class Energy implements IEnergy {
@@ -63,7 +66,7 @@ public  class Energy implements IEnergy {
 	
 	
 	@JsonInclude(Include.NON_EMPTY)
-	@JsonldProperty("https://w3id.org/saref#isMeasuredByDevice") 
+	@JsonldProperty("https://w3id.org/saref#isMeasuredByDevice")
 	private List<RefId> isMeasuredByDeviceOnlyDevice;
 	public void addisMeasuredByDeviceOnly(IDevice parameter)
 	{
@@ -71,7 +74,7 @@ public  class Energy implements IEnergy {
 	}
 			
 	@JsonInclude(Include.NON_EMPTY)
-	@JsonldProperty("https://w3id.org/saref#isControlledByDevice") 
+	@JsonldProperty("https://w3id.org/saref#isControlledByDevice")
 	private List<RefId> isControlledByDeviceOnlyDevice;
 	public void addisControlledByDeviceOnly(IDevice parameter)
 	{
@@ -79,7 +82,7 @@ public  class Energy implements IEnergy {
 	}
 			
 	@JsonInclude(Include.NON_EMPTY)
-	@JsonldProperty("https://w3id.org/saref#relatesToMeasurement") 
+	@JsonldProperty("https://w3id.org/saref#relatesToMeasurement")
 	private List<RefId> relatesToMeasurementOnlyMeasurement;
 	public void addrelatesToMeasurementOnly(IMeasurement parameter)
 	{

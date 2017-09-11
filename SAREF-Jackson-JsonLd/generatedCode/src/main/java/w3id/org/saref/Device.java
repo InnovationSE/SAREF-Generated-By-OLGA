@@ -34,7 +34,10 @@ import w3id.org.saref.IMeasurement;
 import w3id.org.saref.ICommodity;  
 import w3id.org.saref.IFunction;  
 import w3id.org.saref.IProfile;  
-	
+
+
+
+
 
 
 public  class Device implements IDevice {
@@ -98,7 +101,6 @@ public  class Device implements IDevice {
 	{
 		offersOnlyService.add(parameter.getRefId());
 	}
-			
 	@JsonInclude(Include.NON_EMPTY)
 	@JsonldProperty("https://w3id.org/saref#consistsOf") 
 	private List<RefId> consistsOfOnlyDevice;
@@ -106,7 +108,6 @@ public  class Device implements IDevice {
 	{
 		consistsOfOnlyDevice.add(parameter.getRefId());
 	}
-			
 	@JsonInclude(Include.NON_EMPTY)
 	@JsonldProperty("https://w3id.org/saref#measuresProperty") 
 	private List<RefId> measuresPropertyOnlyProperty;
@@ -114,7 +115,6 @@ public  class Device implements IDevice {
 	{
 		measuresPropertyOnlyProperty.add(parameter.getRefId());
 	}
-			
 	@JsonInclude(Include.NON_EMPTY)
 	@JsonldProperty("https://w3id.org/saref#hasTypicalConsumption") 
 	private List<RefId> hasTypicalConsumptionOnlyPower;
@@ -129,7 +129,6 @@ public  class Device implements IDevice {
 	{
 		hasTypicalConsumptionOnlyEnergy.add(parameter.getRefId());
 	}
-			
 	@JsonInclude(Include.NON_EMPTY)
 	@JsonldProperty("https://w3id.org/saref#accomplishes") 
 	private List<RefId> accomplishesMinTask;
@@ -137,7 +136,6 @@ public  class Device implements IDevice {
 	{
 		accomplishesMinTask.add(parameter.getRefId());
 	}
-			
 	@JsonInclude(Include.NON_EMPTY)
 	@JsonldProperty("https://w3id.org/saref#controlsProperty") 
 	private List<RefId> controlsPropertyOnlyProperty;
@@ -145,7 +143,6 @@ public  class Device implements IDevice {
 	{
 		controlsPropertyOnlyProperty.add(parameter.getRefId());
 	}
-			
 	@JsonInclude(Include.NON_EMPTY)
 	@JsonldProperty("https://w3id.org/saref#hasState") 
 	private List<RefId> hasStateOnlyState;
@@ -153,7 +150,6 @@ public  class Device implements IDevice {
 	{
 		hasStateOnlyState.add(parameter.getRefId());
 	}
-			
 	@JsonInclude(Include.NON_EMPTY)
 	@JsonldProperty("https://w3id.org/saref#makesMeasurement") 
 	private List<RefId> makesMeasurementOnlyMeasurement;
@@ -161,7 +157,6 @@ public  class Device implements IDevice {
 	{
 		makesMeasurementOnlyMeasurement.add(parameter.getRefId());
 	}
-			
 	@JsonInclude(Include.NON_EMPTY)
 	@JsonldProperty("https://w3id.org/saref#isUsedFor") 
 	private List<RefId> isUsedForOnlyCommodity;
@@ -169,7 +164,6 @@ public  class Device implements IDevice {
 	{
 		isUsedForOnlyCommodity.add(parameter.getRefId());
 	}
-			
 	@JsonInclude(Include.NON_EMPTY)
 	@JsonldProperty("https://w3id.org/saref#hasFunction") 
 	private List<RefId> hasFunctionMinFunction;
@@ -177,7 +171,6 @@ public  class Device implements IDevice {
 	{
 		hasFunctionMinFunction.add(parameter.getRefId());
 	}
-			
 	@JsonInclude(Include.NON_EMPTY)
 	@JsonldProperty("https://w3id.org/saref#hasProfile") 
 	private List<RefId> hasProfileOnlyProfile;
@@ -185,7 +178,6 @@ public  class Device implements IDevice {
 	{
 		hasProfileOnlyProfile.add(parameter.getRefId());
 	}
-			
 	
 	
 	
@@ -214,6 +206,8 @@ public  class Device implements IDevice {
 	{
 		return hasTypicalConsumptionOnlyPower;
 	}
+	@JsonInclude(Include.NON_EMPTY)
+	@JsonProperty("https://w3id.org/saref#hasTypicalConsumption")
 	public List<RefId> gethasTypicalConsumptionEnergy()
 	{
 		return hasTypicalConsumptionOnlyEnergy;

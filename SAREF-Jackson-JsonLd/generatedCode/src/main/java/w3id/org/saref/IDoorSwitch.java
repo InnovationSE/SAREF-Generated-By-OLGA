@@ -51,6 +51,7 @@ public interface IDoorSwitch extends ISwitch {
 	@JsonldProperty("https://w3id.org/saref#hasState") 
 	public void addhasStateSome(IOpenCloseState parameter);
 			
+			
 	/**
 	* addconsistsOfSome
 	* @param ISwitch

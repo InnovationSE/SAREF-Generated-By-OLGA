@@ -24,8 +24,11 @@ import ioinformarics.oss.jackson.module.jsonld.annotation.JsonldPropertyType;
 import saref.jsonld.util.RefId;
 
 import w3id.org.saref.Function;
+
+
 import w3id.org.saref.ICommand;
-	
+
+
 
 
 public  class ActuatingFunction implements IActuatingFunction {
@@ -60,7 +63,7 @@ public  class ActuatingFunction implements IActuatingFunction {
 	
 	
 	@JsonInclude(Include.NON_EMPTY)
-	@JsonldProperty("https://w3id.org/saref#hasCommand") 
+	@JsonldProperty("https://w3id.org/saref#hasCommand")
 	private List<RefId> hasCommandMinCommand;
 	public void addhasCommandMin1(ICommand parameter)
 	{

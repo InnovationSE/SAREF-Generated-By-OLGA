@@ -24,7 +24,10 @@ import ioinformarics.oss.jackson.module.jsonld.annotation.JsonldPropertyType;
 import saref.jsonld.util.RefId;
 
 import w3id.org.saref.IUnitOfMeasure;  
-	
+
+
+
+
 
 
 public  class Commodity implements ICommodity {
@@ -62,7 +65,6 @@ public  class Commodity implements ICommodity {
 	{
 		isMeasuredInOnlyUnitOfMeasure.add(parameter.getRefId());
 	}
-			
 	
 	
 	

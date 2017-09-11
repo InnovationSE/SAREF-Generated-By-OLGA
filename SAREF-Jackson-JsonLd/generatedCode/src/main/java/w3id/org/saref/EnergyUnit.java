@@ -24,7 +24,12 @@ import ioinformarics.oss.jackson.module.jsonld.annotation.JsonldPropertyType;
 import saref.jsonld.util.RefId;
 
 import w3id.org.saref.UnitOfMeasure;
-	
+
+
+
+import w3id.org.saref.watt_hour;
+import www.wurvoc.org.vocabularies.om_1_8.kilowatt_hour.kilowatt_hour;
+
 
 
 public  class EnergyUnit implements IEnergyUnit {
@@ -35,6 +40,8 @@ public  class EnergyUnit implements IEnergyUnit {
 		super();
 		this.id = "https://w3id.org/saref#" + id;
 		relations = new HashMap<String, List<RefId>>();
+		watt_hour watt_hour = new watt_hour("watt_hour");
+		kilowatt_hour kilowatt_hour = new kilowatt_hour("kilowatt_hour");
 		
 	}
 

@@ -25,7 +25,10 @@ import saref.jsonld.util.RefId;
 
 import w3id.org.saref.IUnitOfMeasure;  
 import w3id.org.saref.IProperty;  
-	
+
+
+
+
 
 
 public  class Measurement implements IMeasurement {
@@ -76,7 +79,6 @@ public  class Measurement implements IMeasurement {
 	{
 		isMeasuredInExactlyUnitOfMeasure.add(parameter.getRefId());
 	}
-			
 	@JsonInclude(Include.NON_EMPTY)
 	@JsonldProperty("https://w3id.org/saref#isMeasuredIn") 
 	private List<RefId> isMeasuredInOnlyUnitOfMeasure;
@@ -84,7 +86,6 @@ public  class Measurement implements IMeasurement {
 	{
 		isMeasuredInOnlyUnitOfMeasure.add(parameter.getRefId());
 	}
-			
 	@JsonInclude(Include.NON_EMPTY)
 	@JsonldProperty("https://w3id.org/saref#relatesToProperty") 
 	private List<RefId> relatesToPropertyExactlyProperty;
@@ -92,7 +93,6 @@ public  class Measurement implements IMeasurement {
 	{
 		relatesToPropertyExactlyProperty.add(parameter.getRefId());
 	}
-			
 	@JsonInclude(Include.NON_EMPTY)
 	@JsonldProperty("https://w3id.org/saref#relatesToProperty") 
 	private List<RefId> relatesToPropertyOnlyProperty;
@@ -100,7 +100,6 @@ public  class Measurement implements IMeasurement {
 	{
 		relatesToPropertyOnlyProperty.add(parameter.getRefId());
 	}
-			
 	
 	
 	

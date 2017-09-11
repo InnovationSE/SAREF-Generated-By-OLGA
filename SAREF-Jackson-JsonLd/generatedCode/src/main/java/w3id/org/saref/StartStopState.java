@@ -24,7 +24,10 @@ import ioinformarics.oss.jackson.module.jsonld.annotation.JsonldPropertyType;
 import saref.jsonld.util.RefId;
 
 import w3id.org.saref.State;
-	
+
+
+
+
 
 
 public  class StartStopState implements IStartStopState {

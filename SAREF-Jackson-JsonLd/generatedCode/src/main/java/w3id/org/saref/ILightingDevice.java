@@ -33,5 +33,6 @@ public interface ILightingDevice extends IFunctionRelated {
 	@JsonIgnore
 	public RefId getRefId();
 	
+			
 	
 }

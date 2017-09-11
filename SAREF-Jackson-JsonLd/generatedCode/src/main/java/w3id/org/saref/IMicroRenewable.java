@@ -33,5 +33,6 @@ public interface IMicroRenewable extends IFunctionRelated {
 	@JsonIgnore
 	public RefId getRefId();
 	
+			
 	
 }

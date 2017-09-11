@@ -24,8 +24,11 @@ import ioinformarics.oss.jackson.module.jsonld.annotation.JsonldPropertyType;
 import saref.jsonld.util.RefId;
 
 import w3id.org.saref.Commodity;
+
+
 import w3id.org.saref.IUnitOfMeasure;
-	
+
+
 
 
 public  class Water implements IWater {
@@ -60,7 +63,7 @@ public  class Water implements IWater {
 	
 	
 	@JsonInclude(Include.NON_EMPTY)
-	@JsonldProperty("https://w3id.org/saref#isMeasuredIn") 
+	@JsonldProperty("https://w3id.org/saref#isMeasuredIn")
 	private List<RefId> isMeasuredInOnlyUnitOfMeasure;
 	public void addisMeasuredInOnly(IUnitOfMeasure parameter)
 	{

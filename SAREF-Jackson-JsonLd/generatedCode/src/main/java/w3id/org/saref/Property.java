@@ -25,7 +25,10 @@ import saref.jsonld.util.RefId;
 
 import w3id.org.saref.IDevice;  
 import w3id.org.saref.IMeasurement;  
-	
+
+
+
+
 
 
 public  class Property implements IProperty {
@@ -65,7 +68,6 @@ public  class Property implements IProperty {
 	{
 		isMeasuredByDeviceOnlyDevice.add(parameter.getRefId());
 	}
-			
 	@JsonInclude(Include.NON_EMPTY)
 	@JsonldProperty("https://w3id.org/saref#isControlledByDevice") 
 	private List<RefId> isControlledByDeviceOnlyDevice;
@@ -73,7 +75,6 @@ public  class Property implements IProperty {
 	{
 		isControlledByDeviceOnlyDevice.add(parameter.getRefId());
 	}
-			
 	@JsonInclude(Include.NON_EMPTY)
 	@JsonldProperty("https://w3id.org/saref#relatesToMeasurement") 
 	private List<RefId> relatesToMeasurementOnlyMeasurement;
@@ -81,7 +82,6 @@ public  class Property implements IProperty {
 	{
 		relatesToMeasurementOnlyMeasurement.add(parameter.getRefId());
 	}
-			
 	
 	
 	

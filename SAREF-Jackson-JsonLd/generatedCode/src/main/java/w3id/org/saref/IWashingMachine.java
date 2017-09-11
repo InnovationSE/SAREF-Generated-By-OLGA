@@ -53,6 +53,7 @@ public interface IWashingMachine extends IAppliance, ILoad {
 	@JsonldProperty("https://w3id.org/saref#hasState") 
 	public void addhasStateSome(IStartStopState parameter);
 			
+			
 	/**
 	* addhasProfileSome
 	* @param IProfile

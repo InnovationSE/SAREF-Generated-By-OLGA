@@ -33,5 +33,6 @@ public interface IMultimedia extends IFunctionRelated {
 	@JsonIgnore
 	public RefId getRefId();
 	
+			
 	
 }

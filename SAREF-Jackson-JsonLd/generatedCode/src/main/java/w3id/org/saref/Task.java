@@ -24,7 +24,20 @@ import ioinformarics.oss.jackson.module.jsonld.annotation.JsonldPropertyType;
 import saref.jsonld.util.RefId;
 
 import w3id.org.saref.IDevice;  
-	
+
+
+
+import w3id.org.saref.WellBeing;
+import w3id.org.saref.Safety;
+import w3id.org.saref.Lighting;
+import w3id.org.saref.EnergyEfficiency;
+import w3id.org.saref.Drying;
+import w3id.org.saref.Comfort;
+import w3id.org.saref.Entertainment;
+import w3id.org.saref.Washing;
+import w3id.org.saref.Cleaning;
+import w3id.org.saref.MeterReading;
+
 
 
 public  class Task implements ITask {
@@ -35,6 +48,16 @@ public  class Task implements ITask {
 		super();
 		this.id = "https://w3id.org/saref#" + id;
 		relations = new HashMap<String, List<RefId>>();
+		WellBeing wellbeing = new WellBeing("WellBeing");
+		Safety safety = new Safety("Safety");
+		Lighting lighting = new Lighting("Lighting");
+		EnergyEfficiency energyefficiency = new EnergyEfficiency("EnergyEfficiency");
+		Drying drying = new Drying("Drying");
+		Comfort comfort = new Comfort("Comfort");
+		Entertainment entertainment = new Entertainment("Entertainment");
+		Washing washing = new Washing("Washing");
+		Cleaning cleaning = new Cleaning("Cleaning");
+		MeterReading meterreading = new MeterReading("MeterReading");
 		isAccomplishedByMinDevice = new ArrayList<>();
 		
 	}
@@ -62,7 +85,6 @@ public  class Task implements ITask {
 	{
 		isAccomplishedByMinDevice.add(parameter.getRefId());
 	}
-			
 	
 	
 	

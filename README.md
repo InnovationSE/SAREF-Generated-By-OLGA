@@ -19,9 +19,9 @@ The output of OLGA is a generated library ready to be used by IoT developers. Th
 [SAREF](http://ontology.tno.nl/saref/) the Smart Appliances REFerence Ontology depends on the [Time](https://www.w3.org/TR/owl-time/) Ontology. Once merged the two ontologies have around 200 Classes and Individuals.
 
 The following sections contain the generated code by OLGA of SAREF[.ttl](http://ontology.tno.nl/saref.ttl) and Time[.ttl](https://www.w3.org/2006/time) Ontologies. Each section provides the following:
-1. Packaged generated library in .dll and .jar formats. (.whl is in progress).
-2. Generated source code in C\# and Java. (Python in progress).
-3. Generated ontology instance (A-Box) of an instantiation SAREF example.
+1. Packaged generated library in .dll, .whl, and .jar
+2. Generated source code in C\#, Python, and Java
+3. Generated ontology instance (A-Box) of an instantiation SAREF example
 4. An instantiation and usage examples for each of the generated SAREF libraries (Jackson-Jsonld and RomanticWeb). The examples demonstrate how any IoT developer can import the generated packages and use them in his development without any knowledge regarding ontologies. The provided examples show the instantiation of a [SAREF temperature sensor](http://ontology.tno.nl/saref/saref_TemperatureSensor.html) with a measurement temperature in degree Celsius, and other information such as the manufacturer and the model number.
 
 # The sections of SAREF generated libraries 

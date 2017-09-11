@@ -1,6 +1,15 @@
 # SAREF in Python with RDFAchemy
 
-SAREF Generated Library in Python with RDFAlchemy by OLGA 
+SAREF Generated Library in Python with RDFAlchemy by OLGA
+
+# Prerequisite
+
+You need to install the following:
+ 1. pip install [twine](https://pypi.python.org/pypi/twine)
+ 2. pip install [wheel](https://pip.pypa.io/en/stable/reference/pip_wheel/)
+ 3. pip install --upgrade setuptools [setuptools](https://pypi.python.org/pypi/setuptools)
+ 4. Download [RDFAlchemy.tar.gz](https://pypi.python.org/pypi/RDFAlchemy/)
+ 5. pip install RDFAlchemy.tar.gz
 
 # RDFAlchemy
 
